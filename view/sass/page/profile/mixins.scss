@@ -1,0 +1,117 @@
+@mixin description($color:rgb(70,70,70),$background:transparent)
+{
+  .iam-profile-description {
+    @include flex(center,center);
+    padding: 80px 20px;
+    background: $background;
+
+    .header {
+      padding-bottom: 20px;
+
+      .im-h3 {
+        font-size: .9em;
+        font-weight: normal;
+        padding-bottom: 10px;
+        color: rgb(40,40,40);
+
+        @include responsive($width-mobile) {
+          font-size: .8rem;
+        }
+
+      }
+      .im-virtue {
+        @include gradient-text($color);
+        color: $color;
+        text-transform: uppercase;
+        @include responsive($width-mobile){
+          text-align: center;
+          font-size: 1.2em;
+        }
+
+      }
+    }
+
+    .section{
+
+      .--text {
+        color: gray;
+        font-size: 1.1em;
+        margin: auto;
+        line-height: 30px;
+        @include responsive($width-mobile) {
+          width: 90%;
+        }
+
+      }
+    }
+    @content;
+  }
+}
+
+@mixin description-image() {
+    .description-card {
+          @include flex;
+          > * {
+            padding:10px 20px;
+            &.title {
+              @include responsive($width-mobile) {
+                margin: auto;
+              }
+              h4 {
+                border-left: 1.4px solid black;
+                padding-left: 10px;
+                margin: 5px;
+                margin-left: 2%;
+                font-size: .8em;
+                width: 50%;
+
+                @include responsive($width-mobile) {
+                  width: 90%;
+                  font-size: .7rem;
+                }
+              }
+
+              h1 {
+                color: rgb(70,70,70);
+                font-size: 2.5em;
+                @include responsive($width-mobile) {
+                  font-size: 1.5em;
+                }
+              }
+            }
+            &.description{
+              .text-description {
+                color: gray;
+                font-size: 1.1em;
+                line-height: 30px;
+                text-align: justify;
+                @include responsive($width-mobile) {
+                  font-size: 1em;
+                  text-align: center;
+                }
+              }
+            }
+          }
+    }
+}
+
+@mixin button($color,$background, $padding : 5px ) {
+  padding:$padding;
+  border-radius: 30px;
+  color: $color;
+  background: $background;
+  font-weight: bolder;
+  display: inline-block;
+  transition: .2s;
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+@mixin flex( $align : none , $justify : none, $direccion:column )
+{
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direccion;
+}

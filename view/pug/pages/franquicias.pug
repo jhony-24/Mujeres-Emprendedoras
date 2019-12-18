@@ -1,0 +1,18 @@
+extends ../helpers/base_html.pug
+include franquicias/mixins
+include ../templates/aside/contacto.pug
+
+append config
+  - subtitle = "Franquicias";
+
+append css3
+  link(rel="stylesheet",href="view/css/intermediate_franquicias.css")
+
+append content
+  .sections-simple.sections
+    include franquicias/sections
+block intermediate-content
+  +contact-aside()
+
+append javascript
+  script(src="view/js/pages/franquicias.js")

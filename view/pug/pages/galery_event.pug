@@ -1,0 +1,26 @@
+extends ../helpers/base_html.pug
+include galery/mixins.pug
+
+append config
+   - subtitle = "Event"
+
+append css3
+   link(rel="stylesheet", href="view/css/intermediate_galery_event.css")
+
+append content
+   section.main-content
+      .main-galery
+         .central-content
+            +image_event("Evento de la Semana","Evento de la semana")         
+         .content-galery
+            //Content ajax
+
+block intermediate-content
+
+append floating-content
+   +modal_photo(false)
+
+append javascript
+   script(src="view/js/functions/galery_event.js")
+   script(src="view/js/functions/galery_functions.js")
+   script(src="view/js/pages/event_galery.js")

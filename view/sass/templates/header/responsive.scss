@@ -1,0 +1,14 @@
+@include responsive(1000px){
+   .main-header{
+      padding: 0 2em;
+      justify-content: space-between;
+      .main-options{ display: none; }    
+      .main-responsive-menu{ display: block; }
+   }
+}
+
+@include responsive(800px){
+   .main-header{
+      .main-logo{ .logo-img{ width: 90px; } }
+   }
+}

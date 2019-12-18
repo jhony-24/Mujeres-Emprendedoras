@@ -1,0 +1,125 @@
+.my-profile {
+  position: relative;
+
+  > .back-view {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+  }
+
+   > .front-view-detail {
+     @include flex(stretch,flex-end,row);
+
+     .card-panel {
+       background: rgba(0,0,0,.5);
+       width: 50%;
+       padding: 2em 50px 5em 50px;
+       display: inline-block;
+
+       @include responsive(1000px) {
+          width: 100%;
+          padding: 2em 50px 2em 50px;
+          background: rgba(0,0,0,.55);
+          font-size: 0.9em;
+       }
+
+        .title-name {
+          color: white;
+          position: relative;
+          margin-bottom: 40px;
+
+          h1,h3 {
+            position: relative;
+            z-index: 1;
+          }
+          h1 {
+            background: linear-gradient(top,red,violet);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 3em;
+            border-left: 1.2px solid white;
+            padding: 0 10px;
+            margin: 10px 0;
+            @include responsive(800px){
+              font-size: 2em;
+            }
+          }
+
+          h3 {
+            @include responsive(1000px) {
+              font-size: .9rem;
+              margin-bottom: 15px;
+            }
+            @include responsive(800px) {
+              margin-bottom: 10px;
+            }
+          }
+
+          @include responsive(1000px){
+            margin-bottom: 20px;
+          }
+        }
+
+        .description {
+          color: white;
+          position: relative;
+          z-index: 1;
+
+          ul {
+            li {
+              list-style: initial;
+              margin-top: 8px;
+              font-size: 0.9em;
+              line-height: 20px;
+              @include responsive(1000px) {
+                font-size: 1em;
+                line-height: 20px;
+              }
+              &:first-letter{
+                font-size: 1.2em;
+              }
+            }
+          }
+
+          @include responsive(800px){
+            max-height: 300px;
+            overflow: auto;
+            padding: 0 10px 10px 0;
+          }
+        }
+     }
+
+   }
+
+   .move-down {
+      position: absolute;
+      bottom: 30px;
+      left: 75%;
+      transform: translateX(-75%);
+      animation: move-down 1s infinite ease-in-out alternate;
+      font-size: 1.5em;
+      z-index: 1;
+
+      @include responsive(1000px) {
+        display: none;
+      }
+      @keyframes move-down {
+        from {
+            bottom: 20px;
+        }
+      }
+
+  }
+
+}

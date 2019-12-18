@@ -1,0 +1,17 @@
+mixin contact-aside(class_aside = false)
+   if !class_aside
+      .aside-contact
+         +content-contact()
+   else
+      .aside-contact.shadow
+         +content-contact()
+
+mixin content-contact()
+   .image
+      img(src="https://cdn.pixabay.com/photo/2015/06/24/15/45/ipad-820272_960_720.jpg", alt="").img
+   .text(data-aos="fade-up")
+      h1.title ¡Hola!
+      p.desc(data-aos="fade-up") Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, mollitia, at, eos cumque quas perferendis aperiam inventore quis repellendus consequuntur tempore voluptatum assumenda quasi exercitationem a officia sequi natus sapiente?
+      h3.sub-title Lorem ipsum dolor sit amet.
+      p.email: <i class="fa fa-envelope"></i> Lorem ipsum dolor @hotmail.com
+      p.email: <i class="fa fa-envelope"></i> Lorem ipsum dolor @hotmail.com

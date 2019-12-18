@@ -1,0 +1,18 @@
+@mixin centerContent(){
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   @content;
+}
+
+@mixin responsive($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin gradient-text($color) {
+  background: $color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

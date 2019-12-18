@@ -1,0 +1,29 @@
+//Values
+
+$whatsapp-width : 60px;
+$header-height : 90px;
+$header-icon-height : 110px;
+
+//Colors Templates
+
+$w-b: rgb(59, 189, 124);
+$whatsapp-background : $w-b;
+
+$header-color-a : #e63c5a;
+$header-color-b : #831cf6;
+$header-background : linear-gradient(120deg, $header-color-a, $header-color-b);
+
+$footer-background : $header-background;
+$footer-background-b : rgba(0,0,0,0.3);
+
+//Colors DOM
+
+$slider-background : linear-gradient(-125deg, $header-background , $footer-background-b);
+$button-background : $header-background;
+
+$text-color : linear-gradient(45deg,red,purple);
+
+
+//Responsive
+$width-mobile : 600px;
+$width-mobile-2 : 700px;

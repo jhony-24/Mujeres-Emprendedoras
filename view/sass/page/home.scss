@@ -1,0 +1,27 @@
+
+$height-view : 80vh;
+$height-bullet : auto;
+$height-slider : $height-view  + $height-bullet;
+$bd-gradient : -webkit-repeating-linear-gradient(220deg,rgb(163, 5, 195),rgb(230,60,90));
+$bd-gradient : $header-background;
+
+
+@import "home/mixins";
+@import "profile/my-profile";
+
+#slider {
+  @import "home/card";
+  @import "home/viewslider";
+  @import "home/bullets";
+  @import "home/arrow-slider";
+  position: relative;
+}
+
+.floating-sections {
+  @import "home/floating-sections";
+  @import "home/card-services";
+}
+
+.profile {
+  @import "home/profile";
+}

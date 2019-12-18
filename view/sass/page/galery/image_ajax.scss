@@ -1,0 +1,160 @@
+@mixin header_galery(){
+   width: 100%;
+   height: 350px;
+   text-align: center;
+   font-size: 1.5em;
+   padding: 1em;
+   @include centerContent(){ flex-direction: column; }
+   .title{
+      font-size: 2.4em;
+      padding-bottom: .5em;
+      @include gradient-text($text-color);
+   }
+   .description{
+      width: 40%;
+      color: #999;
+   }
+   @include responsive(950px){
+      .title{ font-size: 1.8em; }
+      .description{ width: 40%; font-size: 0.8em; }
+   }
+   @include responsive(680px){
+      height: 300px;
+      .title{ font-size: 1.5em; }
+      .description{ font-size: 0.7em; }
+   }
+   @include responsive(580px){
+      height: 230px;
+      .description{
+         display: none;
+      }
+   }
+}
+
+@mixin galery(){
+   .main-galery{
+      width: inherit;
+      height: max-content;
+      background: #fff;
+
+      .content-galery{
+         width: $galery-width;
+         margin: 0 auto;
+         display: grid;
+         grid-template-columns: 1fr 1fr 1fr;
+         grid-gap: 15px;
+         .image{
+            width: 100%;
+            height: 250px;
+            margin-bottom: 5px;
+            position: relative;
+            background: $header-background;
+            cursor: pointer;
+            overflow: hidden;
+            .img-view{
+               width: 100%;
+               height: 100%;
+               opacity: 0;
+               transition: .3s;
+               animation: aparecer 1.5s;
+               animation-fill-mode: both;
+            }
+
+            @keyframes aparecer{
+               from{
+                  opacity: 0;
+               }
+               to{
+                  opacity: 1;
+               }
+            }
+
+            .icon{
+               width: 100%;
+               height: 100%;
+               margin: auto;
+               position: absolute;
+               top: 0;
+               left: 0;
+               color: #fff;
+               transition: .3s;
+               z-index: 9;
+               background: rgba($color: #000000, $alpha: 0.8);
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               opacity: 0;
+            }
+            &:hover{
+               .icon{ opacity: 1; }
+            }
+         }
+         @include responsive(1050px){ .image{ height: 220px; } }
+         @include responsive(950px){
+            grid-template-columns: 1fr 1fr;
+            .image{ height: 250px; }
+         }
+         @include responsive(680px){
+            .image{
+               height: 200px;
+               margin: 0 auto;
+            }
+         }
+         @include responsive(550px){
+            width: $galery-width - 15%;
+            grid-template-columns: 1fr;
+            grid-gap: 25px;
+            .image{
+               height: 220px;
+            }
+         }
+         @include responsive(450px){ width: $galery-width - 10%; }
+         @include responsive(350px){
+            .image{ height: 160px; }
+         }
+      }
+   }
+
+   @content;
+}
+
+@mixin header_galery_event(){
+   .image{
+      width: inherit;
+      height: inherit;
+      background-image: url("https://cdn.pixabay.com/photo/2019/07/12/19/13/happy-4333439_960_720.jpg");
+      background-position: bottom;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: rgba($color: #000000, $alpha: 0.6);
+      background-blend-mode: darken;
+   }
+   .text{
+      $padding : 2.5em;
+      width: inherit;
+      height: inherit;
+      position: absolute;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      color: #fff;
+      text-align: center;
+      .pre-title{
+         display: flex;
+         font-size: 1.2em;
+         padding: $padding 1em 0 1em;
+         .link-sub{
+            font-weight: bold;
+            padding-right: 10px;
+         }
+      }
+      .title{
+         padding-top: $padding;
+         .t{ font-size: 3.5em; padding-bottom: 1em; }
+         .tp{ font-size: 1.2em; }
+      }
+   }
+}

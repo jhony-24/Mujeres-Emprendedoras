@@ -1,0 +1,79 @@
+
+> .view-slider {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+
+
+  @include responsive($width-mobile){
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+  }
+
+   .view {
+    flex:none;
+    width: 100%;
+    scroll-snap-align: start;
+
+    &.transition-check {
+
+       .row-header{ animation: h1-show 1s 1 linear; }
+       .message { animation: p-show 1s 1 linear; }
+       .options-link { > a { animation: a-show .5s 1 ease-in-out; } }
+       @keyframes h1-show {
+         from {
+           transform: translateY(-100%);opacity: 0;
+         }
+       }
+       @keyframes p-show {
+         from {
+           transform: translateX(100%);opacity: .1;
+         }
+       }
+       @keyframes a-show {
+         from {
+           transform: perspective(400px)rotateX(90deg)translateZ(-100px);
+         }
+       }
+    }
+
+    &:not(.transition-check) {
+      .row-header,.message,.options-link {
+        opacity: 0;
+      }
+    }
+
+    .container-view {
+      height: $height-view;
+      position: relative;
+      overflow: hidden;
+
+      @include responsive($width-mobile) {
+        height: 60vh;
+      }
+
+      .back-panel {
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          position: absolute;
+          z-index: 0;
+          display: none;
+      }
+
+      .body-view {
+        position: relative;
+        height:100%;
+        z-index: 1;
+        color: white;
+        @import "views/item-1";
+      }
+    }
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

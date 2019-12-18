@@ -1,0 +1,61 @@
+@mixin item-list() {
+  .container-list {
+    background: white;
+    width: 70%;
+    max-width: 70%;
+    margin: 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    color: $header-color-a;
+
+    .header {
+      @include flex(center,space-between,row);
+      cursor: pointer;
+      padding: .5em;
+      font-size: 1.1em;
+      font-weight: bold;
+      .row{
+        padding: 10px;
+      }
+      .btn-plus-detail{
+        padding: 10px;
+      }
+      @include responsive($width-mobile) {
+        cursor: default;
+        font-size: 1em;
+      }
+    }
+    .content-body {
+      padding: .5em 2em 2em 2em;
+      color: rgb(80,80,80);
+      font-size: .9rem;
+      line-height: 20px;
+      @include responsive($width-mobile){
+        font-size:.8rem;
+      }
+    }
+  }
+}
+
+
+@mixin button($color,$background, $padding : 5px ) {
+  padding:$padding;
+  border-radius: 30px;
+  color: $color;
+  background: $background;
+  font-weight: bolder;
+  display: inline-block;
+  transition: .2s;
+
+  @include responsive($width-mobile) {
+    font-size: .9rem;
+  }
+}
+
+@mixin flex( $align : none , $justify : none, $direccion:column )
+{
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direccion;
+}

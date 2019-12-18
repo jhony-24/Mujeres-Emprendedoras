@@ -1,0 +1,84 @@
+@mixin flex( $align : none , $justify : none, $direccion:column )
+{
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direccion;
+}
+
+
+@mixin bodyview($background : transparent){
+    background: $background;
+    padding: 20px 7%;
+    @include responsive($width-mobile) {
+      padding: 20px 0%;
+    }
+    @content;
+}
+
+
+@mixin size($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+
+@mixin translate($x,$y ) {
+  transform: translate(#{$x},#{$y});
+}
+
+
+@mixin button($color,$background, $padding : 5px ) {
+  padding:$padding;
+  border-radius: 30px;
+  color: $color;
+  background: $background;
+  font-weight: bolder;
+  display: inline-block;
+  transition: .3s;
+  @include responsive($width-mobile) {
+    font-size: .8rem;
+  }
+
+}
+
+@mixin card-material($width : 0,$border : 10px){
+  .card-material {
+
+    @include flex();
+
+    overflow: hidden;
+    border-radius: 10px;
+    transition: .3s;
+    width: $width;
+    margin: 40px auto 10px;
+    display: flex;
+    box-shadow: 0 5px 5px rgba(100,100,100,.3);
+    background: white;
+    position: relative;
+
+    .__image-flexible {
+      @include flex();
+      width: 100%;
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: $width + 40px;
+      }
+    }
+
+    .__description {
+      padding:20px;
+      .card-service {
+        font-size: 1.1em;
+        > strong {
+          display: block;
+          margin: 10px 0;
+          @include gradient-text($text-color);
+        }
+
+      }
+    }
+
+  }
+}

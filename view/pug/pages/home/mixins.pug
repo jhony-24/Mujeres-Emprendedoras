@@ -1,0 +1,21 @@
+mixin view(image="",active = "")
+  .view(class=active)
+    .container-view
+      .back-panel
+      .body-view(style="background-image:url("+image+")")
+        block
+        
+mixin card(title,image,className = "")
+  .card(class=className)
+    .card-header
+      h1= title
+    .card-body
+      img(src=image,alt=image)
+
+mixin cardmaterial(text1,image)
+  .card-material
+    .content-image.__image-flexible
+      img(src= image,alt= image)
+    .content-text.__description
+      p.card-service
+        strong= text1 

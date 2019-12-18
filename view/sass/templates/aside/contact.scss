@@ -1,0 +1,104 @@
+.aside-contact{
+   width: 100%;
+   height: 650px;
+   position: relative;
+   box-shadow: 0 -5px 15px rgb(230, 230, 230);
+   .image{
+      width: 100%;
+      height: 100%;
+      .img{ width: 100%; height: 100%;}
+   }
+
+   .text{
+      width: 50%;
+      height: inherit;
+      padding: 2em;
+      background: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      @include centerContent(){
+         flex-direction: column;
+         justify-content: flex-start;
+         align-items: flex-start;
+      }
+      .title{
+         font-size: 4.5em;
+         @include gradient-text($text-color);
+         padding: .5em 0;
+      }
+      .sub-title{
+         font-size: 1.5em;
+         padding-bottom: 1em;
+      }
+      .desc,.email{
+         font-size: 1.1em;
+         padding-bottom: 1.5em;
+      }
+      .desc{
+         line-height: 1.8em;
+         padding-bottom: 2em;
+      }
+      .email{
+         padding-left: 1em;
+      }
+      .pd{
+         padding-bottom: 1em;
+      }
+
+      &:after{
+         content: "";
+         position: absolute;
+         width: 8%;
+         height: 40%;
+         margin: auto;
+         background: $header-background;
+         top: 0;
+         bottom: 0;
+         right: -4%;
+      }
+      @include responsive(1000px){ width: 60%; }
+      @include responsive(900px){
+         width: 70%;
+         padding: 2.5em;
+         &:after{ width: 6%; right: -3%; }
+      }
+      @include responsive(800px){
+         width: 80%;
+         font-size: 0.95em;
+         &:after{ width: 4%; right: -2%; }
+      }
+      @include responsive(700px){
+         width: 100%;
+         &:after{ display: none; }
+      }
+      @include responsive(550px){
+         .title{ 
+            padding-top: .3em;
+            font-size: 3.5em;
+         }
+      }
+   }
+
+   @include responsive(550px){ height: 580px; }
+   @include responsive(500px){
+      .text{
+         font-size: 0.95em;
+         padding: 1.5em;
+         text-align: center;
+         .title{ width: 100%; }
+         .sub-title{ width: 100%; }
+      }
+   }
+   @include responsive(420px){
+      .text{ 
+         font-size: 0.9em;
+         text-align: center;
+         .email{ width:100%; padding-left: 0; }
+      }
+   }
+}
+.shadow{
+   box-shadow: 0 5px 15px rgb(230, 230, 230);
+}

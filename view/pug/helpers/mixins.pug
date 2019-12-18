@@ -1,0 +1,31 @@
+mixin option_footer_data(data)
+   each e in data
+      li.option-list-footer
+         a(href=e.link).link-style=e.name
+         .animation
+
+mixin option_header_data(data)
+   each e in data
+      li.option
+         if e.child.length < 1
+            a(href=e.link).link=e.name
+            .animation-div
+         else
+            a(href=e.link).link=e.name
+            .animation-div
+            ul.internal-list
+               each i in e.child
+                  li.internal-option
+                     a(href=i.link).link=i.name
+         
+mixin modal_photo(arrow)
+   .photo-screen
+      .image-screen#img
+         img(src="", alt="").img-view
+      if arrow
+         .btn-left#btn-left
+            i.fa.fa-chevron-left.fa-2x
+         .btn-right#btn-right
+            i.fa.fa-chevron-right.fa-2x
+      .btn-close#btn-close
+         i.fa.fa-times.fa-2x

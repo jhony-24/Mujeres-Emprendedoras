@@ -1,0 +1,6 @@
+@import "profile/mixins";
+.section-profile-principal {
+  @import "profile/my-profile";
+  @import "profile/sections";
+
+}

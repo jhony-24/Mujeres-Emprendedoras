@@ -1,0 +1,15 @@
+.view-slider#view-slider
+  +view("view/assets/image/b_j.jpg","active-view transition-check") 
+    include views/item-1
+  +view("https://cdn.pixabay.com/photo/2016/11/29/03/36/beautiful-1867093_960_720.jpg") 
+    include views/item-2
+  //+view("https://cdn.pixabay.com/photo/2016/01/08/06/13/winter-1127201__340.jpg")
+    include views/item-3
+    
+.point-slider
+  ul.bullets-slider#bullets-slider
+    
+.arrow-slider.arrow-left#btn-slider-to-left 
+  i.fa.fa-chevron-left
+.arrow-slider.arrow-right#btn-slider-to-right
+  i.fa.fa-chevron-right

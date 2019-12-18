@@ -1,0 +1,141 @@
+.my-description {
+
+  background: linear-gradient(45deg,white 50%,rgba(100,100,100,.05) 50%);
+
+  .first-description{
+    @include description($text-color){
+
+      .im-h3 {
+        text-align: center;
+      }
+      .--text {
+        width: 80%;
+        text-align: center;
+      }
+    }
+
+  }
+
+  .second-description {
+    @include flex(center,none,row);
+    width: 80%;
+    margin: auto;
+
+    @include responsive($width-mobile) {
+      @include flex;
+      width: 100%;
+    }
+
+    > .row {
+      width: 50%;
+
+      @include responsive($width-mobile) {
+        width: 100%;
+      }
+
+      @include description($text-color){
+        display: block;
+      }
+
+      img {
+        display: block;
+        margin: auto;
+        width: 200px;
+        box-shadow:-20px 20px 0 rgba(100,100,100,.2);
+      }
+
+    }
+  }
+
+  .dark-description {
+      position: relative;
+
+      > .back-view {
+        background:url("../assets/image/b_b.jpg") no-repeat center / cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      > .front-view-detail {
+          background:linear-gradient(45deg,rgba(0,0,0,.8),rgba(0,0,0,.1));
+          padding: 40px 10px;
+          z-index: 2;
+          position: relative;
+
+          @include responsive($width-mobile){
+            padding: 0px;
+          }
+      }
+
+      @include description(white){
+        display: block;
+        width: 50%;
+        margin-left: 5%;
+
+        @include responsive($width-mobile){
+          width: 90%;
+          padding-left: 0;
+          padding-right: 0;
+        }
+        & .header .im-h3 {
+          color: white;
+          @include responsive($width-mobile) {
+            text-align: center;
+          }
+        }
+        .section .--text {
+          color: white;
+
+        }
+        .button {
+          display: inline-block;
+          background: linear-gradient(120deg,rgb(230,60,90),rgb(131, 28, 246));
+          padding: 10px 20px;
+          border-radius: 20px;
+          margin-top: 20px;
+
+          @include responsive($width-mobile){
+            font-size: .8rem;
+            margin: 20px;
+            margin-bottom: 0;
+          }
+        }
+      }
+  }
+
+  .double-row-more-description {
+    @include flex(center);
+    padding: 50px 0;
+    margin: auto;
+    width: 80%;
+    @include responsive($width-mobile) {
+      width: 100%;
+    }
+    @include description-image();
+
+
+    .row {
+      &.row-header {
+        @include flex(none,space-between,row);
+
+        @include responsive($width-mobile + 200) {
+            @include flex;
+        }
+         >* {
+           width: 45%;
+           @include responsive($width-mobile + 200) {
+             width: 100%;
+           }
+         }
+         margin: 20px auto;
+      }
+      &.row-footer {
+        @include button(white,linear-gradient(120deg,rgb(230,60,90),rgb(131, 28, 246)),10px 20px);
+        margin: 50px auto;
+      }
+    }
+  }
+}

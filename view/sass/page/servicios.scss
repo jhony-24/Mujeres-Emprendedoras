@@ -1,0 +1,391 @@
+$height-image : 600px;
+.main-content{
+   width: 100%;
+   height: max-content;
+   .parallax-content{
+      width: 100%;
+      height: $height-image;
+      background-image: url("https://cdn.pixabay.com/photo/2016/01/19/17/19/young-woman-1149643_960_720.jpg");
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      background-color: rgba(0,0,0,0.4);
+      background-blend-mode: darken;
+      background-repeat: no-repeat;
+      position: relative;
+      .text-parallax{
+         width: 45%;
+         height: max-content;
+         margin: auto;
+         position: absolute;
+         top: 0;
+         bottom: 0%;
+         color: #fff;
+         padding: 1em 1em 1em 4em;
+         .title{
+            padding-bottom: 1em;
+            font-size: 2.7em;
+            span{
+               font-size: 1.1em;
+               text-decoration: underline;
+            }
+         }
+         .btn-link{
+            width: 40%;
+            background: $header-background;
+            padding: 10px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.4em;
+         }
+      }
+   }
+
+   .conferencia{
+      width: 100%;
+      height: max-content;
+
+      .title-conferencia{
+         width: 100%;
+         padding: 1.5em;
+         font-size: 2.5em;
+         background: #fff;
+         text-align: center;
+         h1{
+            background: $header-background;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+         }
+      }
+
+      $img-h : 550px;
+      $canvas-h : 50px;
+      .content-conferencia{
+         width: 100%;
+         height: $img-h;
+         position: relative;
+         .image{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-image: url("https://cdn.pixabay.com/photo/2016/02/03/17/38/coffee-break-1177540_960_720.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position-y: center;
+            display: flex;
+            align-items: center;
+            &:after{
+               content: "";
+               width: 100%;
+               height: 100%;
+               position: absolute;
+               top: 0;
+               left: 0;
+               background: $header-color-b;
+               opacity: .7;
+            }
+
+            .container{
+               width: 70%;
+               height: max-content;
+               margin: 0 auto;
+               position: relative;
+               z-index: 15;
+               display: flex;
+               justify-content: space-around;
+               align-items: center;
+               .text{
+                  width: 40%;
+                  padding: 1em;
+                  color: #fff;
+                  text-align: right;
+                  h1{
+                     padding-bottom: 1em;
+                     font-size: 2.2em;
+                  }
+                  p{
+                     font-size: 1.1em;
+                  }
+               }
+               .img{
+                  width: 45%;
+                  height: 300px;
+                  border: 10px solid #fff;
+               }
+            }
+         }
+         .canvas{
+            width: 100%;
+            height: $canvas-h;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            #effect-arc{
+               width: 100%;
+               height: 100%;
+            }
+         }
+      }
+
+   }
+
+   .franquicias{
+      width: 100%;
+      padding: 6em 0;
+      text-align: center;
+      .title{
+         background: $header-background;
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+         font-size: 3.5em;
+         padding-bottom: 1em;
+      }
+      .desc{
+         width: 50%;
+         margin: 0 auto;
+         font-size: 1.2em;
+         padding-bottom: 2em;
+         color: #999;
+      }
+      .btn{
+         background: $header-background;
+         padding: 13px 1.5em;
+         border-radius: 30px;
+         text-transform: uppercase;
+         font-weight: bold;
+      }
+   }
+
+   .contacto{
+      width: 100%;
+      height: max-content;
+      .image{
+         width: 100%;
+         height: 350px;
+         display: flex;
+         justify-content: flex-end;
+         align-items: center;
+         background-image: url("https://cdn.pixabay.com/photo/2015/05/31/11/32/work-791218_960_720.jpg");
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position-y: center;
+         background-color: rgba(0,0,0,.5);
+         background-blend-mode: darken;
+         .content{
+            width: 45%;
+            color: #fff;
+            text-align: right;
+            padding: 1em 4em 1em 1em;
+            h1{
+               font-weight: normal;
+               font-size: 2.5em;
+               padding-bottom: 1em;
+               span{
+                  font-size: 1.2em;
+                  font-weight: bold;
+                  text-decoration: underline;
+               }
+            }
+            a{
+               background: #fff;
+               padding: 10px 1em;
+               color: $header-color-a;
+               border-radius: 20px;
+               font-size: 1.2em;
+            }
+         }
+      }
+      .text{
+         padding: 4em 0;
+         .content{
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            h1{
+               font-size: 2.1em;
+               padding-bottom: 1em;
+            }
+            p{
+               font-size: 1.1em;
+               line-height: 1.5em;
+               color: rgb(129, 129, 129);
+            }
+         }
+      }
+   }
+
+   @include responsive(980px){
+      .parallax-content{
+         .text-parallax{ width: 60%; }
+      }
+      .conferencia > .content-conferencia{
+         .image > .container{
+            width: 90%;
+         }
+      }
+   }
+   @include responsive(850px){
+      .conferencia{
+         .title-conferencia{
+            font-size: 2em;
+            padding: 1em;
+         }
+         .content-conferencia{
+            .image > .container{
+               width: 100%;
+               .text{ width: 50%; }
+               .img{ width: 40%; height: 250px; }
+            }
+         }
+      }
+      .franquicias{
+         padding: 4em 0;
+         .title{ font-size: 3em; padding-bottom: .5em;}
+         .desc{
+            width: 60%;
+            font-size: 1.1em;
+            padding-bottom: 1.5em;
+         }
+      }
+      .contacto{
+         .text{
+            .content{ width: 65%; }
+         }
+      }
+   }
+   @include responsive(750px){
+      .parallax-content{
+         height: 500px;
+         .text-parallax{
+            width: 80%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: .5em;
+            .title{ font-size: 2.5em; }
+         }
+      }
+      .conferencia{
+         .content-conferencia{
+            .image > .container{
+               flex-direction: column;
+               .text{
+                  width: 70%;
+                  text-align: center;
+                  padding-bottom: 1.5em;
+                  h1{
+                     padding-bottom: .5em;
+                  }
+               }
+               .img{
+                  width: 35%;
+                  height: 200px;
+                  border: 6px solid #fff;
+               }
+            }
+         }
+      }
+      .franquicias{
+         padding: 3em 0;
+         .title{ font-size: 2.5em; }
+      }
+      .contacto{
+         .image > .content{
+            width: 60%;
+            padding-right: 2em;
+         }
+      }
+   }
+
+   @include responsive(650px){
+      .parallax-content{
+         height: 400px;
+         .text-parallax{
+            width: 90%;
+            .title{ font-size: 2em; }
+            .btn-link{
+               width: 30%;
+               font-size: 1.1em;
+               padding: 8px;
+            }
+         }
+      }
+      .conferencia{
+         .title-conferencia{
+            font-size: 1.5em;
+         }
+         .content-conferencia{
+            height: 450px;
+            .image > .container{
+               .text{ width: 80%; }
+               .img{ display: none; }
+            }
+            .canvas{
+               height: 30px;
+            }
+         }
+      }
+      .franquicias{
+         .btn{ padding: 8px 1em; }
+      }
+      .contacto{
+         .text{
+            .content{ width: 75%; }
+         }
+      }
+   }
+   @include responsive(600px){
+      .contacto{
+         .image{
+            height: 250px;
+            .content{
+               width: 70%;
+               margin: 0 auto;
+               padding: 1em 1em 0 1em;
+               text-align: center;
+               h1{
+                  font-size: 1.8em;
+                  padding-bottom: .5em;
+               }
+               a{
+                  font-size: 0.9em;
+                  padding: 8px 1em;
+               }
+            }
+         }
+         .text{
+            padding: 3em 0;
+            font-size: 0.95em;
+            .content{ width: 80%; }
+         }
+      }
+      .franquicias{
+         .title{ font-size: 2em; }
+         .desc{ width: 70%; }
+      }
+   }
+   @include responsive(500px){
+      .parallax-content{
+         height: 350px;
+         .text-parallax{
+            .title{ font-size: 1.5em; }
+         }
+      }
+      .contacto{
+         .image{
+            height: 220px;
+            .content{
+               width: 90%;
+               h1{ font-size: 1.5em; }
+            }
+         }
+         .text{
+            .content{ width: 85%; font-size: 0.95em; }
+         }
+      }
+      .franquicias{
+         .title{ font-size: 1.8em; }
+         .desc{ width: 80%; font-size: 0.95em; }
+      }
+   }
+}

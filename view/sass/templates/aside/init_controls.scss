@@ -1,0 +1,83 @@
+.init{
+   width: max-content;
+   height: max-content;
+   margin: auto;
+   position: absolute;
+   transition: .5s;
+   cursor: pointer;
+   color: #fff;
+}
+.init_controls{
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   opacity: 0;
+   transition: .3s;
+}
+
+@mixin create_video($w : 100px, $h : 100px){
+   width: $w;
+   height: max-content;
+   margin: 3em auto 4em auto;
+   .title{
+      width: 100%;
+      text-align: center;
+      padding: .5em 0 1em 0;
+      h1{
+         font-size: 3.5em;
+         background: $header-background;
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+         @include responsive(700px){ font-size: 3em; }
+         @include responsive(550px){ font-size: 2.5em; }
+         @include responsive(450px){ font-size: 2.2em; }
+      }
+   }
+   .content{
+      width: 100%;
+      height: $h;
+      position: relative;
+      overflow: hidden;
+      .video{
+         width: 100%;
+         height: 100%;
+         background: black;
+         #video{
+            width: 100%;
+            height: 100%;
+         }
+      }
+      .controls{
+         opacity: 0;
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         top: 0;
+         left: 0;
+         color: #fff; 
+         transition: .3s;
+         background: rgba($color: #000000, $alpha: 0.7);
+         .center{
+            @extend .init;
+            top: 0;
+            bottom: 0;
+            transition: .3s;
+         }
+         .play{
+            left: 0;
+            right: 0;
+         }
+         .left{ left: -10%;  }
+         .right{ right: -10%; } 
+      }
+      &:hover{
+         .controls{
+            opacity: 1;
+            .right{ right: 5%; }
+            .left{ left: 5%;  } 
+         }
+      }      
+   }
+
+}

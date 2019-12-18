@@ -1,0 +1,28 @@
+mixin card-galery(image_link,title,description,url)
+   .card-galery
+      .text-plain(data-aos="fade-up")
+         h1.title=title
+         if description != ""
+            p.desc=description
+         else
+            p.desc Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt eos tenetur unde vel libero. Vel aperiam veritatis voluptas rem odio sapiente nulla eum quis dolor. Et dolor quibusdam consectetur eveniet!
+         a(href=url).link Ver mas
+      .image-result
+         img(src=image_link, alt="").img-card
+
+mixin card-image(image_link)
+   .image
+      img(src=image_link, alt="").img-view
+      .icon
+         i.fa.fa-camera.fa-2x
+
+mixin image_event(subtitle_event,title_event)
+   .image
+   .text
+      .pre-title
+         a(href="home").link-sub Inicio <i class="fa fa-chevron-right"></i>
+         a(href="galery").link-sub Galeria <i class="fa fa-chevron-right"></i>
+         p.sub=subtitle_event
+      .title
+         h1.t=title_event
+         p.tp Lorem ipsum dolor sit amet.

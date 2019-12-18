@@ -1,0 +1,23 @@
+@import "aside/init_controls";
+
+.container-video{
+   @include create_video(50%, 450px);
+   @include responsive(950px){ 
+      > .content{ height: 400px; }
+   }
+   @include responsive(750px){ 
+      width:70%;
+      > .content{ height: 300px; }
+   }
+   @include responsive(550px){ 
+      width:80%; 
+      > .content{ height: 250px; }
+   }
+   @include responsive(400px){ 
+      width:85%; 
+      > .content{ height: 220px; }
+   }
+}
+
+@import "aside/testimonial";
+@import "aside/contact";

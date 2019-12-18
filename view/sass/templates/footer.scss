@@ -1,0 +1,114 @@
+.main-footer{
+   width: inherit;
+   height: max-content;
+   background: $footer-background;
+   color: #fff;
+   @include centerContent(){ flex-direction: column; };
+   .container-footer{
+      width: 85%;
+      margin: 0 auto;
+      padding: 2.5em;
+      font-size: 0.95em;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-column-gap: 2em;
+
+      .column{
+         padding: 10px;
+         .title{
+            height: 80px;
+            @include centerContent();
+            img{
+               width: 100px;
+               height: 50%;
+            }
+            h2{
+               font-size: 1.5em;
+            }
+         }
+
+         .link-style{ color: #fff; padding: 10px;}
+         .content{
+            width: inherit;
+            font-size: 1.1em;
+            line-height: 1.5em;
+            .option-list-footer{
+               width: inherit;
+               .animation{
+                  width: 0;
+                  height: 3px;
+                  background: #fff;
+                  transition: .3s;
+               }
+               .link-style:hover ~ .animation{
+                  width: 100%;
+               }
+            }
+         }
+         .icons-content{
+            cursor: pointer;
+            @include centerContent();
+            .link-style{
+               &:hover{
+                  color: #999;
+               }
+            }
+         }
+      }
+      .content-center{ text-align: center; }
+
+      @include responsive(850px){
+         width: 95%;
+         grid-template-columns: repeat(3,1fr);
+         .hide-on-screen-small{ display: none; }
+      }
+      @include responsive(700px){
+         grid-row-gap: 10px;
+         grid-template-columns: 1fr;
+         .column{ 
+            text-align: center; 
+            .title{
+               img{ width: 140px; height: 60%; }
+            }
+            .title-mod{ justify-content: center; }
+            .content{
+               padding:1em 2em;
+               .animation{ visibility: hidden; }
+            }
+         }
+      }
+      @include responsive(550px){
+         .column{
+            .title{height: max-content;}
+         }
+         
+      }
+      @include responsive(450px){
+         padding-left: 0em;
+         padding-right: 0em;
+      }
+      @include responsive(350px){
+         .column{
+            .content{
+               padding:1em 1em;
+            }
+         }
+      }
+   }
+   .copyright-content{
+      width: inherit;
+      height: 50px;
+      background: $footer-background-b;
+      font-size: 1.1em;
+      @include centerContent();
+      @include responsive(600px){
+         font-size: 0.9em;
+         padding: 1em;
+         height: auto;
+         text-align: center;
+      }
+   }
+   @include responsive(400px){
+      font-size: 0.9em;
+   }
+}

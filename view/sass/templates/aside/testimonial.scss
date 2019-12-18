@@ -1,0 +1,126 @@
+.testimonial{
+   width: 100%;
+   height: max-content;
+   margin: 0 auto;
+   background: #fff;
+   padding: 4em 0;
+
+   @include centerContent();
+   .card{
+      width: 55%;
+      height: 100%;
+      background: lighten($header-color-a, 50);
+      box-shadow: 0 10px 15px rgb(230, 230, 230);
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+      @include centerContent(){
+         flex-direction: column;
+         justify-content: center;
+      }
+      .title{
+         font-size: 1.5em;
+         padding: 2em 0;
+         @include gradient-text($text-color);
+      }
+      .content{
+         width: 100%;
+         height: max-content;
+         display: flex;
+         justify-content: center;
+         .information{
+            width: 60%;
+            text-align: center;
+            position: relative;
+            transition: .8s;
+            left : 0;
+            .description{ 
+               padding: 0 1em 1em 1em; 
+               line-height: 1.5em;
+            }
+            .description,.testigo{
+               margin-bottom: 2em;
+               color: #999;
+               font-size: 1.1em;
+            }
+            .image{
+               $medidas : 170px;
+               width: $medidas;
+               height: $medidas;
+               border-radius: 50%;
+               border: 8px solid #fff;
+               margin-bottom: 2em;
+            }
+            .testigo{
+               font-size: 1.3em;
+               font-weight: bold;
+               text-decoration: underline;
+               color: $header-color-a;
+               padding-bottom: 1em;
+            }
+         }
+      }
+      .left,.right{
+         @extend .init;
+         top: 0;
+         bottom: 0;
+         color: initial;
+         padding: 1em;
+         opacity: 0;
+      }
+      .left{ left: -10%; }
+      .right{ right: -10%; }
+      &:hover{
+         .left,.right{ opacity: 1; }
+         .left{ left: 5%; }
+         .right{ right: 5%; }
+      }
+
+      @include responsive(950px){ 
+         width: 75%;
+         .content{
+            .information{
+               width: 70%;
+            }
+         }
+      }
+      @include responsive(700px){
+         width: 85%;
+         box-shadow: none;
+         .title{ padding-bottom: 1em; }
+         .content{
+            .information{
+               width: 80%;
+               .image{ margin-bottom: 1em; width: 140px; height: 140px;}
+               .description{ margin-bottom: 1em; }
+            }
+         }
+         .left,.right{ opacity: 1; }
+         .left{ left: 5%; }
+         .right{ right: 5%; }
+      }
+      @include responsive(550px){
+         width: 100%;
+         border-radius: 0px;
+         .title{ font-size: 1em; }
+      }
+      @include responsive(600px){
+         .content{
+            .information{
+               .description{ 
+                  font-size: 0.95em;
+                  padding-top: 1em; 
+               }
+            }
+         }
+      }  
+   }
+
+   @include responsive(600px){
+      height: max-content;
+      padding: 0 0 2em 0;
+   }
+   @include responsive(500px){
+      display: none;
+   }
+}

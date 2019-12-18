@@ -1,0 +1,33 @@
+mixin description(h1,p,h3="")
+  .iam-profile-description
+    .header
+      h3.im-h3= h3
+      h1.im-virtue=h1
+    .section
+      p.--text= p
+      block
+
+mixin description-image(h1,h4,messageDescription)
+  .description-card
+    .title
+      h1= h1
+      h4= h4
+    .description 
+      p.text-description= messageDescription
+
+
+mixin profile(image)
+  .my-profile
+    .front-view-detail
+      .card-panel
+        .title-name
+          h3 Mineria y Construccion
+          h1= data_profile.name
+        .description 
+          ul 
+            each i in data_profile.description
+              li
+                p= i.text
+    block
+    .back-view
+        img(src= image)

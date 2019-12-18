@@ -1,0 +1,83 @@
+.main-header{
+   width: inherit;
+   max-width: 1600px;
+   height: $header-height;
+   position: fixed;
+   top: 0;
+   z-index: 99;
+   @include centerContent(){ justify-content: space-around; }
+   background: $header-background;
+   transition: .3s;
+   .main-logo{
+      height: 90%;
+      @include centerContent();
+      position: relative;
+      .logo-img{ width: $header-icon-height; }
+   }
+   .main-options
+   {
+      height: inherit;
+      .list{
+         height: inherit;
+         display: flex;
+         .option{
+            width: max-content;
+            height: inherit;
+            margin: 0 5px;
+            text-align: center;
+            position: relative;
+            font-weight: bold;
+            font-size: 0.95em;
+            @include centerContent(){ align-items: flex-start; flex-direction: column; }
+
+            .link
+            {
+               padding: 10px;
+               cursor: pointer;
+               color:#fff;
+            }
+
+            .animation-div
+            {
+               width: 0%;
+               height: 3px;
+               background: #fff;
+               transition: .3s;
+            }
+
+            .internal-list
+            {
+               width: 200px;
+               position: absolute;
+               top: $header-height;
+               left: 0;
+               background: $header-color-b;
+               display: none;
+               .internal-option{
+                  width: inherit;
+                  padding: 1em;
+                  .link{ width: 100%; padding: 5px;}
+               }
+            }
+
+            &:hover
+            {
+               .animation-div{ width: 100%; }
+               .internal-list{
+                  display: block;
+                  .animation-div{ width: 0%; }
+               }
+            }
+
+         }
+      }
+   }
+   .main-responsive-menu{
+      display: none;
+      font-size: 1.8em;
+      color: #fff;
+      cursor: pointer;
+   }
+}
+
+@import "header/responsive";

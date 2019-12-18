@@ -1,0 +1,25 @@
+extends ../helpers/base_html.pug
+include profile/mixins
+include home/mixins
+include ../templates/aside/contacto.pug
+
+append config
+  - subtitle = "Home";
+
+append css3
+  link(rel="stylesheet",href="view/css/intermediate_home.css")
+
+append content
+  .slider#slider
+    include home/slider
+  .floating-sections
+    include home/floating-sections
+  .profile
+    include home/profile  
+
+append intermediate-content
+  include ../templates/aside/testimonial.pug
+  +contact-aside()
+
+append javascript
+  script(src="view/js/pages/slider.js")

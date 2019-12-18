@@ -1,0 +1,149 @@
+.floating__power {
+  position: relative;
+
+  &.light {
+    padding: 50px 0;
+
+    .container-row  {
+        width: 65%;
+        margin: 20px auto;
+
+        @include responsive($width-mobile + 50px) {
+          width: 90%;
+        }
+
+        &.__description-simple{
+          display: grid;
+          grid-template-columns: repeat(3,1fr);
+          grid-gap: 50px;
+          @include responsive($width-mobile) {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .row {
+           > h1 {
+             text-align: right;
+             color: rgb(60,60,60);
+             @include responsive($width-mobile) {
+               font-size: 1.2em;
+               text-align: center;
+             }
+
+           }
+
+           > p {
+             text-align: justify;
+             color: rgb(120,120,120);
+             line-height: 1.5em;
+
+             @include responsive($width-mobile) {
+               font-size: 1em;
+               text-align: center;
+             }
+             &:first-letter{
+               font-size: 2em;
+               color: rgb(40,40,40);
+               float: left;
+             }
+           }
+           .content-main-img {
+           @include flex(none,center,row);
+           > img {
+             width: 80%;
+             padding: 10px;
+
+             @include responsive($width-mobile) {
+               width: 60%;
+             }
+            }
+         }
+
+           &.motivate {
+             width: 100%;
+             text-align: center;
+
+             .greant-title {
+                width: 80%;
+                font-size: 2.8em;
+
+                @include responsive($width-mobile) {
+                  font-size: 2em;
+                }
+             }
+             p {
+               padding: 30px;
+               font-size: 1.2em;
+               line-height: 25px;
+               @include responsive($width-mobile) {
+                 font-size: 1em;
+                 padding: 10px;
+               }
+             }
+             * {
+               text-align: center;
+               margin: 10px auto;
+             }
+           }
+        }
+    }
+  }
+
+  &.dark {
+
+    overflow: hidden;
+
+    .image-back-panel {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .front-panel {
+      background: rgba(0,0,0,.6);
+      text-align: center;
+      color: white;
+      padding: 3% 0;
+
+      .icon-simple {
+        width: 40px;
+        margin: 20px 0;
+        filter: invert(100%);
+      }
+
+      .detail-text {
+        width: 40%;
+        margin: auto;
+        font-size: 1.1em;
+        line-height: 25px;
+
+        @include responsive($width-mobile) {
+          width: 90%;
+          font-size: 1em;
+        }
+
+        > .title {
+          font-size: 2.2em;
+          line-height: normal;
+          margin-bottom: 20px;
+          @include responsive($width-mobile) {
+            font-size: 1.2em;
+          }
+        }
+      }
+
+    }
+  }
+
+
+  .button {
+    @include button(white,linear-gradient(120deg,rgb(230,60,90),rgb(131, 28, 246)),15px 30px);
+    margin: 20px auto;
+  }
+
+
+}

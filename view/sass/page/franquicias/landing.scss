@@ -1,0 +1,37 @@
+.container-landing {
+  height: 400px;
+  background:linear-gradient(45deg,black,transparent),url("https://www.nationalgeographic.com.es/medio/2019/11/27/ganadoras-de-la-14%C2%AA-edicion-de-los-premios-a-la-investigacion-loreal-unesco-for-women-in-science_a77dbdc8_1200x630.jpg");
+  background-attachment: fixed;
+  @include flex(center,center);
+  .body-message {
+    text-align: center;
+    margin: 100px auto;
+    display: inline-block;
+    width: 80%;
+    color: white;
+    text-shadow: 0 1px  1px black;
+
+    @include responsive($width-mobile) {
+      margin: 0;
+      padding: 10px 20px;
+    }
+    .main-title {
+      font-size: 3em;
+      @include responsive($width-mobile) {
+        font-size: 1.6em;
+      }
+    }
+
+    .link {
+      a {
+        @include button(white,linear-gradient(120deg,rgb(230,60,90),rgb(131, 28, 246)),15px);
+        margin: 15px 0;
+      }
+    }
+  }
+
+  @include responsive(600px){
+    height: 250px;
+  }
+
+}

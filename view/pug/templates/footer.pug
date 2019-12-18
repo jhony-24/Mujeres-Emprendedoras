@@ -1,0 +1,37 @@
+footer.main-footer
+   .container-footer
+      .column
+         .title
+            img(src="view/assets/image/logo.png", alt="")
+         .content
+            p Todas las mujeres debemos de sentirnos power siempre, independiente de nuestro peso, raza, cultura, situación económica, edad y mil etc que no definen lo power que somos y podemos llegar a ser si nosotras así lo queremos.
+      .column.content-center.hide-on-screen-small
+         .title
+            h2 Pagina Web
+         .content
+            ul.list-footer
+               +option_footer_data(footer_options)
+      .column.content-center
+         .title
+            h2 Galeria
+         .content
+            ul.list-footer
+               li.option-list-footer
+                  a(href="lunes").link-style Evento Lunes
+                  .animation
+               li.option-list-footer 
+                  a(href="martes").link-style Evento Martes
+                  .animation
+      .column.content-center
+         .title
+            h2 Siguenos en:
+         .icons-content
+            a(href="").link-style
+               i.fab.fa-facebook.fa-2x
+            a(href="").link-style
+               i.fab.fa-whatsapp.fa-2x
+            a(href="").link-style
+               i.fab.fa-twitter.fa-2x
+   .copyright-content
+      - let text_footer = "Derechos reservados a Brunella Benavente (2019)"
+      p= text_footer

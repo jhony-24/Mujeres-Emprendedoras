@@ -1,0 +1,26 @@
+extends ../helpers/base_html.pug
+include contact/mixins.pug
+include ../templates/aside/contacto.pug
+
+append config
+   - subtitle = "Contacto";
+
+append css3
+   link(rel="stylesheet", href="view/css/intermediate_contact.css")
+
+append content
+   section.content-contact
+      +contact-aside(true)
+      .form-contact(data-aos="fade-up")
+         .title
+            h1 Contactanos
+         form(action="sendEmail", method="post").form
+            input(type="text",name="name",placeholder="Nombre",required).input
+            input(type="email",name="email",placeholder="Correo Electronico",required).input
+            input(type="number",name="phone",placeholder="Telefono",required).input
+            input(type="text",name="building",placeholder="Organizacion o Empresa",required).input
+            input(type="text",name="asunt",placeholder="Asunto",required).input
+            textarea(name="message",placeholder="Mensaje",required).input.textarea
+            input(type="submit",name="").input.submit
+
+block intermediate-content

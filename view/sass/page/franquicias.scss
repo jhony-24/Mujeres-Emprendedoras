@@ -1,0 +1,77 @@
+@import "franquicias/mixins";
+.sections {
+
+  .landing-container {
+    @import "franquicias/landing";
+  }
+
+  .container-row {
+    padding:100px 50px;
+    text-align: center;
+
+    .title {
+        margin-bottom: 60px;
+        font-size: 2.7em;
+        @include responsive($width-mobile){
+          font-size:1.4em;
+        }
+        .text {
+          @include gradient-text($text-color);
+        }
+
+        .line {
+          height: 1px;
+          width: 100px;
+          background: rgb(230,60,90);
+          margin: 10px auto 20px;
+        }
+    }
+    .message {
+      color: rgb(80,80,80);
+      width: 800px;
+      max-width: 100%;
+      margin: auto;
+      font-size: 1.1em;
+      line-height: 30px;
+      @include responsive($width-mobile){
+        font-size:1em;
+      }
+    }
+    .container-image {
+      .image-rounded {
+        width: 300px;
+        height: 300px;
+        border-radius: 100%;
+        object-fit: cover;
+        margin: 3.5em auto;
+        display: block;
+        background: rgba(100,100,100,.05);
+        @include responsive($width-mobile){
+          width: 200px;
+          height: 200px;
+        }
+      }
+    }
+  }
+
+  .container-row-conferences{
+    background:rgba(100,100,100,.05);
+    padding: 80px 0;
+
+    .title {
+      background: $header-background;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.8em;
+      padding-bottom: .5em;
+      text-align: center;
+      @include responsive($width-mobile){
+        font-size:1.2em;
+      }
+    }
+    .list-items {
+      @include item-list();
+    }
+  }
+
+}

@@ -1,0 +1,35 @@
+@mixin cardimage($width,$height-image){
+  .card {
+    @include flex();
+
+    width: $width;
+    .card-header {
+
+      h1 {
+        font-size: .95em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        width: 90%;
+      }
+    }
+
+    .card-body {
+      @include flex();
+
+      height: $height-image;
+
+      img {
+        width: 100%;
+        height: 100%;
+        color: transparent;
+        border-radius: 20px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    @content;
+
+
+  }
+}
