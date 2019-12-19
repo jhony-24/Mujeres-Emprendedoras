@@ -13,14 +13,13 @@
 
 .profile {
   width: 100%;
-  height: 600px;
-
   @import "home/profile";
 }
 
 .view-galery{
   padding: 5em 0;
   text-align: center;
+
   .title{
     width: 40%;
     margin: 0 auto;
@@ -28,6 +27,10 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 3em;
+    @include responsive($width-mobile) {
+      width: 80%;
+      font-size: 2em;
+    }
     span{
       font-weight: bold;
       font-size: 1.1em;
@@ -49,5 +52,8 @@
     font-size: 1.1em;
     color: #999;
     padding: 1em 1em 2em 1em;
+    @include responsive($width-mobile) {
+      width: 90%;
+    }
   }
 }

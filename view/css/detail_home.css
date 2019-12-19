@@ -721,6 +721,17 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       .floating-sections .floating__power.words-inspiration p span.minun {
         text-transform: lowercase;
         font-size: 0.9em; }
+  @media screen and (max-width: 700px) {
+    .floating-sections .floating__power.words-inspiration p {
+      width: 80%; }
+      .floating-sections .floating__power.words-inspiration p span {
+        font-weight: bold;
+        text-transform: uppercase; }
+        .floating-sections .floating__power.words-inspiration p span.central {
+          font-size: 2em; }
+        .floating-sections .floating__power.words-inspiration p span.minun {
+          text-transform: lowercase;
+          font-size: 0.9em; } }
   .floating-sections .floating__power.dark {
     overflow: hidden; }
     .floating-sections .floating__power.dark .image-back-panel {
@@ -945,36 +956,78 @@ body::-webkit-scrollbar-thumb:vertical:hover {
               -webkit-text-fill-color: transparent; } }
 
 .profile {
-  width: 100%;
-  height: 600px; }
+  width: 100%; }
   .profile .my-profile {
     width: 100%;
-    height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
+    @media screen and (max-width: 700px) {
+      .profile .my-profile {
+        display: block; } }
     .profile .my-profile .view-profile {
-      width: 50%;
-      height: 100%;
       background: url("../assets/image/b_a.jpg");
       background-position: center;
-      background-size: cover; }
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      width: 50%; }
+      @media screen and (max-width: 1000px) {
+        .profile .my-profile .view-profile {
+          width: 100%;
+          height: 600px; } }
+      @media screen and (max-width: 700px) {
+        .profile .my-profile .view-profile {
+          width: 100%;
+          height: 400px; } }
     .profile .my-profile .detail-profile {
       width: 50%;
-      height: 100%;
+      margin-left: auto;
+      background: red;
       position: initial;
       background: -webkit-linear-gradient(330deg, #e63c5a, #831cf6);
       background: -o-linear-gradient(330deg, #e63c5a, #831cf6);
       background: linear-gradient(120deg, #e63c5a, #831cf6);
       color: #fff;
       padding: 2em 5em; }
+      @media screen and (max-width: 1000px) {
+        .profile .my-profile .detail-profile {
+          height: 500px;
+          width: 90%;
+          margin: auto;
+          -webkit-transform: translateY(70%);
+          -ms-transform: translateY(70%);
+          transform: translateY(70%);
+          margin-bottom: 50%;
+          overflow-y: scroll; }
+          .profile .my-profile .detail-profile::-webkit-scrollbar {
+            display: none; } }
+      @media screen and (max-width: 700px) {
+        .profile .my-profile .detail-profile {
+          height: 400px;
+          -webkit-transform: translateY(50%);
+          -ms-transform: translateY(50%);
+          transform: translateY(50%);
+          overflow-y: auto;
+          margin-bottom: 50%;
+          padding: 2em 3em; } }
       .profile .my-profile .detail-profile .title-name {
         padding: 1.5em 0; }
+        @media screen and (max-width: 1000px) {
+          .profile .my-profile .detail-profile .title-name {
+            text-align: center; } }
         .profile .my-profile .detail-profile .title-name h3 {
           border-left: 2px solid #fff;
           padding-left: 5px;
           margin-bottom: .5em;
           font-size: 0.9em; }
+          @media screen and (max-width: 1000px) {
+            .profile .my-profile .detail-profile .title-name h3 {
+              display: inline-block; } }
         .profile .my-profile .detail-profile .title-name h1 {
           font-size: 2.2em; }
       .profile .my-profile .detail-profile .description ul li {
@@ -995,6 +1048,10 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 3em; }
+    @media screen and (max-width: 700px) {
+      .view-galery .title {
+        width: 80%;
+        font-size: 2em; } }
     .view-galery .title span {
       font-weight: bold;
       font-size: 1.1em; }
@@ -1023,6 +1080,9 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     font-size: 1.1em;
     color: #999;
     padding: 1em 1em 2em 1em; }
+    @media screen and (max-width: 700px) {
+      .view-galery .text {
+        width: 90%; } }
 
 .init, .container-video .content .controls .center {
   width: -webkit-max-content;

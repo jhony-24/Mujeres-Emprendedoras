@@ -1,16 +1,16 @@
 .floating__power {
   position: relative;
-  
+
   &.words-inspiration{
-    p{ 
-      width: 40%; 
-      margin: 2.5em auto; 
+    p{
+      width: 40%;
+      margin: 2.5em auto;
       font-size: 1.8em;
       text-align: center;
       background: $header-background;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      span{ 
+      span{
         font-weight: bold;
         text-transform: uppercase;
         &.central{
@@ -22,6 +22,22 @@
         }
       }
 
+    }
+    @include responsive($width-mobile) {
+      p{
+        width: 80%;
+        span{
+        font-weight: bold;
+        text-transform: uppercase;
+        &.central{
+          font-size: 2em;
+       }
+        &.minun{
+          text-transform: lowercase;
+          font-size: 0.9em;
+        }
+      }
+      }
     }
   }
 
@@ -44,6 +60,7 @@
       text-align: center;
       color: white;
       padding: 3% 0;
+
 
       .icon-simple {
         width: 40px;

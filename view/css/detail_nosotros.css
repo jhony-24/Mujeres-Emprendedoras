@@ -549,9 +549,8 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       background: -webkit-linear-gradient(330deg, #e63c5a, #831cf6);
       background: -o-linear-gradient(330deg, #e63c5a, #831cf6);
       background: linear-gradient(120deg, #e63c5a, #831cf6);
-      padding: 15px 1em;
-      border-radius: 30px;
-      font-size: 1.2em; }
+      padding: 10px 1em;
+      border-radius: 30px; }
   @media screen and (max-width: 850px) {
     .card-nosotros {
       width: 80%;

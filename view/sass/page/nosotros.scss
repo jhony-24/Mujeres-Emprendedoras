@@ -71,15 +71,14 @@ $bg-image : "https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_960_7
       }
       .btn{
          background: $header-background;
-         padding: 15px 1em;
+         padding: 10px 1em;
          border-radius: 30px;
-         font-size: 1.2em;
       }
    }
    @include responsive(850px){ width: 80%; transform: translateY(-10%); }
-   @include responsive(650px){ 
-      width: 90%; 
-      font-size: 0.95em; 
+   @include responsive(650px){
+      width: 90%;
+      font-size: 0.95em;
       padding: 1.5em;
       .text{ width: 80%; }
    }
