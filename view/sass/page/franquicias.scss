@@ -13,7 +13,7 @@
         margin-bottom: 60px;
         font-size: 2.7em;
         @include responsive($width-mobile){
-          font-size:1.4em;
+          font-size:2em;
         }
         .text {
           @include gradient-text($text-color);
@@ -39,13 +39,13 @@
     }
     .container-image {
       .image-rounded {
+        $border : 1px solid rgb(230,60,90);
         width: 300px;
         height: 300px;
         border-radius: 100%;
         object-fit: cover;
         margin: 3.5em auto;
         display: block;
-        background: rgba(100,100,100,.05);
         @include responsive($width-mobile){
           width: 200px;
           height: 200px;
@@ -62,11 +62,13 @@
       background: $header-background;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-size: 1.8em;
+      font-size: 1.7em;
       padding-bottom: .5em;
       text-align: center;
+      margin: auto;
       @include responsive($width-mobile){
-        font-size:1.2em;
+        font-size:1.4em;
+        width: 80%;
       }
     }
     .list-items {

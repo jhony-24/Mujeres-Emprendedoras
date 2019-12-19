@@ -479,15 +479,15 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     width: 80%;
     color: white;
     text-shadow: 0 1px  1px black; }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 700px) {
       .sections .landing-container .container-landing .body-message {
         margin: 0;
         padding: 10px 20px; } }
     .sections .landing-container .container-landing .body-message .main-title {
       font-size: 3em; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 700px) {
         .sections .landing-container .container-landing .body-message .main-title {
-          font-size: 1.6em; } }
+          font-size: 2em; } }
   @media screen and (max-width: 600px) {
     .sections .landing-container .container-landing {
       height: 250px; } }
@@ -498,9 +498,9 @@ body::-webkit-scrollbar-thumb:vertical:hover {
   .sections .container-row .title {
     margin-bottom: 60px;
     font-size: 2.7em; }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 700px) {
       .sections .container-row .title {
-        font-size: 1.4em; } }
+        font-size: 2em; } }
     .sections .container-row .title .text {
       background: -webkit-linear-gradient(45deg, red, purple);
       background: -o-linear-gradient(45deg, red, purple);
@@ -519,7 +519,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     margin: auto;
     font-size: 1.1em;
     line-height: 30px; }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 700px) {
       .sections .container-row .message {
         font-size: 1em; } }
   .sections .container-row .container-image .image-rounded {
@@ -529,9 +529,8 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     -o-object-fit: cover;
     object-fit: cover;
     margin: 3.5em auto;
-    display: block;
-    background: rgba(100, 100, 100, 0.05); }
-    @media screen and (max-width: 600px) {
+    display: block; }
+    @media screen and (max-width: 700px) {
       .sections .container-row .container-image .image-rounded {
         width: 200px;
         height: 200px; } }
@@ -545,17 +544,19 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     background: linear-gradient(120deg, #e63c5a, #831cf6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 1.8em;
+    font-size: 1.7em;
     padding-bottom: .5em;
-    text-align: center; }
-    @media screen and (max-width: 600px) {
+    text-align: center;
+    margin: auto; }
+    @media screen and (max-width: 700px) {
       .sections .container-row-conferences .title {
-        font-size: 1.2em; } }
+        font-size: 1.4em;
+        width: 80%; } }
   .sections .container-row-conferences .list-items .container-list {
     background: white;
     width: 70%;
     max-width: 70%;
-    margin: 20px auto;
+    margin: 40px auto;
     border-radius: 20px;
     overflow: hidden;
     color: #e63c5a; }
@@ -574,14 +575,14 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       -ms-flex-direction: row;
       flex-direction: row;
       cursor: pointer;
-      padding: .5em;
+      padding: 1em .5em;
       font-size: 1.1em;
       font-weight: bold; }
       .sections .container-row-conferences .list-items .container-list .header .row {
         padding: 10px; }
       .sections .container-row-conferences .list-items .container-list .header .btn-plus-detail {
         padding: 10px; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 700px) {
         .sections .container-row-conferences .list-items .container-list .header {
           cursor: default;
           font-size: 1em; } }
@@ -590,7 +591,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       color: #505050;
       font-size: .9rem;
       line-height: 20px; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 700px) {
         .sections .container-row-conferences .list-items .container-list .content-body {
           font-size: .8rem; } }
 

@@ -3,7 +3,7 @@
     background: white;
     width: 70%;
     max-width: 70%;
-    margin: 20px auto;
+    margin: 40px auto;
     border-radius: 20px;
     overflow: hidden;
     color: $header-color-a;
@@ -11,7 +11,7 @@
     .header {
       @include flex(center,space-between,row);
       cursor: pointer;
-      padding: .5em;
+      padding: 1em .5em;
       font-size: 1.1em;
       font-weight: bold;
       .row{

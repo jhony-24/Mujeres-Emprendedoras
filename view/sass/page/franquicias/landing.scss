@@ -20,7 +20,7 @@
     .main-title {
       font-size: 3em;
       @include responsive($width-mobile) {
-        font-size: 1.6em;
+        font-size: 2em;
       }
     }
   }
