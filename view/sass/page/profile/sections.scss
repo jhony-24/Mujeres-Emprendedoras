@@ -79,6 +79,7 @@
           width: 90%;
           padding-left: 0;
           padding-right: 0;
+          text-align: center;
         }
         & .header .im-h3 {
           color: white;
@@ -88,16 +89,17 @@
         }
         .section .--text {
           color: white;
-
+          @include responsive($width-mobile) {
+            text-align: center;
+          }
         }
         .button {
           display: inline-block;
           margin-top: 20px;
-
           @include responsive($width-mobile){
-            font-size: .8rem;
             margin: 20px;
             margin-bottom: 0;
+
           }
         }
       }
@@ -130,7 +132,6 @@
          margin: 20px auto;
       }
       &.row-footer {
-        @include button(white,linear-gradient(120deg,rgb(230,60,90),rgb(131, 28, 246)));
         margin: 70px auto;
       }
     }

@@ -596,7 +596,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         color: #282828; }
         @media screen and (max-width: 700px) {
           .section-profile-principal .my-description .first-description .iam-profile-description .header .im-h3 {
-            font-size: .8rem; } }
+            font-size: 1.2em; } }
       .section-profile-principal .my-description .first-description .iam-profile-description .header .im-virtue {
         font-size: 3em;
         background: -webkit-linear-gradient(330deg, #e63c5a, #831cf6);
@@ -608,7 +608,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         @media screen and (max-width: 700px) {
           .section-profile-principal .my-description .first-description .iam-profile-description .header .im-virtue {
             text-align: center;
-            font-size: 1.2em; } }
+            font-size: 2em; } }
     .section-profile-principal .my-description .first-description .iam-profile-description .section .--text {
       color: gray;
       font-size: 1.1em;
@@ -616,7 +616,8 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       line-height: 30px; }
       @media screen and (max-width: 700px) {
         .section-profile-principal .my-description .first-description .iam-profile-description .section .--text {
-          width: 90%; } }
+          width: 90%;
+          text-align: center; } }
     .section-profile-principal .my-description .first-description .iam-profile-description .section a {
       margin-top: 1.7em; }
     .section-profile-principal .my-description .first-description .iam-profile-description .im-h3 {
@@ -687,7 +688,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
             color: #282828; }
             @media screen and (max-width: 700px) {
               .section-profile-principal .my-description .second-description > .row .iam-profile-description .header .im-h3 {
-                font-size: .8rem; } }
+                font-size: 1.2em; } }
           .section-profile-principal .my-description .second-description > .row .iam-profile-description .header .im-virtue {
             font-size: 3em;
             background: -webkit-linear-gradient(330deg, #e63c5a, #831cf6);
@@ -699,7 +700,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
             @media screen and (max-width: 700px) {
               .section-profile-principal .my-description .second-description > .row .iam-profile-description .header .im-virtue {
                 text-align: center;
-                font-size: 1.2em; } }
+                font-size: 2em; } }
         .section-profile-principal .my-description .second-description > .row .iam-profile-description .section .--text {
           color: gray;
           font-size: 1.1em;
@@ -707,7 +708,8 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           line-height: 30px; }
           @media screen and (max-width: 700px) {
             .section-profile-principal .my-description .second-description > .row .iam-profile-description .section .--text {
-              width: 90%; } }
+              width: 90%;
+              text-align: center; } }
         .section-profile-principal .my-description .second-description > .row .iam-profile-description .section a {
           margin-top: 1.7em; }
       .section-profile-principal .my-description .second-description > .row img {
@@ -763,7 +765,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           color: #282828; }
           @media screen and (max-width: 700px) {
             .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-h3 {
-              font-size: .8rem; } }
+              font-size: 1.2em; } }
         .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-virtue {
           font-size: 3em;
           background: white;
@@ -773,7 +775,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           @media screen and (max-width: 700px) {
             .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-virtue {
               text-align: center;
-              font-size: 1.2em; } }
+              font-size: 2em; } }
       .section-profile-principal .my-description .dark-description .iam-profile-description .section .--text {
         color: gray;
         font-size: 1.1em;
@@ -781,14 +783,16 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         line-height: 30px; }
         @media screen and (max-width: 700px) {
           .section-profile-principal .my-description .dark-description .iam-profile-description .section .--text {
-            width: 90%; } }
+            width: 90%;
+            text-align: center; } }
       .section-profile-principal .my-description .dark-description .iam-profile-description .section a {
         margin-top: 1.7em; }
       @media screen and (max-width: 700px) {
         .section-profile-principal .my-description .dark-description .iam-profile-description {
           width: 90%;
           padding-left: 0;
-          padding-right: 0; } }
+          padding-right: 0;
+          text-align: center; } }
       .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-h3 {
         color: white; }
         @media screen and (max-width: 700px) {
@@ -796,12 +800,14 @@ body::-webkit-scrollbar-thumb:vertical:hover {
             text-align: center; } }
       .section-profile-principal .my-description .dark-description .iam-profile-description .section .--text {
         color: white; }
+        @media screen and (max-width: 700px) {
+          .section-profile-principal .my-description .dark-description .iam-profile-description .section .--text {
+            text-align: center; } }
       .section-profile-principal .my-description .dark-description .iam-profile-description .button {
         display: inline-block;
         margin-top: 20px; }
         @media screen and (max-width: 700px) {
           .section-profile-principal .my-description .dark-description .iam-profile-description .button {
-            font-size: .8rem;
             margin: 20px;
             margin-bottom: 0; } }
   .section-profile-principal .my-description .double-row-more-description {
@@ -853,13 +859,15 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           @media screen and (max-width: 700px) {
             .section-profile-principal .my-description .double-row-more-description .description-card > *.title h4 {
               width: 90%;
-              font-size: .7rem; } }
+              font-size: .8rem;
+              text-align: center;
+              border-left: 0; } }
         .section-profile-principal .my-description .double-row-more-description .description-card > *.title h1 {
           color: #464646;
           font-size: 2.5em; }
           @media screen and (max-width: 700px) {
             .section-profile-principal .my-description .double-row-more-description .description-card > *.title h1 {
-              font-size: 1.5em; } }
+              font-size: 2em; } }
         .section-profile-principal .my-description .double-row-more-description .description-card > *.description .text-description {
           color: gray;
           font-size: 1.1em;
@@ -905,22 +913,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           .section-profile-principal .my-description .double-row-more-description .row.row-header > * {
             width: 100%; } }
     .section-profile-principal .my-description .double-row-more-description .row.row-footer {
-      padding: 5px;
-      border-radius: 30px;
-      color: white;
-      background: -webkit-linear-gradient(330deg, #e63c5a, #831cf6);
-      background: -o-linear-gradient(330deg, #e63c5a, #831cf6);
-      background: linear-gradient(120deg, #e63c5a, #831cf6);
-      font-weight: bolder;
-      display: inline-block;
-      -webkit-transition: .2s;
-      -o-transition: .2s;
-      transition: .2s;
       margin: 70px auto; }
-      .section-profile-principal .my-description .double-row-more-description .row.row-footer:active {
-        -webkit-transform: scale(0.95);
-        -ms-transform: scale(0.95);
-        transform: scale(0.95); }
 
 .init, .container-video .content .controls .center, .testimonial .card .left, .testimonial .card .right {
   width: -webkit-max-content;
