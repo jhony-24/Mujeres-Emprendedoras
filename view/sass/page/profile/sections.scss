@@ -4,7 +4,7 @@
 
   .first-description{
     @include description($header-background){
-
+      padding: 150px 0;
       .im-h3 {
         text-align: center;
       }
@@ -19,7 +19,7 @@
   .second-description {
     @include flex(center,none,row);
     width: 80%;
-    margin: auto;
+    margin: 20px auto;
 
     @include responsive($width-mobile) {
       @include flex;
@@ -92,9 +92,6 @@
         }
         .button {
           display: inline-block;
-          background: linear-gradient(120deg,rgb(230,60,90),rgb(131, 28, 246));
-          padding: 10px 20px;
-          border-radius: 20px;
           margin-top: 20px;
 
           @include responsive($width-mobile){
@@ -133,8 +130,8 @@
          margin: 20px auto;
       }
       &.row-footer {
-        @include button(white,linear-gradient(120deg,rgb(230,60,90),rgb(131, 28, 246)),10px 20px);
-        margin: 50px auto;
+        @include button(white,linear-gradient(120deg,rgb(230,60,90),rgb(131, 28, 246)));
+        margin: 70px auto;
       }
     }
   }

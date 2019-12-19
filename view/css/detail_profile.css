@@ -585,11 +585,12 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     -ms-flex-direction: column;
     flex-direction: column;
     padding: 80px 20px;
-    background: transparent; }
+    background: transparent;
+    padding: 150px 0; }
     .section-profile-principal .my-description .first-description .iam-profile-description .header {
       padding-bottom: 20px; }
       .section-profile-principal .my-description .first-description .iam-profile-description .header .im-h3 {
-        font-size: .9em;
+        font-size: 1em;
         font-weight: normal;
         padding-bottom: 10px;
         color: #282828; }
@@ -597,13 +598,13 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           .section-profile-principal .my-description .first-description .iam-profile-description .header .im-h3 {
             font-size: .8rem; } }
       .section-profile-principal .my-description .first-description .iam-profile-description .header .im-virtue {
+        font-size: 3em;
         background: -webkit-linear-gradient(330deg, #e63c5a, #831cf6);
         background: -o-linear-gradient(330deg, #e63c5a, #831cf6);
         background: linear-gradient(120deg, #e63c5a, #831cf6);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        color: linear-gradient(120deg, #e63c5a, #831cf6);
-        text-transform: uppercase; }
+        color: linear-gradient(120deg, #e63c5a, #831cf6); }
         @media screen and (max-width: 600px) {
           .section-profile-principal .my-description .first-description .iam-profile-description .header .im-virtue {
             text-align: center;
@@ -638,7 +639,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     -ms-flex-direction: row;
     flex-direction: row;
     width: 80%;
-    margin: auto; }
+    margin: 20px auto; }
     @media screen and (max-width: 600px) {
       .section-profile-principal .my-description .second-description {
         display: -webkit-box;
@@ -680,7 +681,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         .section-profile-principal .my-description .second-description > .row .iam-profile-description .header {
           padding-bottom: 20px; }
           .section-profile-principal .my-description .second-description > .row .iam-profile-description .header .im-h3 {
-            font-size: .9em;
+            font-size: 1em;
             font-weight: normal;
             padding-bottom: 10px;
             color: #282828; }
@@ -688,13 +689,13 @@ body::-webkit-scrollbar-thumb:vertical:hover {
               .section-profile-principal .my-description .second-description > .row .iam-profile-description .header .im-h3 {
                 font-size: .8rem; } }
           .section-profile-principal .my-description .second-description > .row .iam-profile-description .header .im-virtue {
+            font-size: 3em;
             background: -webkit-linear-gradient(330deg, #e63c5a, #831cf6);
             background: -o-linear-gradient(330deg, #e63c5a, #831cf6);
             background: linear-gradient(120deg, #e63c5a, #831cf6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            color: linear-gradient(120deg, #e63c5a, #831cf6);
-            text-transform: uppercase; }
+            color: linear-gradient(120deg, #e63c5a, #831cf6); }
             @media screen and (max-width: 600px) {
               .section-profile-principal .my-description .second-description > .row .iam-profile-description .header .im-virtue {
                 text-align: center;
@@ -756,7 +757,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       .section-profile-principal .my-description .dark-description .iam-profile-description .header {
         padding-bottom: 20px; }
         .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-h3 {
-          font-size: .9em;
+          font-size: 1em;
           font-weight: normal;
           padding-bottom: 10px;
           color: #282828; }
@@ -764,11 +765,11 @@ body::-webkit-scrollbar-thumb:vertical:hover {
             .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-h3 {
               font-size: .8rem; } }
         .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-virtue {
+          font-size: 3em;
           background: white;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-          color: white;
-          text-transform: uppercase; }
+          color: white; }
           @media screen and (max-width: 600px) {
             .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-virtue {
               text-align: center;
@@ -797,11 +798,6 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         color: white; }
       .section-profile-principal .my-description .dark-description .iam-profile-description .button {
         display: inline-block;
-        background: -webkit-linear-gradient(330deg, #e63c5a, #831cf6);
-        background: -o-linear-gradient(330deg, #e63c5a, #831cf6);
-        background: linear-gradient(120deg, #e63c5a, #831cf6);
-        padding: 10px 20px;
-        border-radius: 20px;
         margin-top: 20px; }
         @media screen and (max-width: 600px) {
           .section-profile-principal .my-description .dark-description .iam-profile-description .button {
@@ -850,7 +846,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         .section-profile-principal .my-description .double-row-more-description .description-card > *.title h4 {
           border-left: 1.4px solid black;
           padding-left: 10px;
-          margin: 5px;
+          margin: 10px 5px;
           margin-left: 2%;
           font-size: .8em;
           width: 50%; }
@@ -909,7 +905,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           .section-profile-principal .my-description .double-row-more-description .row.row-header > * {
             width: 100%; } }
     .section-profile-principal .my-description .double-row-more-description .row.row-footer {
-      padding: 10px 20px;
+      padding: 5px;
       border-radius: 30px;
       color: white;
       background: -webkit-linear-gradient(330deg, #e63c5a, #831cf6);
@@ -920,7 +916,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       -webkit-transition: .2s;
       -o-transition: .2s;
       transition: .2s;
-      margin: 50px auto; }
+      margin: 70px auto; }
       .section-profile-principal .my-description .double-row-more-description .row.row-footer:active {
         -webkit-transform: scale(0.95);
         -ms-transform: scale(0.95);

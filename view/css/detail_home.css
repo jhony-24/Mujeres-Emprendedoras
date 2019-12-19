@@ -709,7 +709,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
 .floating-sections .floating__power {
   position: relative; }
   .floating-sections .floating__power.light {
-    padding: 50px 0; }
+    padding: 70px 0; }
     .floating-sections .floating__power.light .container-row {
       width: 65%;
       margin: 20px auto; }
@@ -807,7 +807,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         filter: invert(100%); }
       .floating-sections .floating__power.dark .front-panel .detail-text {
         width: 40%;
-        margin: auto;
+        margin: 20px auto;
         font-size: 1.1em;
         line-height: 25px; }
         @media screen and (max-width: 600px) {
@@ -817,26 +817,12 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         .floating-sections .floating__power.dark .front-panel .detail-text > .title {
           font-size: 2.2em;
           line-height: normal;
-          margin-bottom: 20px; }
+          margin-bottom: 40px; }
           @media screen and (max-width: 600px) {
             .floating-sections .floating__power.dark .front-panel .detail-text > .title {
               font-size: 1.2em; } }
-  .floating-sections .floating__power .button {
-    padding: 15px 30px;
-    border-radius: 30px;
-    color: white;
-    background: -webkit-linear-gradient(330deg, #e63c5a, #831cf6);
-    background: -o-linear-gradient(330deg, #e63c5a, #831cf6);
-    background: linear-gradient(120deg, #e63c5a, #831cf6);
-    font-weight: bolder;
-    display: inline-block;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    transition: .3s;
+  .floating-sections .floating__power .btn-link {
     margin: 20px auto; }
-    @media screen and (max-width: 600px) {
-      .floating-sections .floating__power .button {
-        font-size: .8rem; } }
 
 .floating-sections .card-services {
   padding: 20px 0;
