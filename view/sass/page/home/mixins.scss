@@ -48,10 +48,10 @@
     @include flex();
 
     overflow: hidden;
-    border-radius: 10px;
+    //border-radius: 10px;
     transition: .3s;
     width: $width;
-    margin: 40px auto 10px;
+    margin: .5em auto .5em auto;
     display: flex;
     box-shadow: 0 5px 5px rgba(100,100,100,.3);
     background: white;
@@ -68,13 +68,15 @@
     }
 
     .__description {
-      padding:20px;
+      padding: 1em;
       .card-service {
-        font-size: 1.1em;
+        font-size: 1.3em;
         > strong {
           display: block;
           margin: 10px 0;
-          @include gradient-text($text-color);
+          background: $header-background;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
 
       }

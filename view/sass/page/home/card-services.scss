@@ -2,31 +2,39 @@
 
   padding: 20px 0;
   padding-bottom: 100px;
-
+  background: rgb(240,240,240);
   text-align: center;
 
   .header-card-title {
-
     > * {
       margin:15px auto;
     }
 
-    h2 {
-      font-size: 2.7em;
-      @include gradient-text($text-color);
-      width: 50%;
-      padding-bottom: 1em;
+    p{
+      font-size: 3.2em;
+      width: 40%;
+      padding: 1em 0;
+      background: $header-background;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
 
       @include responsive($width-mobile) {
         width: 90%;
         font-size: 2em;
       }
+
+      span{
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+
     }
 
   }
 
   .all-cards-services {
-    width: 90%;
+    width: 80%;
     margin: auto;
     flex-wrap: wrap;
 

@@ -1,5 +1,4 @@
 extends ../helpers/base_html.pug
-include profile/mixins
 include home/mixins
 include ../templates/aside/contacto.pug
 
@@ -37,10 +36,14 @@ append content
   .floating-sections
     include home/floating-sections
   .profile
-    include home/profile  
+    include home/profile
+  .view-galery
+    p.title Visite <span>Nuestra Galeria</span>
+    .icon: i.fa.fa-portrait
+    p.text Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil totam, sequi possimus nostrum soluta minus obcaecati optio adipisci tenetur animi, velit esse molestiae, laudantium omnis.
+    a.btn-link(href="galery") Ver mas
 
 append detail-content
-  include ../templates/aside/testimonial.pug
   +contact-aside()
 
 append javascript

@@ -1,107 +1,28 @@
 .floating__power {
   position: relative;
-
-  &.light {
-    padding: 70px 0;
-
-    .container-row  {
-        width: 80%;
-        margin: 20px auto;
-
-        display: flex;
-        flex-flow: row;
-        @include responsive($width-mobile-2) {
-          width: 90%;
+  
+  &.words-inspiration{
+    p{ 
+      width: 40%; 
+      margin: 2.5em auto; 
+      font-size: 1.8em;
+      text-align: center;
+      background: $header-background;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      span{ 
+        font-weight: bold;
+        text-transform: uppercase;
+        &.central{
+          font-size: 2.5em;
         }
-
-        @include responsive($width-mobile) {
-          display: block;
-          > * {
-            width: 100%;
-          }
+        &.minun{
+          text-transform: lowercase;
+          font-size: 0.9em;
         }
+      }
 
-          > *{
-            padding: 0 15px;
-            width: calc(100% / 3);
-            @include responsive($width-mobile) {
-                width: 100%;
-            }
-          }
-            h1 {
-             text-align: right;
-             color: rgb(60,60,60);
-             font-size: 2.5em;
-             margin: 0;
-             @include responsive($width-mobile-2) {
-               font-size: 2.2em;
-             }
-
-             @include responsive($width-mobile) {
-               font-size: 1.8em;
-               margin: 30px 0;
-               text-align: center;
-             }
-
-           }
-            p {
-             text-align: justify;
-             color: rgb(120,120,120);
-             line-height: 1.5em;
-             font-size: 1.1em;
-             @include responsive($width-mobile-2) {
-               width: 50%;
-               font-size: 1.1em;
-             }
-             @include responsive($width-mobile) {
-               font-size: 1em;
-               text-align: center;
-               margin: 20px 0;
-               width: 100%;
-             }
-           }
-           .content-main-img {
-           @include flex(none,center,row);
-           height: 300px;
-           > img {
-             object-fit: cover;
-             border-radius: 10px;
-             width: 100%;
-             height: 100%;
-
-             @include responsive($width-mobile) {
-               width: 80%;
-             }
-            }
-         }
-
-           &.motivate {
-             width: 100%;
-             text-align: center;
-
-             .greant-title {
-                width: 80%;
-                font-size: 2.8em;
-
-                @include responsive($width-mobile) {
-                  font-size: 1.8em;
-                }
-             }
-             p {
-               padding: 30px;
-               font-size: 1.2em;
-               line-height: 25px;
-               @include responsive($width-mobile) {
-                 font-size: 1em;
-                 padding: 10px;
-               }
-             }
-             * {
-               text-align: center;
-               margin: 10px auto;
-             }
-           }
-        }
+    }
   }
 
   &.dark {
@@ -126,7 +47,7 @@
 
       .icon-simple {
         width: 40px;
-        margin: 20px 0;
+        margin: .8em 0;
         filter: invert(100%);
       }
 
@@ -156,33 +77,30 @@
 
   &.light-2{
     width: 70%;
-    margin: 100px auto;
+    margin: 5em auto;
     text-align: center;
-    @include responsive($width-mobile) {
-      width: 90%;
-    }
+    @include responsive($width-mobile) { width: 90%; }
 
     h1 {
       margin: 20px auto;
-      width: 50%;
-      color: rgb(60,60,60);
-      font-size: 2.7em;
-      @include responsive($width-mobile) {
-        width: 90%;
-        font-size: 1.8em;
-      }
+      width: 70%;
+      background: $header-background;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 3.5em;
+      @include responsive($width-mobile) { width: 90%; font-size: 1.8em; }
     }
     p {
+      width: 60%;
       font-size: 1.1em;
-      line-height: 25px;
+      line-height: 1.8em;
       color: rgb(120,120,120);
-      margin: 20px auto;
+      margin: 2em auto 1.5em auto;
     }
   }
 
   .btn-link {
     margin: 20px auto;
   }
-
 
 }

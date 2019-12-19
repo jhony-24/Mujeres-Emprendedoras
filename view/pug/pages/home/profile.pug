@@ -1,1 +1,10 @@
-+profile("view/assets/image/b_a.jpg")
+.my-profile
+   .view-profile
+   .detail-profile
+      .title-name
+         h3 Mineria y Construccion
+         h1= data_profile.name
+      .description 
+         ul 
+            each i in data_profile.description
+               li: p= i.text
