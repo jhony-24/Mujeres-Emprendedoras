@@ -3,7 +3,7 @@
   background: linear-gradient(45deg,white 50%,rgba(100,100,100,.05) 50%);
 
   .first-description{
-    @include description($text-color){
+    @include description($header-background){
 
       .im-h3 {
         text-align: center;
@@ -33,7 +33,7 @@
         width: 100%;
       }
 
-      @include description($text-color){
+      @include description($header-background){
         display: block;
       }
 

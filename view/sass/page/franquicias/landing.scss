@@ -1,7 +1,9 @@
 .container-landing {
-  height: 400px;
-  background:linear-gradient(45deg,black,transparent),url("https://www.nationalgeographic.com.es/medio/2019/11/27/ganadoras-de-la-14%C2%AA-edicion-de-los-premios-a-la-investigacion-loreal-unesco-for-women-in-science_a77dbdc8_1200x630.jpg");
+  height: 350px;
+  background:linear-gradient(bottom,black,transparent),url("https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557399_960_720.jpg");
+  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
   @include flex(center,center);
   .body-message {
     text-align: center;
@@ -19,13 +21,6 @@
       font-size: 3em;
       @include responsive($width-mobile) {
         font-size: 1.6em;
-      }
-    }
-
-    .link {
-      a {
-        @include button(white,linear-gradient(120deg,rgb(230,60,90),rgb(131, 28, 246)),15px);
-        margin: 15px 0;
       }
     }
   }

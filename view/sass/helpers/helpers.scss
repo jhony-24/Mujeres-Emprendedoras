@@ -1,5 +1,14 @@
 @import "variables";
 
+.btn-link{
+   background: $header-background;
+   line-height: 2em;
+   padding: 0 1.5em;
+   border-radius: 1em;
+   text-align: center;
+   font-size: 1.2em;
+}
+
 .fist-loading{
    width: 100%;
    height: 100vh;

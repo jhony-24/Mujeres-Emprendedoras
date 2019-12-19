@@ -50,7 +50,7 @@
             @include centerContent();
             .link-style{
                &:hover{
-                  color: #999;
+                  transform: scale(1.2);
                }
             }
          }

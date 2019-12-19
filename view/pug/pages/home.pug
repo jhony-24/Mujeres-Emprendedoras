@@ -7,17 +7,39 @@ append config
   - subtitle = "Home";
 
 append css3
-  link(rel="stylesheet",href="view/css/intermediate_home.css")
+  link(rel="stylesheet",href="view/css/detail_home.css")
 
 append content
-  .slider#slider
-    include home/slider
+  .slider
+    .content
+      .image
+          img(src="view/assets/image/b_l.jpg", alt="")
+          .text
+            h1 Lorem ipsum dolor sit.
+            p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum tenetur voluptatem itaque corrupti ipsum exercitationem blanditiis quibusdam aut eaque molestias?
+            a(href="").btn-link Ver mas..
+      .image
+          img(src="view/assets/image/b_m.jpg", alt="")
+          .text
+            h1 Lorem ipsum dolor sit.
+            p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum tenetur voluptatem itaque corrupti ipsum exercitationem blanditiis quibusdam aut eaque molestias?
+            a(href="").btn-link Ver mas..
+      .image
+          img(src="view/assets/image/b_n.jpg", alt="")
+          .text
+            h1 Lorem ipsum dolor sit.
+            p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum tenetur voluptatem itaque corrupti ipsum exercitationem blanditiis quibusdam aut eaque molestias?
+            a(href="").btn-link Ver mas..
+    .icons 
+      .circle
+      .circle
+      .circle
   .floating-sections
     include home/floating-sections
   .profile
     include home/profile  
 
-append intermediate-content
+append detail-content
   include ../templates/aside/testimonial.pug
   +contact-aside()
 

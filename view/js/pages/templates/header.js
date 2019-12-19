@@ -2,7 +2,7 @@ window.addEventListener("load", ()=> {
   const loader = document.querySelector(".fist-loading");
   setTimeout(() => {
     document.body.removeChild(loader);
-  },1500);
+  },1000);
 
   Link_Selected();
 
