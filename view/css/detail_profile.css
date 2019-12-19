@@ -594,7 +594,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         font-weight: normal;
         padding-bottom: 10px;
         color: #282828; }
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 700px) {
           .section-profile-principal .my-description .first-description .iam-profile-description .header .im-h3 {
             font-size: .8rem; } }
       .section-profile-principal .my-description .first-description .iam-profile-description .header .im-virtue {
@@ -605,7 +605,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         color: linear-gradient(120deg, #e63c5a, #831cf6); }
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 700px) {
           .section-profile-principal .my-description .first-description .iam-profile-description .header .im-virtue {
             text-align: center;
             font-size: 1.2em; } }
@@ -614,7 +614,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       font-size: 1.1em;
       margin: auto;
       line-height: 30px; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 700px) {
         .section-profile-principal .my-description .first-description .iam-profile-description .section .--text {
           width: 90%; } }
     .section-profile-principal .my-description .first-description .iam-profile-description .section a {
@@ -640,7 +640,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     flex-direction: row;
     width: 80%;
     margin: 20px auto; }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 700px) {
       .section-profile-principal .my-description .second-description {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -658,7 +658,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         width: 100%; } }
     .section-profile-principal .my-description .second-description > .row {
       width: 50%; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 700px) {
         .section-profile-principal .my-description .second-description > .row {
           width: 100%; } }
       .section-profile-principal .my-description .second-description > .row .iam-profile-description {
@@ -685,7 +685,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
             font-weight: normal;
             padding-bottom: 10px;
             color: #282828; }
-            @media screen and (max-width: 600px) {
+            @media screen and (max-width: 700px) {
               .section-profile-principal .my-description .second-description > .row .iam-profile-description .header .im-h3 {
                 font-size: .8rem; } }
           .section-profile-principal .my-description .second-description > .row .iam-profile-description .header .im-virtue {
@@ -696,7 +696,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             color: linear-gradient(120deg, #e63c5a, #831cf6); }
-            @media screen and (max-width: 600px) {
+            @media screen and (max-width: 700px) {
               .section-profile-principal .my-description .second-description > .row .iam-profile-description .header .im-virtue {
                 text-align: center;
                 font-size: 1.2em; } }
@@ -705,7 +705,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           font-size: 1.1em;
           margin: auto;
           line-height: 30px; }
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 700px) {
             .section-profile-principal .my-description .second-description > .row .iam-profile-description .section .--text {
               width: 90%; } }
         .section-profile-principal .my-description .second-description > .row .iam-profile-description .section a {
@@ -732,7 +732,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       padding: 40px 10px;
       z-index: 2;
       position: relative; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 700px) {
         .section-profile-principal .my-description .dark-description > .front-view-detail {
           padding: 0px; } }
     .section-profile-principal .my-description .dark-description .iam-profile-description {
@@ -761,7 +761,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           font-weight: normal;
           padding-bottom: 10px;
           color: #282828; }
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 700px) {
             .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-h3 {
               font-size: .8rem; } }
         .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-virtue {
@@ -770,7 +770,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           color: white; }
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 700px) {
             .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-virtue {
               text-align: center;
               font-size: 1.2em; } }
@@ -779,19 +779,19 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         font-size: 1.1em;
         margin: auto;
         line-height: 30px; }
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 700px) {
           .section-profile-principal .my-description .dark-description .iam-profile-description .section .--text {
             width: 90%; } }
       .section-profile-principal .my-description .dark-description .iam-profile-description .section a {
         margin-top: 1.7em; }
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 700px) {
         .section-profile-principal .my-description .dark-description .iam-profile-description {
           width: 90%;
           padding-left: 0;
           padding-right: 0; } }
       .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-h3 {
         color: white; }
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 700px) {
           .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-h3 {
             text-align: center; } }
       .section-profile-principal .my-description .dark-description .iam-profile-description .section .--text {
@@ -799,7 +799,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       .section-profile-principal .my-description .dark-description .iam-profile-description .button {
         display: inline-block;
         margin-top: 20px; }
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 700px) {
           .section-profile-principal .my-description .dark-description .iam-profile-description .button {
             font-size: .8rem;
             margin: 20px;
@@ -821,7 +821,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     padding: 50px 0;
     margin: auto;
     width: 80%; }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 700px) {
       .section-profile-principal .my-description .double-row-more-description {
         width: 100%; } }
     .section-profile-principal .my-description .double-row-more-description .description-card {
@@ -840,7 +840,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       flex-direction: column; }
       .section-profile-principal .my-description .double-row-more-description .description-card > * {
         padding: 10px 20px; }
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 700px) {
           .section-profile-principal .my-description .double-row-more-description .description-card > *.title {
             margin: auto; } }
         .section-profile-principal .my-description .double-row-more-description .description-card > *.title h4 {
@@ -850,14 +850,14 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           margin-left: 2%;
           font-size: .8em;
           width: 50%; }
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 700px) {
             .section-profile-principal .my-description .double-row-more-description .description-card > *.title h4 {
               width: 90%;
               font-size: .7rem; } }
         .section-profile-principal .my-description .double-row-more-description .description-card > *.title h1 {
           color: #464646;
           font-size: 2.5em; }
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 700px) {
             .section-profile-principal .my-description .double-row-more-description .description-card > *.title h1 {
               font-size: 1.5em; } }
         .section-profile-principal .my-description .double-row-more-description .description-card > *.description .text-description {
@@ -865,7 +865,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           font-size: 1.1em;
           line-height: 30px;
           text-align: justify; }
-          @media screen and (max-width: 600px) {
+          @media screen and (max-width: 700px) {
             .section-profile-principal .my-description .double-row-more-description .description-card > *.description .text-description {
               font-size: 1em;
               text-align: center; } }
@@ -884,7 +884,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       -ms-flex-direction: row;
       flex-direction: row;
       margin: 20px auto; }
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 900px) {
         .section-profile-principal .my-description .double-row-more-description .row.row-header {
           display: -webkit-box;
           display: -ms-flexbox;
@@ -901,7 +901,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           flex-direction: column; } }
       .section-profile-principal .my-description .double-row-more-description .row.row-header > * {
         width: 45%; }
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 900px) {
           .section-profile-principal .my-description .double-row-more-description .row.row-header > * {
             width: 100%; } }
     .section-profile-principal .my-description .double-row-more-description .row.row-footer {

@@ -5,56 +5,72 @@
     padding: 70px 0;
 
     .container-row  {
-        width: 65%;
+        width: 80%;
         margin: 20px auto;
 
-        @include responsive($width-mobile + 50px) {
+        display: flex;
+        flex-flow: row;
+        @include responsive($width-mobile-2) {
           width: 90%;
         }
 
-        &.__description-simple{
-          display: grid;
-          grid-template-columns: repeat(3,1fr);
-          grid-gap: 50px;
-          @include responsive($width-mobile) {
-            grid-template-columns: 1fr;
+        @include responsive($width-mobile) {
+          display: block;
+          > * {
+            width: 100%;
           }
         }
 
-        .row {
-           > h1 {
+          > *{
+            padding: 0 15px;
+            width: calc(100% / 3);
+            @include responsive($width-mobile) {
+                width: 100%;
+            }
+          }
+            h1 {
              text-align: right;
              color: rgb(60,60,60);
+             font-size: 2.5em;
+             margin: 0;
+             @include responsive($width-mobile-2) {
+               font-size: 2.2em;
+             }
+
              @include responsive($width-mobile) {
-               font-size: 1.2em;
+               font-size: 1.8em;
+               margin: 30px 0;
                text-align: center;
              }
 
            }
-
-           > p {
+            p {
              text-align: justify;
              color: rgb(120,120,120);
              line-height: 1.5em;
-
+             font-size: 1.1em;
+             @include responsive($width-mobile-2) {
+               width: 50%;
+               font-size: 1.1em;
+             }
              @include responsive($width-mobile) {
                font-size: 1em;
                text-align: center;
-             }
-             &:first-letter{
-               font-size: 2em;
-               color: rgb(40,40,40);
-               float: left;
+               margin: 20px 0;
+               width: 100%;
              }
            }
            .content-main-img {
            @include flex(none,center,row);
+           height: 300px;
            > img {
-             width: 80%;
-             padding: 10px;
+             object-fit: cover;
+             border-radius: 10px;
+             width: 100%;
+             height: 100%;
 
              @include responsive($width-mobile) {
-               width: 60%;
+               width: 80%;
              }
             }
          }
@@ -68,7 +84,7 @@
                 font-size: 2.8em;
 
                 @include responsive($width-mobile) {
-                  font-size: 2em;
+                  font-size: 1.8em;
                 }
              }
              p {
@@ -86,7 +102,6 @@
              }
            }
         }
-    }
   }
 
   &.dark {
@@ -131,7 +146,7 @@
           line-height: normal;
           margin-bottom: 40px;
           @include responsive($width-mobile) {
-            font-size: 1.2em;
+            font-size: 1.8em;
           }
         }
       }
@@ -139,6 +154,31 @@
     }
   }
 
+  &.light-2{
+    width: 70%;
+    margin: 100px auto;
+    text-align: center;
+    @include responsive($width-mobile) {
+      width: 90%;
+    }
+
+    h1 {
+      margin: 20px auto;
+      width: 50%;
+      color: rgb(60,60,60);
+      font-size: 2.7em;
+      @include responsive($width-mobile) {
+        width: 90%;
+        font-size: 1.8em;
+      }
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 25px;
+      color: rgb(120,120,120);
+      margin: 20px auto;
+    }
+  }
 
   .btn-link {
     margin: 20px auto;
