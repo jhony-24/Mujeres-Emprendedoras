@@ -51,14 +51,11 @@
             cursor: pointer;
             border-radius: .5em;
             overflow: hidden;
-            line-height: 0;
-            font-size: 0;
-            
+
             @for $i from 1 through 16{
                &::nth-child(#{$i}){
                   $h: (random(280) + 100) + px;
                   height: $h;
-                  line-height: $h;
                }
             }
 
@@ -98,7 +95,7 @@
                opacity: 0;
             }
             &:hover{
-               .icon{ opacity: 1; }
+               .icon{ opacity: 1;}
             }
 
          }

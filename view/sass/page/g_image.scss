@@ -10,7 +10,7 @@ $margin : $header-height + 10px;
    .header-galery{
       @include header_galery;
    }
-   
+
    @include galery(){
       .main-cards{
          width: 75%;
@@ -26,7 +26,7 @@ $margin : $header-height + 10px;
             box-shadow: 0 0 10px rgb(210,210,210);
             opacity: 1;
             transition: .5s;
-            
+
             .text-plain,.image-result{
                width: 50%;
                height: inherit;
@@ -42,8 +42,8 @@ $margin : $header-height + 10px;
                   -webkit-background-clip: text;
                   -webkit-text-fill-color: transparent;
                }
-               .desc{ 
-                  color: #666; 
+               .desc{
+                  color: #666;
                   font-size: 1.1em;
                   line-height: 1.4em;
                   &::first-letter{
@@ -72,14 +72,14 @@ $margin : $header-height + 10px;
          }
 
          @include responsive(1200px){
-            .card-galery{ font-size: 0.95em; height: auto; } 
+            .card-galery{ font-size: 0.95em; height: auto; }
          }
          @include responsive(950px){
             .card-galery{ font-size: 0.9em; }
          }
          @include responsive(850px){
-            .card-galery{ 
-               flex-direction: column; 
+            .card-galery{
+               flex-direction: column;
                text-align: center;
                .text-plain{ width: 100%; }
                .image-result{ display: none; }
@@ -87,21 +87,21 @@ $margin : $header-height + 10px;
          }
          @include responsive(650px){ width: 85%; }
          @include responsive(450px){ width: 90%; }
-         @include responsive(400px){ 
-            .card-galery{ 
-               .text-plain{ 
+         @include responsive(400px){
+            .card-galery{
+               .text-plain{
                   padding: 1em;
                   .title{ padding-top: .6em;  }
-               }  
+               }
             }
          }
-         @include responsive(350px){ 
-            .card-galery{ 
+         @include responsive(350px){
+            .card-galery{
                .text-plain{
                   .title{ font-size: 2.2em; }
                   .desc{ font-size: 1em; }
                   .link{ padding: 8px 14px; }
-               }  
+               }
             }
          }
       }
