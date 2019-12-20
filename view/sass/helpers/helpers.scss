@@ -63,21 +63,18 @@
    align-items: center;
    justify-content: center;
    .image-screen{
-      width: 55%;
-      height: 85%;
       .img-view{
-         width: 100%;
-         height: 100%;
+         width: auto;
+         height: 440px;
          opacity: 0;
          animation: aparecer 1s;
          animation-delay: 0.2s;
          animation-fill-mode: both;
+
+         @include responsive(800px){ height: 400px; }
+         @include responsive(650px){ height: 300px; }
+         @include responsive(550px){ height: 200px; }
       }
-      @include responsive(950px){ width: 65%; }
-      @include responsive(800px){ width: 70%; height: 60%; }
-      @include responsive(650px){ width: 60%; height: 50%; }
-      @include responsive(550px){ width: 80%; }
-      @include responsive(450px){ width: 85%; height: 45%; }
    }
 
    @keyframes aparecer{

@@ -1,12 +1,12 @@
 [
    {
       "name" : "alt-image",
-      "link" : "https://cdn.pixabay.com/photo/2014/04/26/04/25/fitness-332278_960_720.jpg",
+      "link" : "view/assets/image/b_b.jpg",
       "event" : ["all","lunes"]
    },
    {
       "name" : "alt-image",
-      "link" : "https://cdn.pixabay.com/photo/2015/02/02/11/09/office-620822_960_720.jpg",
+      "link" : "view/assets/image/b_c.jpg",
       "event" : ["all"]
    },
    {
