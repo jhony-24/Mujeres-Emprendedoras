@@ -2,12 +2,11 @@
   .container-list {
     background: white;
     width: 70%;
-    max-width: 70%;
     margin: 40px auto;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
-    color: $header-color-a;
-
+    color: rgb(80,80,80);
+    @content;
     .header {
       @include flex(center,space-between,row);
       cursor: pointer;
@@ -16,9 +15,11 @@
       font-weight: bold;
       .row{
         padding: 10px;
+        transition: .2s;
       }
       .btn-plus-detail{
         padding: 10px;
+        font-size: .8em;
       }
       @include responsive($width-mobile) {
         cursor: default;
@@ -28,10 +29,10 @@
     .content-body {
       padding: .5em 2em 2em 2em;
       color: rgb(80,80,80);
-      font-size: .9rem;
-      line-height: 20px;
+      font-size: 1em;
+      line-height: 25px;
       @include responsive($width-mobile){
-        font-size:.8rem;
+        font-size:.9rem;
       }
     }
   }

@@ -10,7 +10,6 @@
     margin: 100px auto;
     display: inline-block;
     width: 80%;
-    color: white;
     text-shadow: 0 1px  1px black;
 
     @include responsive($width-mobile) {
@@ -19,6 +18,7 @@
     }
     .main-title {
       font-size: 3em;
+      color: white;
       @include responsive($width-mobile) {
         font-size: 2em;
       }
