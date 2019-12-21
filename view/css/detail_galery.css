@@ -522,8 +522,16 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           -webkit-animation: aparecer 1.5s;
           animation: aparecer 1.5s;
           -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-          display: block; }
+          animation-fill-mode: both; }
+          @media screen and (max-width: 600px) {
+            .main-content .main-galery .content-galery .image .img-view {
+              height: 500px; } }
+          @media screen and (max-width: 500px) {
+            .main-content .main-galery .content-galery .image .img-view {
+              height: 550px; } }
+          @media screen and (max-width: 400px) {
+            .main-content .main-galery .content-galery .image .img-view {
+              height: 350px; } }
 
 @keyframes aparecer {
   from {
