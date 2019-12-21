@@ -49,10 +49,8 @@
         }
     }
     @include responsive($width-mobile) {
-        height: 400px;
         transform: translateY(50%);
-        overflow-y:auto;
-        margin-bottom: 50%;
+        margin-bottom: 80%;
         padding: 2em 3em;
     }
 
@@ -78,12 +76,20 @@
     }
     .description{
       ul{
+        @include responsive($width-mobile-2) {
+          height: 300px;
+          overflow-y: scroll;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
         li{
           font-size: 0.9em;
           list-style: circle;
           line-height: 1.5em;
           padding-bottom: 5px;
         }
+
       }
     }
   }

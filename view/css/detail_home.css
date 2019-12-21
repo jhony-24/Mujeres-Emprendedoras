@@ -998,12 +998,10 @@ body::-webkit-scrollbar-thumb:vertical:hover {
             display: none; } }
       @media screen and (max-width: 700px) {
         .profile .my-profile .detail-profile {
-          height: 400px;
           -webkit-transform: translateY(50%);
           -ms-transform: translateY(50%);
           transform: translateY(50%);
-          overflow-y: auto;
-          margin-bottom: 50%;
+          margin-bottom: 80%;
           padding: 2em 3em; } }
       .profile .my-profile .detail-profile .title-name {
         padding: 1.5em 0; }
@@ -1020,6 +1018,12 @@ body::-webkit-scrollbar-thumb:vertical:hover {
               display: inline-block; } }
         .profile .my-profile .detail-profile .title-name h1 {
           font-size: 2.2em; }
+      @media screen and (max-width: 1000px) {
+        .profile .my-profile .detail-profile .description ul {
+          height: 300px;
+          overflow-y: scroll; }
+          .profile .my-profile .detail-profile .description ul::-webkit-scrollbar {
+            display: none; } }
       .profile .my-profile .detail-profile .description ul li {
         font-size: 0.9em;
         list-style: circle;
