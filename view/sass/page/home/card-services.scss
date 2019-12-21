@@ -37,12 +37,11 @@
     width: 80%;
     margin: auto;
     flex-wrap: wrap;
-
+    @include responsive($width-mobile) {
+      width: 100%;
+    }
     @include flex(center,space-between,row);
     @include card-material(220px);
-    @include responsive($width-mobile) {
-      @include card-material(320px);
-    }
   }
 
 }

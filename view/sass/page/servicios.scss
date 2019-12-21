@@ -30,6 +30,9 @@ $height-image : 600px;
                text-decoration: underline;
             }
          }
+         .btn-link {
+           line-height: normal;
+         }
       }
    }
 
@@ -196,6 +199,9 @@ $height-image : 600px;
             h1{
                font-size: 2.1em;
                padding-bottom: 1em;
+               background: $header-background;
+               -webkit-background-clip: text;
+               -webkit-text-fill-color: transparent;
             }
             p{
                font-size: 1.1em;

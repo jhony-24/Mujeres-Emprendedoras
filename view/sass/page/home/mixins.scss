@@ -57,13 +57,16 @@
     background: white;
     position: relative;
 
+    @include responsive($width-mobile) {
+      width: 95%;
+    }
     .__image-flexible {
       @include flex();
       width: 100%;
       img {
         width: 100%;
         object-fit: cover;
-        height: $width + 40px;
+        height: calc( $width + 40px);
       }
     }
 

@@ -473,6 +473,8 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         .main-content .parallax-content .text-parallax .title span {
           font-size: 1.1em;
           text-decoration: underline; }
+      .main-content .parallax-content .text-parallax .btn-link {
+        line-height: normal; }
   .main-content .conferencia {
     width: 100%;
     height: -webkit-max-content;
@@ -632,7 +634,12 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         text-align: center; }
         .main-content .contacto .text .content h1 {
           font-size: 2.1em;
-          padding-bottom: 1em; }
+          padding-bottom: 1em;
+          background: -webkit-linear-gradient(330deg, #e63c5a, #831cf6);
+          background: -o-linear-gradient(330deg, #e63c5a, #831cf6);
+          background: linear-gradient(120deg, #e63c5a, #831cf6);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent; }
         .main-content .contacto .text .content p {
           font-size: 1.1em;
           line-height: 1.5em;

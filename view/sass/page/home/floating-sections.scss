@@ -113,6 +113,9 @@
       line-height: 1.8em;
       color: rgb(120,120,120);
       margin: 2em auto 1.5em auto;
+      @include responsive($width-mobile){
+        width: 80%;
+      }
     }
   }
 

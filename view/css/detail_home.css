@@ -784,6 +784,9 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       line-height: 1.8em;
       color: #787878;
       margin: 2em auto 1.5em auto; }
+      @media screen and (max-width: 700px) {
+        .floating-sections .floating__power.light-2 p {
+          width: 80%; } }
   .floating-sections .floating__power .btn-link {
     margin: 20px auto; }
 
@@ -829,6 +832,9 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row; }
+    @media screen and (max-width: 700px) {
+      .floating-sections .card-services .all-cards-services {
+        width: 100%; } }
     .floating-sections .card-services .all-cards-services .card-material {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -854,6 +860,9 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       box-shadow: 0 5px 5px rgba(100, 100, 100, 0.3);
       background: white;
       position: relative; }
+      @media screen and (max-width: 700px) {
+        .floating-sections .card-services .all-cards-services .card-material {
+          width: 95%; } }
       .floating-sections .card-services .all-cards-services .card-material .__image-flexible {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -873,7 +882,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           width: 100%;
           -o-object-fit: cover;
           object-fit: cover;
-          height: 260px; }
+          height: calc( $width + 40px); }
       .floating-sections .card-services .all-cards-services .card-material .__description {
         padding: 1em; }
         .floating-sections .card-services .all-cards-services .card-material .__description .card-service {
@@ -886,64 +895,6 @@ body::-webkit-scrollbar-thumb:vertical:hover {
             background: linear-gradient(120deg, #e63c5a, #831cf6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent; }
-    @media screen and (max-width: 700px) {
-      .floating-sections .card-services .all-cards-services .card-material {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: none;
-        -ms-flex-align: none;
-        align-items: none;
-        -webkit-box-pack: none;
-        -ms-flex-pack: none;
-        justify-content: none;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        overflow: hidden;
-        -webkit-transition: .3s;
-        -o-transition: .3s;
-        transition: .3s;
-        width: 320px;
-        margin: .5em auto .5em auto;
-        display: flex;
-        -webkit-box-shadow: 0 5px 5px rgba(100, 100, 100, 0.3);
-        box-shadow: 0 5px 5px rgba(100, 100, 100, 0.3);
-        background: white;
-        position: relative; }
-        .floating-sections .card-services .all-cards-services .card-material .__image-flexible {
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-align: none;
-          -ms-flex-align: none;
-          align-items: none;
-          -webkit-box-pack: none;
-          -ms-flex-pack: none;
-          justify-content: none;
-          -webkit-box-orient: vertical;
-          -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-          flex-direction: column;
-          width: 100%; }
-          .floating-sections .card-services .all-cards-services .card-material .__image-flexible img {
-            width: 100%;
-            -o-object-fit: cover;
-            object-fit: cover;
-            height: 360px; }
-        .floating-sections .card-services .all-cards-services .card-material .__description {
-          padding: 1em; }
-          .floating-sections .card-services .all-cards-services .card-material .__description .card-service {
-            font-size: 1.3em; }
-            .floating-sections .card-services .all-cards-services .card-material .__description .card-service > strong {
-              display: block;
-              margin: 10px 0;
-              background: -webkit-linear-gradient(330deg, #e63c5a, #831cf6);
-              background: -o-linear-gradient(330deg, #e63c5a, #831cf6);
-              background: linear-gradient(120deg, #e63c5a, #831cf6);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent; } }
 
 .profile {
   width: 100%; }
@@ -1001,7 +952,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           -webkit-transform: translateY(50%);
           -ms-transform: translateY(50%);
           transform: translateY(50%);
-          margin-bottom: 80%;
+          margin-bottom: 220px;
           padding: 2em 3em; } }
       .profile .my-profile .detail-profile .title-name {
         padding: 1.5em 0; }
