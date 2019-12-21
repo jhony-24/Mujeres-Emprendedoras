@@ -559,8 +559,16 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           -webkit-animation: aparecer 1.5s;
           animation: aparecer 1.5s;
           -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-          display: block; }
+          animation-fill-mode: both; }
+          @media screen and (max-width: 600px) {
+            .main-content .main-galery .content-galery .image .img-view {
+              height: 500px; } }
+          @media screen and (max-width: 500px) {
+            .main-content .main-galery .content-galery .image .img-view {
+              height: 550px; } }
+          @media screen and (max-width: 400px) {
+            .main-content .main-galery .content-galery .image .img-view {
+              height: 350px; } }
 
 @keyframes aparecer {
   from {
@@ -878,8 +886,8 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     font-size: 0.95em;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[4];
-    grid-template-columns: repeat(4, 1fr);
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 2em; }
     .main-footer .container-footer .column {
       padding: 10px; }

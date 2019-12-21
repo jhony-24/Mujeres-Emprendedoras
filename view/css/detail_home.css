@@ -882,7 +882,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           width: 100%;
           -o-object-fit: cover;
           object-fit: cover;
-          height: calc( $width + 40px); }
+          height: 260px; }
       .floating-sections .card-services .all-cards-services .card-material .__description {
         padding: 1em; }
         .floating-sections .card-services .all-cards-services .card-material .__description .card-service {
