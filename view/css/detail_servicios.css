@@ -1036,8 +1036,8 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     font-size: 0.95em;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[4];
-    grid-template-columns: repeat(4, 1fr);
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 2em; }
     .main-footer .container-footer .column {
       padding: 10px; }

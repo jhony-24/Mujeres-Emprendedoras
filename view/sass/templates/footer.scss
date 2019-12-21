@@ -10,7 +10,7 @@
       padding: 2.5em;
       font-size: 0.95em;
       display: grid;
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns: repeat(3,1fr);
       grid-column-gap: 2em;
 
       .column{
@@ -65,8 +65,8 @@
       @include responsive(700px){
          grid-row-gap: 10px;
          grid-template-columns: 1fr;
-         .column{ 
-            text-align: center; 
+         .column{
+            text-align: center;
             .title{
                img{ width: 140px; height: 60%; }
             }
@@ -81,7 +81,7 @@
          .column{
             .title{height: max-content;}
          }
-         
+
       }
       @include responsive(450px){
          padding-left: 0em;
