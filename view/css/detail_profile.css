@@ -712,6 +712,9 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         display: block;
         margin: auto;
         width: 250px; }
+        @media screen and (max-width: 800px) {
+          .section-profile-principal .my-description .second-description > .row img {
+            margin-bottom: 70px; } }
   .section-profile-principal .my-description .dark-description {
     position: relative; }
     .section-profile-principal .my-description .dark-description > .back-view {
@@ -817,6 +820,9 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     padding: 50px 0;
     margin: auto;
     width: 80%; }
+    @media screen and (max-width: 1000px) {
+      .section-profile-principal .my-description .double-row-more-description {
+        width: 90%; } }
     @media screen and (max-width: 700px) {
       .section-profile-principal .my-description .double-row-more-description {
         width: 100%; } }
@@ -836,37 +842,40 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       flex-direction: column; }
       .section-profile-principal .my-description .double-row-more-description .description-card > * {
         padding: 10px 20px; }
-        @media screen and (max-width: 700px) {
-          .section-profile-principal .my-description .double-row-more-description .description-card > *.title {
-            margin: auto; } }
-        .section-profile-principal .my-description .double-row-more-description .description-card > *.title h4 {
-          border-left: 1.4px solid black;
-          padding-left: 10px;
-          margin: 10px 5px;
-          margin-left: 2%;
-          font-size: .8em;
-          width: 50%; }
+        .section-profile-principal .my-description .double-row-more-description .description-card > *.title {
+          margin: auto; }
+          @media screen and (max-width: 1000px) {
+            .section-profile-principal .my-description .double-row-more-description .description-card > *.title {
+              width: 80%; } }
           @media screen and (max-width: 700px) {
-            .section-profile-principal .my-description .double-row-more-description .description-card > *.title h4 {
-              width: 90%;
-              font-size: .8rem;
-              text-align: center;
-              border-left: 0; } }
-        .section-profile-principal .my-description .double-row-more-description .description-card > *.title h1 {
-          color: #464646;
-          font-size: 2.5em; }
-          @media screen and (max-width: 700px) {
-            .section-profile-principal .my-description .double-row-more-description .description-card > *.title h1 {
-              font-size: 2em; } }
-        .section-profile-principal .my-description .double-row-more-description .description-card > *.description .text-description {
-          color: gray;
-          font-size: 1.1em;
-          line-height: 30px;
-          text-align: justify; }
-          @media screen and (max-width: 700px) {
-            .section-profile-principal .my-description .double-row-more-description .description-card > *.description .text-description {
-              font-size: 1em;
+            .section-profile-principal .my-description .double-row-more-description .description-card > *.title {
+              margin: auto;
+              width: auto;
               text-align: center; } }
+          .section-profile-principal .my-description .double-row-more-description .description-card > *.title h1 {
+            color: #464646;
+            font-size: 2.5em; }
+            @media screen and (max-width: 700px) {
+              .section-profile-principal .my-description .double-row-more-description .description-card > *.title h1 {
+                font-size: 2em; } }
+        .section-profile-principal .my-description .double-row-more-description .description-card > *.description {
+          margin: auto; }
+          @media screen and (max-width: 1000px) {
+            .section-profile-principal .my-description .double-row-more-description .description-card > *.description {
+              margin-bottom: 60px;
+              width: 80%; } }
+          @media screen and (max-width: 700px) {
+            .section-profile-principal .my-description .double-row-more-description .description-card > *.description {
+              width: 90%; } }
+          .section-profile-principal .my-description .double-row-more-description .description-card > *.description .text-description {
+            color: gray;
+            font-size: 1.1em;
+            line-height: 30px;
+            text-align: justify; }
+            @media screen and (max-width: 700px) {
+              .section-profile-principal .my-description .double-row-more-description .description-card > *.description .text-description {
+                font-size: 1em;
+                text-align: center; } }
     .section-profile-principal .my-description .double-row-more-description .row.row-header {
       margin: 20px auto;
       display: -webkit-box;
@@ -899,6 +908,9 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           flex-direction: column; } }
       .section-profile-principal .my-description .double-row-more-description .row.row-header > * {
         width: 45%; }
+        @media screen and (max-width: 1000px) {
+          .section-profile-principal .my-description .double-row-more-description .row.row-header > * {
+            width: 50%; } }
         @media screen and (max-width: 900px) {
           .section-profile-principal .my-description .double-row-more-description .row.row-header > * {
             width: 100%; } }

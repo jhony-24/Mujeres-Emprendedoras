@@ -48,25 +48,15 @@
       > * {
         padding:10px 20px;
         &.title {
+          margin: auto;
+          @include responsive($width-mobile-2) {
+            width: 80%;
+          }
           @include responsive($width-mobile) {
             margin: auto;
+            width: auto;
+            text-align: center;
           }
-          h4 {
-            border-left: 1.4px solid black;
-            padding-left: 10px;
-            margin: 10px 5px;
-            margin-left: 2%;
-            font-size: .8em;
-            width: 50%;
-
-            @include responsive($width-mobile) {
-              width: 90%;
-              font-size: .8rem;
-              text-align: center;
-              border-left: 0;
-            }
-          }
-
           h1 {
             color: rgb(70,70,70);
             font-size: 2.5em;
@@ -76,6 +66,14 @@
           }
         }
         &.description{
+          margin: auto;
+          @include responsive($width-mobile-2) {
+            margin-bottom: 60px;
+            width: 80%;
+          }
+          @include responsive($width-mobile) {
+            width: 90%;
+          }
           .text-description {
             color: gray;
             font-size: 1.1em;

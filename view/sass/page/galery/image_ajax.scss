@@ -52,7 +52,7 @@
             position: relative;
             cursor: pointer;
             //border-radius: .5em;
-            overflow: hidden; 
+            overflow: hidden;
 
             .img-view{
                width: 100%;
@@ -86,7 +86,7 @@
                opacity: 0;
             }
             &:hover{
-               .icon{ 
+               .icon{
                   top: 0;
                   opacity: 1;
                }

@@ -58,6 +58,10 @@
         display: block;
         margin: auto;
         width: 250px;
+        @include responsive($width-mobile + 100px) {
+          margin-bottom: 70px;
+        }
+
       }
 
     }
@@ -130,6 +134,10 @@
     padding: 50px 0;
     margin: auto;
     width: 80%;
+    @include responsive(1000px) {
+      width: 90%;
+    }
+
     @include responsive($width-mobile) {
       width: 100%;
     }
@@ -144,6 +152,10 @@
 
         >* {
           width: 45%;
+          @include responsive(1000px) {
+            width: 50%;
+          }
+
           @include responsive($width-mobile + 200) {
             width: 100%;
           }
