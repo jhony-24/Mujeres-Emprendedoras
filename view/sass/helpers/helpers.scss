@@ -115,6 +115,7 @@
    animation-name: loader;
    animation-duration: 0.8s;
    animation-iteration-count: infinite;
+   &.loader-img{ border-bottom-color: rgb(225,225,225); }
 }
 
 .menu-responsive-header{

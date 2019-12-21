@@ -48,7 +48,7 @@
   height: 60px;
   border-radius: 50%;
   cursor: pointer;
-  background: #3bbd7c;
+  background: #1dce75;
   color: #fff;
   position: fixed;
   bottom: 0;
@@ -156,6 +156,8 @@
   animation-duration: 0.8s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite; }
+  .loader.loader-img {
+    border-bottom-color: #e1e1e1; }
 
 .menu-responsive-header {
   width: 40%;
@@ -574,29 +576,21 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     flex-direction: column;
     padding: 80px 20px;
     background: transparent;
-    padding: 150px 0; }
+    padding: 6em 0; }
     .section-profile-principal .my-description .first-description .iam-profile-description .header {
       padding-bottom: 20px; }
-      .section-profile-principal .my-description .first-description .iam-profile-description .header .im-h3 {
-        font-size: 1em;
-        font-weight: normal;
-        padding-bottom: 10px;
-        color: #282828; }
-        @media screen and (max-width: 700px) {
-          .section-profile-principal .my-description .first-description .iam-profile-description .header .im-h3 {
-            font-size: 1.2em; } }
       .section-profile-principal .my-description .first-description .iam-profile-description .header .im-virtue {
-        font-size: 3em;
+        font-size: 3.8em;
+        color: linear-gradient(120deg, #e63c5a, #831cf6);
         background: -webkit-linear-gradient(330deg, #e63c5a, #831cf6);
         background: -o-linear-gradient(330deg, #e63c5a, #831cf6);
         background: linear-gradient(120deg, #e63c5a, #831cf6);
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: linear-gradient(120deg, #e63c5a, #831cf6); }
+        -webkit-text-fill-color: transparent; }
         @media screen and (max-width: 700px) {
           .section-profile-principal .my-description .first-description .iam-profile-description .header .im-virtue {
             text-align: center;
-            font-size: 2em; } }
+            font-size: 3em; } }
     .section-profile-principal .my-description .first-description .iam-profile-description .section .--text {
       color: gray;
       font-size: 1.1em;
@@ -608,11 +602,33 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           text-align: center; } }
     .section-profile-principal .my-description .first-description .iam-profile-description .section a {
       margin-top: 1.7em; }
-    .section-profile-principal .my-description .first-description .iam-profile-description .im-h3 {
-      text-align: center; }
+    .section-profile-principal .my-description .first-description .iam-profile-description .im-virtue {
+      font-size: 5em; }
     .section-profile-principal .my-description .first-description .iam-profile-description .--text {
-      width: 80%;
+      width: 50%;
       text-align: center; }
+  .section-profile-principal .my-description .message-inspiration {
+    background: #e6e6e6;
+    color: dimgray;
+    padding: 4em 0; }
+    .section-profile-principal .my-description .message-inspiration .message {
+      border-left: 3px solid;
+      padding-left: 2em;
+      width: 40%;
+      margin: 0 auto;
+      font-size: 1.1em;
+      line-height: 1.5em; }
+      @media screen and (max-width: 950px) {
+        .section-profile-principal .my-description .message-inspiration .message {
+          width: 60%; } }
+      @media screen and (max-width: 750px) {
+        .section-profile-principal .my-description .message-inspiration .message {
+          width: 80%;
+          padding-left: 1.5em; } }
+      @media screen and (max-width: 550px) {
+        .section-profile-principal .my-description .message-inspiration .message {
+          width: 90%;
+          padding-left: 1em; } }
   .section-profile-principal .my-description .second-description {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -647,7 +663,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         width: 100%; } }
     .section-profile-principal .my-description .second-description > .row {
       width: 50%; }
-      @media screen and (max-width: 700px) {
+      @media screen and (max-width: 800px) {
         .section-profile-principal .my-description .second-description > .row {
           width: 100%; } }
       .section-profile-principal .my-description .second-description > .row .iam-profile-description {
@@ -669,26 +685,18 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         display: block; }
         .section-profile-principal .my-description .second-description > .row .iam-profile-description .header {
           padding-bottom: 20px; }
-          .section-profile-principal .my-description .second-description > .row .iam-profile-description .header .im-h3 {
-            font-size: 1em;
-            font-weight: normal;
-            padding-bottom: 10px;
-            color: #282828; }
-            @media screen and (max-width: 700px) {
-              .section-profile-principal .my-description .second-description > .row .iam-profile-description .header .im-h3 {
-                font-size: 1.2em; } }
           .section-profile-principal .my-description .second-description > .row .iam-profile-description .header .im-virtue {
-            font-size: 3em;
+            font-size: 3.8em;
+            color: linear-gradient(120deg, #e63c5a, #831cf6);
             background: -webkit-linear-gradient(330deg, #e63c5a, #831cf6);
             background: -o-linear-gradient(330deg, #e63c5a, #831cf6);
             background: linear-gradient(120deg, #e63c5a, #831cf6);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: linear-gradient(120deg, #e63c5a, #831cf6); }
+            -webkit-text-fill-color: transparent; }
             @media screen and (max-width: 700px) {
               .section-profile-principal .my-description .second-description > .row .iam-profile-description .header .im-virtue {
                 text-align: center;
-                font-size: 2em; } }
+                font-size: 3em; } }
         .section-profile-principal .my-description .second-description > .row .iam-profile-description .section .--text {
           color: gray;
           font-size: 1.1em;
@@ -703,13 +711,15 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       .section-profile-principal .my-description .second-description > .row img {
         display: block;
         margin: auto;
-        width: 200px;
-        -webkit-box-shadow: -20px 20px 0 rgba(100, 100, 100, 0.2);
-        box-shadow: -20px 20px 0 rgba(100, 100, 100, 0.2); }
+        width: 250px; }
   .section-profile-principal .my-description .dark-description {
     position: relative; }
     .section-profile-principal .my-description .dark-description > .back-view {
-      background: url("../assets/image/b_b.jpg") no-repeat center/cover;
+      background: url("../assets/image/b_c.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center 10%;
+      background-size: cover;
       position: absolute;
       top: 0;
       left: 0;
@@ -746,24 +756,16 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       margin-left: 5%; }
       .section-profile-principal .my-description .dark-description .iam-profile-description .header {
         padding-bottom: 20px; }
-        .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-h3 {
-          font-size: 1em;
-          font-weight: normal;
-          padding-bottom: 10px;
-          color: #282828; }
-          @media screen and (max-width: 700px) {
-            .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-h3 {
-              font-size: 1.2em; } }
         .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-virtue {
-          font-size: 3em;
+          font-size: 3.8em;
+          color: white;
           background: white;
           -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          color: white; }
+          -webkit-text-fill-color: transparent; }
           @media screen and (max-width: 700px) {
             .section-profile-principal .my-description .dark-description .iam-profile-description .header .im-virtue {
               text-align: center;
-              font-size: 2em; } }
+              font-size: 3em; } }
       .section-profile-principal .my-description .dark-description .iam-profile-description .section .--text {
         color: gray;
         font-size: 1.1em;
@@ -866,6 +868,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
               font-size: 1em;
               text-align: center; } }
     .section-profile-principal .my-description .double-row-more-description .row.row-header {
+      margin: 20px auto;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -878,8 +881,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
       -ms-flex-direction: row;
-      flex-direction: row;
-      margin: 20px auto; }
+      flex-direction: row; }
       @media screen and (max-width: 900px) {
         .section-profile-principal .my-description .double-row-more-description .row.row-header {
           display: -webkit-box;
@@ -900,8 +902,19 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         @media screen and (max-width: 900px) {
           .section-profile-principal .my-description .double-row-more-description .row.row-header > * {
             width: 100%; } }
-    .section-profile-principal .my-description .double-row-more-description .row.row-footer {
-      margin: 70px auto; }
+        .section-profile-principal .my-description .double-row-more-description .row.row-header > * .t {
+          background: -webkit-linear-gradient(330deg, #e63c5a, #831cf6);
+          background: -o-linear-gradient(330deg, #e63c5a, #831cf6);
+          background: linear-gradient(120deg, #e63c5a, #831cf6);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: 3.5em;
+          padding-bottom: .2em; }
+        .section-profile-principal .my-description .double-row-more-description .row.row-header > * .st {
+          border-left: 2px solid black;
+          margin-left: 1em;
+          padding-left: 10px;
+          font-weight: bold; }
 
 .init, .container-video .content .controls .center {
   width: -webkit-max-content;

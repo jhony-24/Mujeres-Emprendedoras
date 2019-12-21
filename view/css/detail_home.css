@@ -48,7 +48,7 @@
   height: 60px;
   border-radius: 50%;
   cursor: pointer;
-  background: #3bbd7c;
+  background: #1dce75;
   color: #fff;
   position: fixed;
   bottom: 0;
@@ -156,6 +156,8 @@
   animation-duration: 0.8s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite; }
+  .loader.loader-img {
+    border-bottom-color: #e1e1e1; }
 
 .menu-responsive-header {
   width: 40%;

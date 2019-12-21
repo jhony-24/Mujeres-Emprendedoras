@@ -14,7 +14,7 @@ function add_images(js,name_category = "all"){
 
          if(arr_event == name_category){
             var template = `<div class="image">
-               <div class="loader"></div>
+               <div class="loader loader-img"></div>
             </div>`;
             var image = new Image();
             image.src = v.link;

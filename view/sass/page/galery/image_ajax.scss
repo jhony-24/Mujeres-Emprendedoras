@@ -8,7 +8,9 @@
    .title{
       font-size: 2.4em;
       padding-bottom: .5em;
-      @include gradient-text($text-color);
+      background: $header-background;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
    }
    .description{
       width: 40%;
@@ -40,28 +42,21 @@
       .content-galery{
          width: $galery-width;
          margin: 0 auto;
-         columns: 3 200px;
-         column-gap: .8em;
+         display: grid;
+         grid-gap: 10px;
+         grid-template-columns: repeat(4,1fr) ;
          .image{
             width: 100%;
-            display: inline-block;
+            height: 200px;
             margin-bottom: 5px;
             position: relative;
-            background: $header-background;
             cursor: pointer;
-            border-radius: .5em;
-            overflow: hidden;
-
-            @for $i from 1 through 16{
-               &::nth-child(#{$i}){
-                  $h: (random(280) + 100) + px;
-                  height: $h;
-               }
-            }
+            //border-radius: .5em;
+            overflow: hidden; 
 
             .img-view{
                width: 100%;
-               height: 100%;
+               height: 350px;
                opacity: 0;
                transition: .3s;
                animation: aparecer 1.5s;
@@ -70,12 +65,8 @@
             }
 
             @keyframes aparecer{
-               from{
-                  opacity: 0;
-               }
-               to{
-                  opacity: 1;
-               }
+               from{ opacity: 0; }
+               to{  opacity: 1; }
             }
 
             .icon{
@@ -83,7 +74,7 @@
                height: 100%;
                margin: auto;
                position: absolute;
-               top: 0;
+               top: 30px;
                left: 0;
                color: #fff;
                transition: .3s;
@@ -95,33 +86,29 @@
                opacity: 0;
             }
             &:hover{
-               .icon{ opacity: 1;}
+               .icon{ 
+                  top: 0;
+                  opacity: 1;
+               }
             }
 
          }
-         /*@include responsive(1050px){ .image{ height: 220px; } }
-         @include responsive(950px){
+         @include responsive(1050px){
+            grid-template-columns: 1fr 1fr 1fr;
+         }
+         @include responsive(850px){
+            width: $galery-width + 5%;
+         }
+         @include responsive(700px){
             grid-template-columns: 1fr 1fr;
+         }
+         @include responsive(600px){
+            grid-template-columns: 1fr;
             .image{ height: 250px; }
          }
-         @include responsive(680px){
-            .image{
-               height: 200px;
-               margin: 0 auto;
-            }
-         }
-         @include responsive(550px){
-            width: $galery-width - 15%;
-            grid-template-columns: 1fr;
-            grid-gap: 25px;
-            .image{
-               height: 220px;
-            }
-         }
-         @include responsive(450px){ width: $galery-width - 10%; }
          @include responsive(350px){
-            .image{ height: 160px; }
-         }*/
+            .image{ height: 200px; }
+         }
       }
    }
 

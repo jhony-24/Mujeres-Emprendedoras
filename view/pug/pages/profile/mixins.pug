@@ -1,17 +1,15 @@
-mixin description(h1,p,h3="")
+mixin description(h1,p)
   .iam-profile-description
     .header
-      h3.im-h3= h3
-      h1.im-virtue=h1
+      p.im-virtue=h1
     .section
       p.--text= p
       block
 
-mixin description-image(h1,h4,messageDescription)
+mixin description-image(h1,messageDescription)
   .description-card
     .title
-      h1= h1
-      h4= h4
+      p.t= h1
     .description 
       p.text-description= messageDescription
 

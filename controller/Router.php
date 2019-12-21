@@ -6,7 +6,7 @@
          $this->title_events = json_decode(file_get_contents("view/js/json/galery_events.json"));
       }
 
-      /*Control de galeria eventos*/
+      /*Control de galeria eventos
       function lunes(){
          $this->events("lunes");
       }
@@ -32,7 +32,7 @@
             $ruta = "view/html/404.html";
             require_once($ruta);
          }
-      }
+      }*/
 
       /*Pages*/
       function home(){
@@ -71,26 +71,26 @@
       }
 
       function sendEmail() {
-          $to = "jhonyvegacuya24@gmail.com";
-          $email = $_POST["email"];
-          $name = $_POST["name"];
-          $phone = $_POST["phone"];
-          $building =  $_POST["building"];
-          $asunt =  $_POST["asunt"];
-          $message = $_POST["message"];
+         $to = "jhonyvegacuya24@gmail.com";
+         $email = $_POST["email"];
+         $name = $_POST["name"];
+         $phone = $_POST["phone"];
+         $building =  $_POST["building"];
+         $asunt =  $_POST["asunt"];
+         $message = $_POST["message"];
 
-          $headers ="MIME-Version: 1.0 ";
-          $headers.="from: $from  $asunt";
-          $headers.="Content-type: text/html;charset=utf-8 ";
-          $headers.="X-Priority: 3";
-          $headers.="X-Mailer: smail-PHP ".phpversion();
+         $headers ="MIME-Version: 1.0 ";
+         $headers.="from: $from  $asunt";
+         $headers.="Content-type: text/html;charset=utf-8 ";
+         $headers.="X-Priority: 3";
+         $headers.="X-Mailer: smail-PHP ".phpversion();
 
-          $completeMessage = $message;
-          if(mail($to,$asunt,$completeMessage,$headers)){
-            header("Location:contact");
-          }
-          else{
-            Header("Location:error");
-          }
+         $completeMessage = $message;
+         if(mail($to,$asunt,$completeMessage,$headers)){
+         header("Location:contact");
+         }
+         else{
+         Header("Location:error");
+         }
       }
    }
