@@ -1,71 +1,78 @@
-async function data_images(){
-   var data = await fetch("ajaxImage");
-   var json = await data.json();
-   return json;
-}
+var Images = {
+   element : () => document.querySelector(".main-content .content-galery"),
+   modalPhotos : () => document.querySelector(".photo-screen"),
+   CreateIcon : function(i){
+      let icon = document.createElement("div");
+      icon.classList.add("icon");
+      icon.innerHTML = `<i class="${i} fa-3x" id="icon-draw"></i>`
+      return icon;
+   },
+   CreateImage : function(src){
+      var img = new Image();
+      img.src = src;
+      img.classList.add("img-view");
+      return img;
+   },
+   AddImage : function(data){
 
-function add_images(js,name_category = "all"){
-   var element = document.querySelector(".main-content .content-galery");
-   var image_index = 0;
-   element.innerHTML = "";
+      let arr = data.filter( (v,i) => i < 8 );
 
-   js.forEach( (v,i) => {
-      v.event.forEach( arr_event => {
+      arr.forEach( e => {
 
-         if(arr_event == name_category){
-            var template = `<div class="image">
-               <div class="loader loader-img"></div>
-            </div>`;
-            var image = new Image();
-            image.src = v.link;
-            image.classList.add("img-view");
-            image.addEventListener("load",function(){
-               var img = element.querySelectorAll(".image")[image_index];
+         let div_image = document.createElement("div");
+         let img = this.CreateImage(e.link);
 
-               img.innerHTML = "";
-               img.appendChild(image);
-               img.innerHTML += `<div class="icon"><i class="fa fa-camera fa-2x"></i></div>`;
+         img.onload = (ev)=>{
 
-               var img_icon = element.querySelectorAll(".image");
-               image_function(img_icon,image_index++);
+            let icon = this.CreateIcon("fa fa-camera");
 
-            });
+            div_image.classList.add("image");
 
-            element.innerHTML += template;
+            div_image.appendChild(img);
+            div_image.appendChild(icon);
+
+            this.element().appendChild(div_image);
+
+            icon.addEventListener("click",(ev) => { this.ViewImage(img.src); })
          }
+
       })
 
-   });
-}
+   },
+   ViewImage : function(pathImage){
 
-function image_function(img,index)
-{
-   var view = img[index].querySelector(".img-view");
-   img[index].addEventListener("click",()=>{
-      let modal_image = document.querySelector(".photo-screen");
-      let m_img = modal_image.querySelector("#img .img-view");
+      let photo = this.modalPhotos();
 
-      m_img.src = view.src;
-      modal_image.style.display = "flex";
       document.body.style.overflow = "hidden";
-   })
-}
+      photo.style.visibility = "visible";
+      photo.style.opacity = "1";
 
-function view_image_galery(type){
-   var data = data_images();
+      let content_image = this.modalPhotos().querySelector(".image-screen .img-view");
+      content_image.src = pathImage;
+      content_image.onload = function(ev){
+         ev.target.style.opacity = 1;
+      }
 
-   var images = [];
+   },
+   CloseImage : function(){ 
 
-   data.then( v => {
-      images = v;
-      add_images(images,type);
-   })
+      let photo = this.modalPhotos();   
+      let close_image = this.modalPhotos().querySelector(".btn-close");
+      
+      close_image.addEventListener("click",()=>{
+         document.body.style.overflow = "auto";
+         photo.style.visibility = "hidden";
+         photo.style.opacity = "0"; 
+      })
 
-   let btn_close = document.querySelector("#btn-close");
+   },
+   init : function(){
+    
+      fetch("ajaxImage")
+         .then( r => r.json() )
+         .then( v => this.AddImage(v))
 
-   btn_close.addEventListener("click",()=>{
-      let doc = document.querySelector(".photo-screen");
-      document.body.style.overflow = "auto";
-      doc.style.display = "none";
-   })
+      this.CloseImage();
+
+   }
 }

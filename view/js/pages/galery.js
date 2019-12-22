@@ -1,5 +1,5 @@
 window.addEventListener("load",()=>{
    
-   view_image_galery("all");
+   Images.init();
 
 });

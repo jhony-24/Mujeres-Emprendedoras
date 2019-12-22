@@ -54,7 +54,7 @@
   bottom: 0;
   right: 0;
   margin: 1em;
-  z-index: 10;
+  z-index: 1000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -75,13 +75,20 @@
   left: 0;
   background: rgba(0, 0, 0, 0.9);
   z-index: 999;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s; }
   .photo-screen .image-screen .img-view {
     width: auto;
     height: 440px;
@@ -159,7 +166,20 @@
   .loader.loader-img {
     border-bottom-color: #e1e1e1; }
 
-.menu-responsive-header {
+.menu-responsive {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s; }
+
+.menu-responsive > .menu-responsive-header {
   width: 40%;
   height: 100%;
   position: fixed;
@@ -172,7 +192,7 @@
   -webkit-transition: .5s;
   -o-transition: .5s;
   transition: .5s; }
-  .menu-responsive-header .title-menu-responsive {
+  .menu-responsive > .menu-responsive-header .title-menu-responsive {
     width: 100%;
     height: 100px;
     display: -webkit-box;
@@ -184,40 +204,40 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
-    .menu-responsive-header .title-menu-responsive a {
+    .menu-responsive > .menu-responsive-header .title-menu-responsive a {
       width: 55%;
       height: 60px; }
-      .menu-responsive-header .title-menu-responsive a .logo-img {
+      .menu-responsive > .menu-responsive-header .title-menu-responsive a .logo-img {
         width: 100%;
         height: 100%; }
-  .menu-responsive-header .options-menu-responsive {
+  .menu-responsive > .menu-responsive-header .options-menu-responsive {
     width: 100%; }
-    .menu-responsive-header .options-menu-responsive .list {
+    .menu-responsive > .menu-responsive-header .options-menu-responsive .list {
       width: 100%; }
-      .menu-responsive-header .options-menu-responsive .list .item {
+      .menu-responsive > .menu-responsive-header .options-menu-responsive .list .item {
         text-align: center;
         width: 100%;
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         font-weight: bold; }
-        .menu-responsive-header .options-menu-responsive .list .item a {
+        .menu-responsive > .menu-responsive-header .options-menu-responsive .list .item a {
           width: 100%;
           padding: 10px; }
   @media screen and (max-width: 850px) {
-    .menu-responsive-header {
+    .menu-responsive > .menu-responsive-header {
       width: 40%; }
-      .menu-responsive-header .title-menu-responsive a {
+      .menu-responsive > .menu-responsive-header .title-menu-responsive a {
         width: 40%;
         height: 55px; } }
   @media screen and (max-width: 700px) {
-    .menu-responsive-header {
+    .menu-responsive > .menu-responsive-header {
       width: 50%; }
-      .menu-responsive-header .title-menu-responsive a {
+      .menu-responsive > .menu-responsive-header .title-menu-responsive a {
         width: 40%;
         height: 50px; } }
   @media screen and (max-width: 500px) {
-    .menu-responsive-header {
+    .menu-responsive > .menu-responsive-header {
       width: 65%; }
-      .menu-responsive-header .title-menu-responsive a {
+      .menu-responsive > .menu-responsive-header .title-menu-responsive a {
         height: 40px; } }
 
 @-webkit-keyframes loader {
@@ -540,35 +560,24 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       display: -ms-grid;
       display: grid;
       grid-gap: 10px;
-      -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr); }
+      -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr); }
       .main-content .main-galery .content-galery .image {
         width: 100%;
-        height: 200px;
+        height: 250px;
         margin-bottom: 5px;
         position: relative;
         cursor: pointer;
         overflow: hidden; }
         .main-content .main-galery .content-galery .image .img-view {
           width: 100%;
-          height: 350px;
-          opacity: 0;
+          min-height: 250px;
+          opacity: 1;
           -webkit-transition: .3s;
           -o-transition: .3s;
           transition: .3s;
-          -webkit-animation: aparecer 1.5s;
-          animation: aparecer 1.5s;
           -webkit-animation-fill-mode: both;
           animation-fill-mode: both; }
-          @media screen and (max-width: 600px) {
-            .main-content .main-galery .content-galery .image .img-view {
-              height: 500px; } }
-          @media screen and (max-width: 500px) {
-            .main-content .main-galery .content-galery .image .img-view {
-              height: 550px; } }
-          @media screen and (max-width: 400px) {
-            .main-content .main-galery .content-galery .image .img-view {
-              height: 350px; } }
 
 @keyframes aparecer {
   from {
@@ -580,7 +589,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           height: 100%;
           margin: auto;
           position: absolute;
-          top: 30px;
+          top: 0;
           left: 0;
           color: #fff;
           -webkit-transition: .3s;
@@ -599,7 +608,6 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           justify-content: center;
           opacity: 0; }
         .main-content .main-galery .content-galery .image:hover .icon {
-          top: 0;
           opacity: 1; }
       @media screen and (max-width: 1050px) {
         .main-content .main-galery .content-galery {
@@ -617,7 +625,10 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           -ms-grid-columns: 1fr;
           grid-template-columns: 1fr; }
           .main-content .main-galery .content-galery .image {
-            height: 250px; } }
+            height: 320px; } }
+      @media screen and (max-width: 450px) {
+        .main-content .main-galery .content-galery .image {
+          height: 240px; } }
       @media screen and (max-width: 350px) {
         .main-content .main-galery .content-galery .image {
           height: 200px; } }
