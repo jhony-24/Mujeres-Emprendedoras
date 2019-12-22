@@ -30,8 +30,10 @@ $height-image : 600px;
                text-decoration: underline;
             }
          }
-         .btn-link {
-           line-height: normal;
+         @include responsive($width-mobile) {
+           .btn-link {
+             line-height: normal;
+           }
          }
       }
    }
