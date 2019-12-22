@@ -45,9 +45,6 @@
          display: grid;
          grid-gap: 10px;
          grid-template-columns: repeat(4,1fr);
-         @include responsive(600px){
-           display: block;
-         }
          .image{
             width: 100%;
             height: 200px;
@@ -63,7 +60,7 @@
                transition: .3s;
                animation: aparecer 1.5s;
                animation-fill-mode: both;
-               @include responsive(600px) { height: 500px;display:block; }
+               @include responsive(600px) { height: 500px; }
                @include responsive(500px) { height: 550px; }
                @include responsive(400px) { height: 350px; }
             }
