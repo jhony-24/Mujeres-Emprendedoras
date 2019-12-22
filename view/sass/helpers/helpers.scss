@@ -131,13 +131,13 @@
    visibility: hidden;
    opacity: 0;
    transition: .3s;
+   z-index: 98;
 }
 
 .menu-responsive > .menu-responsive-header{
    width: 40%;
    height: 100%;
    position: fixed;
-   z-index: 9999;
    top: 0;
    left: -100%;
    background: $header-background;
