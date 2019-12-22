@@ -60,7 +60,7 @@
                transition: .3s;
                animation: aparecer 1.5s;
                animation-fill-mode: both;
-               @include responsive(600px) { height: 500px; }
+               @include responsive(600px) { height: 500px;display:block; }
                @include responsive(500px) { height: 550px; }
                @include responsive(400px) { height: 350px; }
             }
