@@ -1,62 +1,50 @@
 [
    {
       "name" : "alt-image",
-      "link" : "view/assets/image/b_a.jpg",
-      "event" : ["all","lunes"]
+      "link" : "view/assets/image/b_a.jpg"
    },
    {
       "name" : "alt-image",
-      "link" : "view/assets/image/b_b.jpg",
-      "event" : ["all"]
+      "link" : "view/assets/image/b_b.jpg"
    },
    {
       "name" : "alt-image",
-      "link" : "view/assets/image/b_c.jpg",
-      "event" : ["all","lunes"]
+      "link" : "view/assets/image/b_c.jpg"
    },
    {
       "name" : "alt-image",
-      "link" : "view/assets/image/b_d.jpg",
-      "event" : ["all","lunes"]
+      "link" : "view/assets/image/b_d.jpg"
    },
    {
       "name" : "alt-image",
-      "link" : "view/assets/image/b_e.jpg",
-      "event" : ["all","martes"]
+      "link" : "view/assets/image/b_e.jpg"
    },
    {
       "name" : "alt-image",
-      "link" : "view/assets/image/b_f.jpg",
-      "event" : ["all","lunes"]
+      "link" : "view/assets/image/b_f.jpg"
    },
    {
       "name" : "alt-image",
-      "link" : "view/assets/image/b_g.jpg",
-      "event" : ["all","martes"]
+      "link" : "view/assets/image/b_g.jpg"
    },
    {
       "name" : "alt-image",
-      "link" : "view/assets/image/b_h.jpg",
-      "event" : ["all","lunes"]
+      "link" : "view/assets/image/b_h.jpg"
    },
    {
       "name" : "alt-image",
-      "link" : "view/assets/image/b_i.jpg",
-      "event" : ["all","lunes"]
+      "link" : "view/assets/image/b_i.jpg"
    },
    {
       "name" : "alt-image",
-      "link" : "view/assets/image/b_n.jpg",
-      "event" : ["all","martes"]
+      "link" : "view/assets/image/b_n.jpg"
    },
    {
       "name" : "alt-image",
-      "link" : "view/assets/image/b_m.jpg",
-      "event" : ["all","lunes"]
+      "link" : "view/assets/image/b_m.jpg"
    },
    {
       "name" : "alt-image",
-      "link" : "view/assets/image/b_l.jpg",
-      "event" : ["all","lunes"]
+      "link" : "view/assets/image/b_l.jpg"
    }
 ]

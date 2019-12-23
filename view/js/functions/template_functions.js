@@ -19,16 +19,22 @@ const Header_scroll = function(){
       active_menu : false,
       actions_responsive_menu : {
          create: function(){
-            var menu = document.querySelector(".menu-responsive-header");
+            var men = document.querySelector(".menu-responsive");
+            men.style.visibility = "visible";
+            men.style.opacity = "1";
+            var menu = men.querySelector(".menu-responsive-header");
             menu.style.left = "0%";
             document.body.style.overflow = "hidden";
          },
          delete: function(){
-            var menu = document.querySelector(".menu-responsive-header");
+            var men = document.querySelector(".menu-responsive");
+            var menu = men.querySelector(".menu-responsive-header");
             menu.style.left = "-100%";
             var time = getComputedStyle(menu).transitionDuration.split("s")[0].split(".")[1];
             setTimeout( ()=>{
                document.body.style.overflow = "auto";
+               men.style.visibility = "hidden";
+               men.style.opacity = "0";
             }, time * 100)
          }
       },
