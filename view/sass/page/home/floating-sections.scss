@@ -17,27 +17,29 @@
           font-size: 2.5em;
         }
         &.minun{
-          text-transform: lowercase;
+          text-transform: none;
           font-size: 0.9em;
         }
       }
 
     }
-    @include responsive($width-mobile) {
+    @include responsive($width-mobile + 100px) {
       p{
         width: 80%;
         span{
-        font-weight: bold;
-        text-transform: uppercase;
-        &.central{
-          font-size: 2em;
-       }
-        &.minun{
-          text-transform: lowercase;
-          font-size: 0.9em;
+          font-weight: bold;
+          text-transform: uppercase;
+          &.central{
+            font-size: 1.5em;
+          }
+          &.minun{
+            font-size: 0.9em;
+          }
         }
       }
-      }
+    }
+    @include responsive(450px){
+      p { span{ font-size: 0.2em; } }
     }
   }
 
@@ -73,6 +75,10 @@
         margin: 20px auto;
         font-size: 1.1em;
         line-height: 25px;
+
+        @include responsive($width-mobile + 200px) {
+          width: 60%;
+        }
 
         @include responsive($width-mobile) {
           width: 90%;

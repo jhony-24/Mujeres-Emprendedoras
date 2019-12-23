@@ -5,13 +5,13 @@ var slider = {
      //Remueve o agrega la animacion
      if(!origin){
         for(let i of elements){
-           i.classList.add("animate");
+           i.classList.add("animation-slider");
         }         
      }
      else
      {
         for(let i of elements){
-           i.classList.remove("animate");
+           i.classList.remove("animation-slider");
         }          
      }
   },
