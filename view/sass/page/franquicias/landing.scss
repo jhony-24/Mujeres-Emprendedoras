@@ -9,16 +9,30 @@
     text-align: center;
     margin: 100px auto;
     display: inline-block;
-    width: 80%;
+    width: 50%;
     text-shadow: 0 1px  1px black;
 
     @include responsive($width-mobile) {
       margin: 0;
       padding: 10px 20px;
+      width: 80%;
     }
     .main-title {
-      font-size: 3em;
+      font-size: 2.6em;
       color: white;
+      .t1 {
+        font-size: 1.3em;
+        @include responsive($width-mobile) {
+          font-size: 1.2em;
+        }
+      }
+      .woman-name { 
+        font-size: 2em;
+        text-transform: uppercase;
+        @include responsive($width-mobile) {
+          font-size: 1.5em;
+        }
+      }
       @include responsive($width-mobile) {
         font-size: 2em;
       }

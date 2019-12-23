@@ -72,12 +72,9 @@
       }
     }
     .list-items {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      @include responsive(1000px) {display: block;}
       @include item-list(){
-        width: 400px;
-        @include responsive(1200px) {  width: 300px;  }
+        width: 800px;
+        @include responsive(1200px) {  width: 600px;  }
         @include responsive(1200px) { width: 70%; }
         @include responsive($width-mobile-2) { width: 80%; }
         @include responsive($width-mobile) { width: 90%; }
