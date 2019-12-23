@@ -26,7 +26,7 @@
           font-size: 1.2em;
         }
       }
-      .woman-name { 
+      .woman-name {
         font-size: 2em;
         text-transform: uppercase;
         @include responsive($width-mobile) {
