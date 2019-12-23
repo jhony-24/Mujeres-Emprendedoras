@@ -44,21 +44,27 @@
 
       function sendEmail() {
          if(isset($_POST["submit"])){
-            $to = "bbenavente@emcforwomen.com";
+            $to = "brunella.benavente@emcforwomen.com";
             $email = $_POST["email"];
             $name = $_POST["name"];
             $phone = $_POST["phone"];
             $building =  $_POST["building"];
             $asunt =  $_POST["asunt"];
             $message = $_POST["message"];
-   
+
             $headers ="MIME-Version: 1.0 ";
             $headers.="from: $from  $asunt";
             $headers.="Content-type: text/html;charset=utf-8 ";
             $headers.="X-Priority: 3";
             $headers.="X-Mailer: smail-PHP ".phpversion();
-   
-            $completeMessage = $message;
+
+            $completeMessage = "
+            Nombre: $name <br>
+            Telefono: $phone <br>
+            Building : $building <br>
+            Asunto: $asunt <br>
+            Mensaje: $message
+            ";
             if(mail($to,$asunt,$completeMessage,$headers)){
                header("Location:contact");
             }
