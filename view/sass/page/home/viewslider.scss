@@ -4,6 +4,7 @@
   height: max-content;
   position: relative;
   .content{
+    width: 100%2;
     display: flex;
     overflow: hidden;
     .image{
@@ -19,9 +20,11 @@
         top: -30%;
         @include responsive(850px){ top: -15%; }
         @include responsive(550px){ top: -5%; }
+        @include responsive(500px){ top: 0; }
       }
 
       .text{
+        width: 100%;
         padding: 1em 3em;
         height: max-content;
         margin: auto 0;
@@ -32,25 +35,25 @@
         color: #fff;
         $time: .5s;
         h1{
-          width: 70%;
+          width: 70% !important;
           font-size: 3.5em;
           padding-bottom: .3em;
           opacity: 0;
           position: relative;
           top: 30px;
-          &.animate{
+          &.animation-slider{
             animation: textFloating $time linear .6s forwards;
           }
         }
         p{
-          width: 40%;
+          width: 40% !important;
           font-size: 1.2em;
           line-height: 1.5em;
           padding-bottom: .8em;
           position: relative;
           opacity: 0;
           top: 30px;
-          &.animate{
+          &.animation-slider{
             animation: textFloating $time linear 1.1s forwards;
           }
         }
@@ -59,13 +62,13 @@
           top: 30px;
           opacity: 0;
           margin-top: .5em;
-          &.animate{
+          &.animation-slider{
             animation: textFloating $time linear 1.6s forwards;
           }
         }
 
         @keyframes textFloating{
-            100%{ opacity:1; top:0; }
+          100%{ opacity:1; top:0; }
         }
       }
 
@@ -81,18 +84,20 @@
       }
 
       @include responsive(850px){
-        .text > p{ width: 60%; }
+        .text > p{ width: 60% !important; }
       }
       @include responsive(650px){
+        width: 100%;
         max-height: 500px;
-        .text{ font-size: 0.9em; }
-        .text > h1{ width: 85%; font-size: 3em; }
-        .text > p{ width: 70%; }
+        .text{ text-align: center; font-size: 0.9em; padding: 0 2em; }
+        .text > *{ margin: 0 auto; }
+        .text > h1{ width: 85% !important; font-size: 3em; }
+        .text > p{ width: 70% !important; }
       }
       @include responsive(550px){
-        .text{ text-align: center; }
-        .text > p{ width: 100%;}
-        .text > h1{ width: 100%; }
+        .text{ font-size: 0.8em; }
+        .text > p{ width: 100% !important; }
+        .text > h1{ width: 100% !important; }
       }
     }
   }

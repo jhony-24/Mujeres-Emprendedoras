@@ -6,7 +6,11 @@
    padding: 0 1.5em;
    border-radius: 1em;
    text-align: center;
-   font-size: 1.2em;
+   font-size: 1.2em; 
+   transition: .3s;
+   &:active{
+      transform: scale(.95);
+   }
 }
 
 .fist-loading{
@@ -25,8 +29,8 @@
 }
 
 .main-app{
-   width: inherit;
-   height: inherit;
+   width: 100%;
+   height: auto;
    padding: $header-height 0;
    max-width: 1600px;
    margin: 0 auto;
