@@ -165,12 +165,12 @@
             -webkit-text-fill-color: transparent;
             font-size: 3.5em;
             padding-bottom: .2em;
-          }
-          .st{
-            border-left: 2px solid black;
-            margin-left: 1em;
-            padding-left: 10px;
-            font-weight: bold;
+            @include responsive(600px){
+              font-size: 2.8em;
+            }
+            @include responsive(450px){
+              font-size: 2em;
+            }
           }
         }
       }

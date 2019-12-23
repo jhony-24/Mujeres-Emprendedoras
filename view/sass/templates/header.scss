@@ -26,7 +26,7 @@
          visibility: hidden;
          opacity: 0;
          transition: .3s;
-         @include responsive(600px){ display: none; }
+         @include responsive(650px){ display: none; }
       }
       a:hover ~ .sign{
          top: $header-height;
