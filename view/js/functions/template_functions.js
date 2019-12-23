@@ -9,11 +9,11 @@ const Header_scroll = function(){
          if(scrollY != 0){
             this.option_i().style.top = "70px";
             this.header().style.height = "70px";
-            this.main_app().style.padding = "70px 0";
+            this.main_app().style.padding = "70px 0 0 0";
          }else{
             this.option_i().style.top = "90px";
             this.header().style.height = "90px";
-            this.main_app().style.padding = "90px 0";
+            this.main_app().style.padding = "90px 0 0 0";
          }
       },
       active_menu : false,

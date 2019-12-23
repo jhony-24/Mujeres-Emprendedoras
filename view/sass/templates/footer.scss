@@ -59,7 +59,7 @@
 
       @include responsive(850px){
          width: 95%;
-         grid-template-columns: repeat(3,1fr);
+         grid-template-columns: repeat(2,1fr);
          .hide-on-screen-small{ display: none; }
       }
       @include responsive(700px){
