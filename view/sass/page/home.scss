@@ -17,7 +17,7 @@
 }
 
 .view-galery{
-  padding: 5em 0;
+  padding: 5em 0 0 0;
   text-align: center;
 
   .title{
@@ -34,26 +34,6 @@
     span{
       font-weight: bold;
       font-size: 1.1em;
-    }
-  }
-  .icon{
-    font-size: 3em;
-    margin: 1em auto .5em auto;
-    background: $header-background;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    @include centerContent();
-    color: #fff;
-  }
-  .text{
-    width: 40%;
-    margin: 0 auto;
-    font-size: 1.1em;
-    color: #999;
-    padding: 1em 1em 2em 1em;
-    @include responsive($width-mobile) {
-      width: 90%;
     }
   }
 }

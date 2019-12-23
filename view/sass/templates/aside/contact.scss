@@ -25,7 +25,9 @@
       }
       .title{
          font-size: 4.5em;
-         @include gradient-text($text-color);
+         background: $header-background;
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
          padding: .5em 0;
       }
       .sub-title{
@@ -86,8 +88,7 @@
       .text{
          font-size: 0.95em;
          padding: 1.5em;
-         text-align: center;
-         .title{ width: 100%; }
+         .title{ width: 100%; text-align: center;}
          .sub-title{ width: 100%; }
       }
    }

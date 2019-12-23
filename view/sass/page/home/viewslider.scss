@@ -21,6 +21,7 @@
         @include responsive(850px){ top: -15%; }
         @include responsive(550px){ top: -5%; }
         @include responsive(500px){ top: 0; }
+        @include responsive(380px){ top: 0; height: 100%; }
       }
 
       .text{
@@ -98,6 +99,9 @@
         .text{ font-size: 0.8em; }
         .text > p{ width: 100% !important; }
         .text > h1{ width: 100% !important; }
+      }
+      @include responsive(550px){
+        .text{ font-size: 0.7em; }
       }
     }
   }
