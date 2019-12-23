@@ -13,6 +13,27 @@
       @include centerContent();
       position: relative;
       .logo-img{ width: $header-icon-height; }
+      .sign{
+         width: max-content;
+         max-width: 95%;
+         position: absolute;
+         top: $header-height + 10px;
+         left: 5%;
+         padding: 1em;
+         border-radius: .5em;
+         background: rgba(#000000,.8);
+         color: #fff;
+         font-size: 1.1em;
+         visibility: hidden;
+         opacity: 0;
+         transition: .3s;
+         @include responsive(600px){ display: none; }
+      }
+      a:hover ~ .sign{
+         top: $header-height;
+         visibility: visible;
+         opacity: 1;
+      }
    }
    .main-options
    {
