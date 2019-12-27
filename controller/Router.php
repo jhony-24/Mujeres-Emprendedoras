@@ -2,13 +2,13 @@
    class Router{
       private $title_events = null;
 
-      function __construct(){
-         $this->title_events = json_decode(file_get_contents("view/js/json/galery_events.json"));
-      }
-
       /*Pages*/
       function home(){
          $ruta = "view/html/home.html";
+         require_once($ruta);
+      }
+      function error(){
+         $ruta = "view/html/404.html";
          require_once($ruta);
       }
       function galery(){

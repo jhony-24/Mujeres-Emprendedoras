@@ -8,14 +8,11 @@
       $ruta = $_GET["url"];
       $rutas = explode("/",$ruta);
 
-      if(method_exists($router,$rutas[0]) && count($rutas) < 2)
+      if(method_exists($router,$rutas[0]) && count($rutas) == 1)
       {
-        if($rutas[0] != "events") $router->{$rutas[0]}();
-        else require_once("view/html/404.html");
-      }
-      else
-      {
-        require_once("view/html/404.html");
+         $router->{$rutas[0]}();
+      }else{
+         $router->error();
       }
 
    }else
