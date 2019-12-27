@@ -44,7 +44,7 @@
 
       function sendEmail() {
          if(isset($_POST["submit"])){
-            $to = "brunella.benavente@emcforwomen.com";
+            $to = "brunella.benavente@emcforwoman.com";
             $email = $_POST["email"];
             $name = $_POST["name"];
             $phone = $_POST["phone"];
@@ -59,10 +59,10 @@
             $headers.="X-Mailer: smail-PHP ".phpversion();
 
             $completeMessage = "
-            Nombre: $name <br>
-            Telefono: $phone <br>
-            Building : $building <br>
-            Asunto: $asunt <br>
+            Nombre: $name 
+            Telefono: $phone
+            Empresa u Organizacion: $building 
+            Asunto: $asunt 
             Mensaje: $message
             ";
             if(mail($to,$asunt,$completeMessage,$headers)){
@@ -71,6 +71,8 @@
             else{
                Header("Location:error");
             }
+         }else{
+            header("Location:contact");
          }
       }
    }

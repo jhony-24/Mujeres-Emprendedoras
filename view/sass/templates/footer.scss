@@ -99,7 +99,6 @@
       width: inherit;
       height: 50px;
       background: $footer-background-b;
-      font-size: 1.1em;
       @include centerContent();
       @include responsive(600px){
          font-size: 0.9em;
@@ -107,6 +106,7 @@
          height: auto;
          text-align: center;
       }
+      span{ margin: 0 5px; }
    }
    @include responsive(400px){
       font-size: 0.9em;
