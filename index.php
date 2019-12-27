@@ -1,5 +1,6 @@
 <?php
 
+
    if(isset($_GET["url"]))
    {
       require_once("controller/Router.php");
@@ -8,10 +9,25 @@
       $ruta = $_GET["url"];
       $rutas = explode("/",$ruta);
 
-      if(method_exists($router,$rutas[0]) && count($rutas) == 1)
+      if(method_exists($router,$rutas[0]))
       {
-         $router->{$rutas[0]}();
-      }else{
+        $uri = "http://".$_SERVER["HTTP_HOST"];
+        $len = count($rutas);
+
+        if($len==1) {
+          $router->{$rutas[0]}();
+        }
+        else if($len==2)  {
+          $path = $uri.$_SERVER["REQUEST_URI"];
+          $url = substr($path,0,strlen($path)-1);
+        }
+        else {
+          $url = $uri . "/Mujeres-Emprendedoras/404"; //prueba local
+          //$url = $uri . "/404"; //para producción
+        }
+        header("Location:$url");
+      }
+      else{
          $router->error();
       }
 
