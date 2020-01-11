@@ -59,11 +59,86 @@
             $headers.="X-Mailer: smail-PHP ".phpversion();
 
             $completeMessage = "
-            Nombre: $name 
-            Telefono: $phone
-            Empresa u Organizacion: $building 
-            Asunto: $asunt 
-            Mensaje: $message
+            <html>
+               <style>
+                     *{ 
+                           font-family: arial; 
+                           margin: 0;
+                           padding: 0;
+                           box-sizing: border-box;
+                     }
+                     html,body {
+                           height: 100%;
+                           width: 100%;
+                     }
+                     body {
+                           background: rgba(100,100,100,.06);
+                     }
+                     .root {
+                           width: 80%;
+                           height: 100%;
+                           margin: auto;
+                           background: white;
+                     }
+                     .message-title {
+                           margin-bottom: 1em;
+                           background: rgb(230,60,90);
+                           color: white;
+                           padding: 20px;
+                     }
+                     .message-title .body {
+                           font-size: 1.5em;
+                           font-weight: bold;
+                           text-align: center;
+                           margin: auto;
+                           width: 50%;
+                     }
+                     .nombre-title {
+                           font-style: oblique;
+                     }
+                     .row {
+                           display: flex;
+                           align-items: center;
+                           padding: 10px 3em;
+                     }
+                     .row strong {
+                           margin-right: 10px;
+                     }
+                     .row span {
+                           color: rgb(80,80,80);
+                     }
+                     .message-content {
+                           padding: 2em 3em;
+                     }
+                     .message-content .title-message {
+                           font-size: 2em;
+                     }
+                     .text {
+                           color: rgb(80,80,80);
+                           font-size: .9em;
+                           padding: 10px 0;
+                           line-height: 20px;
+                     }
+               </style>
+               <body>
+                  <div class='root'>
+                     <div class='message-title'>
+                           <div class='body'>
+                              Hola, tienes un nuevo mensaje de <span class='nombre-title'><q>$name</q></span>
+                           </div>
+                     </div>
+                     <div class='message-content'>
+                           <p class='title-message'>Nuevo mensaje...</p>
+                           <p class='text'>$message</p>
+                     </div>
+                     <div class='row'><strong>Asunto:</strong><span>$asunto</span></div>
+                     <div class='row'><strong>Nombre:</strong><span>$name</span></div>
+                     <div class='row'><strong>Correo electrónico:</strong><span>$email</span></div>
+                     <div class='row'><strong>Telefono:</strong><span>$phone</span></div>
+                     <div class='row'><strong>Organización o empresa:</strong><span>$building</span></div>
+                  </div>    
+               </body>
+            </html>
             ";
             if(mail($to,$asunt,$completeMessage,$headers)){
                header("Location:contact");
