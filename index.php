@@ -12,6 +12,7 @@
       if(method_exists($router,$rutas[0]))
       {
         $uri = "http://".$_SERVER["HTTP_HOST"];
+        $url="";
         $len = count($rutas);
 
         if($len==1) {

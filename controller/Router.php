@@ -59,7 +59,7 @@
          echo "true";
       }
 
-      function blogRequestPublication(){
+      function RequestEvents(){
          require_once("model/Conection.php");
          require_once("model/Events.php");
 
