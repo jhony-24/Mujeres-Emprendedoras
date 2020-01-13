@@ -36,16 +36,15 @@
          $ruta = $this->routerBase."servicios.html";
          require_once($ruta);
        }
-
-      /*Ajax content*/
-      function ajaxImage(){
-         $ruta = "view/js/json/galery_images.json";
-         echo file_get_contents($ruta);
+      function login() {
+         $rute = $this->routerBase."login.html";
+         require_once($rute);
       }
 
+      //---------------------------------ALTERAR POR DISEÑO---------------------------------------
       function admin(){
          session_start();
-         if(isset($_SESSION["user"])){
+         if(!isset($_SESSION["user"])){
             $url = $this->routerBase . "admin.html";
             require_once($url);
          }else{
@@ -57,6 +56,12 @@
          session_start();
          session_destroy();
          echo "true";
+      }
+
+      /*Ajax content*/
+      function ajaxImage(){
+         $ruta = "view/js/json/galery_images.json";
+         echo file_get_contents($ruta);
       }
 
       function RequestEvents(){

@@ -1,0 +1,308 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/helpers";
+@import "helpers/reset";
+
+.header-options{
+    width: 80%;
+    margin: 0 auto;
+    padding: 2em 0;
+    .link{
+        color: $header-background;
+        &:hover{ text-decoration: underline; }
+    }
+}
+
+.nav-options {
+    @include flex(row,none,center);
+    margin: 0 auto 3em auto;
+    width:80%;
+    .search {
+         @include flex(row,none,center);
+         background: lighten(#000, 95);
+         padding: 15px;
+         width: 50%;
+         .icon-search {
+            color: gray;
+         }
+         .input-search {
+            padding-left: 10px;
+            font-size: 1em;
+            width: 100%;
+         }
+    }
+    .add-publication {
+        @include flex(row,center,center);
+        flex: none;
+        width: 45px;
+        height: 45px;
+        //border-radius: 50%;
+        color: white;
+        background: $header-background;
+        margin: 0 0 0 10px;
+    }
+    @include responsive(600px) {
+        width: 90%;
+        .search {
+            width: 100%;
+        }
+    }
+
+}
+
+.body-publications {
+    margin: auto;
+    width: 80%;
+
+    .publication {
+        @include flex(row,center,center);
+        background: rgba(0,0,0,.6);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        transition: .3s;
+
+        &.toggle {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .add-publication {
+            background: white;
+            overflow: auto;
+            box-shadow: 0 5px 10px rgba(0,0,0,.6);
+            padding: 30px;
+            width: 550px;
+            transition: .3s;
+
+            &::-webkit-scrollbar{
+                display: none;
+            }
+
+            @include responsive(600px) {
+                width: 100%;
+                height: 100%;
+            }
+
+
+            &.toggle {
+                visibility: hidden;
+                opacity: 0;
+            }
+            .title {
+                margin-bottom: 20px;
+            }
+            .row-body-publication {
+                @include flex(column);
+
+                .container-input {
+                    @include flex();
+                    @include responsive(600px) {
+                        @include flex(column);
+                    }
+                    width: 100%;
+                    .fields {
+                        width: 100%;
+                        margin: 5px;
+                        .text-field {
+                            border:1px solid rgba(100,100,100,.2);
+                            padding: 10px;
+                            width: 100%;
+                            margin: 5px 0;
+                        }
+                        .input-picture {
+                            width: 100%; 
+                            margin: 5px 0;
+                            
+                            .text-upload-file {
+                                display: block;
+                                background: rgba(100,100,100,.1);
+                                color:rgb(80,80,80);
+                                padding: 15px;
+                                text-align: center;
+                                cursor: pointer;
+                                .icon-upload {
+                                    margin-right: 10px;
+                                }
+                            }
+                            input[type="file"] {
+                                display: none;
+                            }
+                           
+                        }
+                    }
+                 
+                    .preview {
+                        .preview-image {
+                            img {
+                                width: 200px;
+                                height: 160px;
+                                object-fit: cover;
+                                margin:10px 0;
+                                margin-left: 10px;
+                                animation:show-image .5s 1;
+                                @include responsive(600px) {
+                                    width: 100%;
+                                    margin:10px 0;
+                                }
+                            }
+        
+                            @keyframes show-image {
+                                from {
+                                    opacity: 0;
+                                    height: 0;
+                                }
+                            }
+                            .name-image {
+                                color: gray;
+                                font-size: .8em;
+                                padding: 0 1em;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+     
+                .btn-options {
+                    margin-top: 20px;
+                    @include flex(row,space-between,center);
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 10px;
+
+                    .btn-cancel,.btn-publication{
+                        cursor: pointer;
+                        padding: 15px;
+                        font-weight: bold;
+                    }
+
+                    .btn-cancel {
+                        background: rgb(230,230,230);
+                        color: #444;
+                        &:hover{
+                            background: rgb(240,240,240);
+                        }
+                    }
+                    .btn-publication {
+                        color:white;
+                        background: $header-background;
+                        &:hover{
+                            background: lighten($color: red, $amount: 10);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .row-title {
+        .title {
+            width: 100%;
+            font-size: 1.8em;
+            padding-bottom: .5em;
+            border-bottom: 1px solid rgb(230,230,230);
+            &.modal{
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+    }
+    
+    .row-publications {
+        margin: 3em 0;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 1em;
+
+        .card-published {
+            width: 100%;
+            border:1px solid rgba(100,100,100,.1); 
+
+            .container-image {
+                width: 100%;
+                height: 280px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .container-details {
+                width: 100%;
+                height: 150px;
+                overflow: auto;
+                .text{
+                    padding: 1em 1.5em;
+                    .dark {
+                        font-size:1.3em;
+                    }
+                    .text-publication {
+                        font-size: .8em;
+                        padding: .8em 0 0 0;
+                        color: lighten(#000,30);
+                    }
+                }
+            }
+            .container-options {
+                @include flex(row,space-between,center);
+                padding: 10px;
+                background:lighten(#000, 97);
+                .date {
+                    color: gray;
+                    font-size:.7em;
+                    padding: 10px 0;
+                }
+                button {
+                    padding: 10px 15px;
+                    background: $header-background;
+                    color: white;
+                    }
+                }
+            }
+        .not-found {
+            position: relative;
+            width: 500px;
+            .dark {
+                font-size: 1.1em;
+                display: inline;
+                font-weight: bold;
+            }
+            .message {
+                display: inline;
+                color: lighten( #000, 45);
+            }
+        }
+        .not-publication{
+            width: 100%;
+            height: 400px;
+            @include flex(column,center,center);
+            .icon{
+                font-size: 3em;
+                padding-bottom: .5em;
+                color: $header-background;
+            }
+            .message{
+                color: #444;
+                font-weight: bold;
+            }
+        }
+        &.notPublication{
+            grid-template-columns: 1fr;
+        }
+
+        @include responsive(1000px) { grid-template-columns: repeat(2,1fr);}
+
+        @include responsive(700px) {
+            grid-template-columns: 1fr;
+            .not-found {
+                width: 100%;
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,18 @@
+extends ../helpers/base_html
+
+block css3
+   link(rel="stylesheet", href=`view/css/detail_login.css?v=${version}`)
+
+
+block content 
+   .container
+      p.title Admin Panel
+      form#form-login
+         input(type="text" name="user" placeholder="Username" maxlength="50" required class="input username")
+         input(type="password" name="pass" placeholder="Password" maxlength="50" required class="input password")
+         input(type="submit" name="submit" value="Entry" class="input submit")
+   a(href="index.php?url=home").floating-button: i.fa.fa-door-open
+
+block detail-content
+block final-content
+block floating-content

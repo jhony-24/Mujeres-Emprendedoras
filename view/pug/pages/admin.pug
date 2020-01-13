@@ -1,0 +1,46 @@
+
+extends ../helpers/base_html
+
+block css3
+   - var version = 2.1
+   link(rel="stylesheet", href=`view/css/detail_admin.css?v=${version}`)
+
+
+block content 
+    .header-options
+        button.link#logout-button Logout
+    .nav-options
+        .search
+            i.icon-search.fa.fa-search
+            input.input-search(placeholder="Search Publication")
+        button.add-publication#add-publication
+              i.fa.fa-plus
+    .body-publications
+        .publication#publication.toggle
+            form#form-insert-publication.add-publication.toggle(enctype="multipart/form-data")
+                .row-title
+                    p.title.modal Agregar publicación
+                .row-body-publication
+                    .container-input
+                        .fields 
+                            input.text-field(type="text" name="title" maxlength="300" placeholder="Titulo",rows="3" required)
+                            textarea.text-field(placeholder="Descripcion..." maxlength="2000" name="text" rows="6" required)
+                            .input-picture
+                                label.text-upload-file 
+                                    i.icon-upload.fa.fa-image
+                                    | subir una foto
+                                    input(type="file" name="image" required)
+                        .preview
+                            .preview-image
+                    .btn-options 
+                        input.btn-cancel(type="reset",value="Cancelar")#btn-cancel-publication
+                        input.btn-publication(type="submit",value="Publicar")
+        .row-title
+            p.title Eventos publicados
+        .row-publications#content-publications
+            //Content js
+
+
+block detail-content
+block final-content
+block floating-content

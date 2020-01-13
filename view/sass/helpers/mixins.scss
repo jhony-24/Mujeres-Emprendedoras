@@ -5,6 +5,13 @@
    @content;
 }
 
+@mixin  flex($dir : row , $j : center , $a : center) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $j;
+    align-items: $a;
+}
+
 @mixin responsive($width) {
   @media screen and (max-width: $width) {
     @content;
