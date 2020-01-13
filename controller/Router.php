@@ -1,38 +1,39 @@
 <?php
    class Router{
       private $title_events = null;
+      private $routerBase = "view/html/";
 
       /*Pages*/
       function home(){
-         $ruta = "view/html/home.html";
+         $ruta = $this->routerBase."home.html";
          require_once($ruta);
       }
       function error(){
-         $ruta = "view/html/404.html";
+         $ruta = $this->routerBase."404.html";
          require_once($ruta);
       }
       function galery(){
-         $ruta = "view/html/galery_image.html";
+         $ruta = $this->routerBase."galery_image.html";
          require_once($ruta);
       }
       function contact(){
-         $ruta = "view/html/contact.html";
+         $ruta = $this->routerBase."contact.html";
          require_once($ruta);
       }
       function profile(){
-         $ruta = "view/html/profile.html";
+         $ruta = $this->routerBase."profile.html";
          require_once($ruta);
       }
       function nosotros(){
-         $ruta = "view/html/nosotros.html";
+         $ruta = $this->routerBase."nosotros.html";
          require_once($ruta);
       }
       function franquicias(){
-        $ruta = "view/html/franquicias.html";
+        $ruta = $this->routerBase."franquicias.html";
         require_once($ruta);
       }
       function servicios(){
-         $ruta = "view/html/servicios.html";
+         $ruta = $this->routerBase."servicios.html";
          require_once($ruta);
        }
 
@@ -41,6 +42,86 @@
          $ruta = "view/js/json/galery_images.json";
          echo file_get_contents($ruta);
       }
+
+      function admin(){
+         session_start();
+         if(isset($_SESSION["user"])){
+            $url = $this->routerBase . "admin.html";
+            require_once($url);
+         }else{
+            header("location: index.php?url=login");
+         }
+      }
+
+      function logout(){
+         session_start();
+         session_destroy();
+         echo "true";
+      }
+
+      function blogRequestPublication(){
+         require_once("model/Conection.php");
+         require_once("model/Events.php");
+
+         $publications = new Events();
+         $event = $publications->SelectEvents();
+         echo $event;
+      }
+
+
+      function LoginRequest(){
+         if(isset($_POST["user"])){
+            require_once("model/Conection.php");
+            require_once("model/User.php");
+            
+            $user = new User();
+            $response = $user->Login($_POST["user"],$_POST["pass"]);
+
+            if($response == "true"){
+               session_start();
+               $_SESSION["user"] = true;
+            }
+
+            echo $response;
+         }else{
+            echo "false";
+         }
+      }
+
+      function AdminCreatePublication(){
+         if(isset($_FILES["image"])) {
+            require_once("model/Conection.php");
+            require_once("model/Events.php");
+   
+            $path = "public/event_publications/" . $_FILES["image"]["name"];
+            $type = explode("/",$_FILES["image"]["type"]);
+   
+            if ($type[1] == "png" || $type[1] == "jpeg" || $type[1] == "jpg") {
+               $event = new Events();
+               
+               $values = [
+                  ":image" => $path,
+                  ":title" => $_POST["title"],
+                  ":text" => $_POST["text"] 
+               ];  
+               
+               $response = $event->InsertEvent($values);
+               if ($response == "true") {
+                  if (move_uploaded_file($_FILES["image"]["tmp_name"],$path)) {
+                     echo $response;
+                  }
+               }else if ($response == "false") {
+                  echo "ErrorUpdload";
+               }
+            }else {
+               echo "NoImage";
+            }
+         }else {
+            echo "false";
+         }
+      }
+
+
 
       function sendEmail() {
          if(isset($_POST["submit"])){
