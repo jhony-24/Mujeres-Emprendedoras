@@ -1,0 +1,40 @@
+block config
+   include init/config
+   include init/mixins
+
+<!DOCTYPE html>
+html(lang="es")
+   head
+      meta(charset="UTF-8")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0,maximum-scale=1.0")
+      meta(http-equiv="X-UA-Compatible", content="ie=edge")
+      meta(name="theme-color",content="#e63c5a")
+      link(rel="shortcut icon",href="view/assets/image/icon_page.png")
+      block title
+         title= `${subtitle} - ${TITLE}` 
+      block css3
+         link(rel="stylesheet",href="https://unpkg.com/aos@2.3.1/dist/aos.css")
+   body
+      .fist-loading
+         .loader
+      main.main-app
+         block content
+            include header.pug
+
+         block detail-content
+            include aside.pug
+            
+         block final-content
+            include footer.pug
+
+         block floating-content
+            include components/icon_whasapp.pug
+            include components/menu-responsive.pug
+
+         
+      block javascript
+         script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
+         script(async,src="view/assets/helpers/icons.js")
+         script(src="view/js/all.js")
+      script.
+        AOS.init({once:true});
