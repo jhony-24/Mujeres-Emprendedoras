@@ -15,9 +15,7 @@
         $url="";
         $len = count($rutas);
 
-        if($len==1) {
-          $router->{$rutas[0]}();
-        }
+        if($len==1) $router->{$rutas[0]}();
         else if($len==2)  {
           $path = $uri.$_SERVER["REQUEST_URI"];
           $url = substr($path,0,strlen($path)-1);
@@ -26,10 +24,11 @@
           $url = $uri . "/Mujeres-Emprendedoras/404"; //prueba local
           //$url = $uri . "/404"; //para producción
         }
-        header("Location:$url");
+
+        if($url != "") header("Location:$url");
       }
       else{
-         $router->error();
+        $router->error();
       }
 
    }else

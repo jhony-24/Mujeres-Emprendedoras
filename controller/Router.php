@@ -58,12 +58,7 @@
          echo "true";
       }
 
-      /*Ajax content*/
-      function ajaxImage(){
-         $ruta = "view/js/json/galery_images.json";
-         echo file_get_contents($ruta);
-      }
-
+      //Ajax
       function RequestEvents(){
          require_once("model/Conection.php");
          require_once("model/Events.php");
@@ -125,8 +120,6 @@
             echo "false";
          }
       }
-
-
 
       function sendEmail() {
          if(isset($_POST["submit"])){
