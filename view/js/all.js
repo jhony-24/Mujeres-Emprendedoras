@@ -396,12 +396,13 @@ var Login = {
    }
 }
 
-var Events = {
+var Admin = {
    btnAddPublication : () => document.getElementById('add-publication'),
    formButtonClose : () => document.getElementById("btn-cancel-publication"),
    formPublication : () => document.getElementById('publication'),
    publications : () => document.querySelector('#content-publications'),
    inputSearch : () => document.querySelector('.input-search'),
+   buttonsChangeViewPublication : () => document.querySelectorAll(".btn-change-publication"),
    toggleForm : function() {
       var f = this.formPublication();
       let add = f.querySelector("#form-insert-publication");
@@ -420,8 +421,19 @@ var Events = {
           document.body.style.overflow = "auto";
       })
   },
-   loadEvents : async function(title = null) {
+  loadImages : async function() {
 
+   const request = await fetch("index.php?url=RequestImages");
+   const response = await request.json();
+   const divPublications =  this.publications();
+
+   divPublications.innerHTML = "";
+   response.forEach(image=>{
+      divPublications.innerHTML += `<img class="image" src="${image.path_image}" alt=""/>`;
+   });
+
+  },
+   loadEvents : async function(title = null) {
       var pathRequest;
       if(title == null ) pathRequest = "index.php?url=RequestEvents";
       else pathRequest = "index.php?url=SearchByTitle&title=" + title;
@@ -430,13 +442,14 @@ var Events = {
       const response = await request.json();
       const divPublications = this.publications();
 
+
       divPublications.innerHTML = "";
       if(response.length > 0){
 
          response.forEach(v => {
             divPublications.innerHTML += `<div class="card-published">
                <div class="container-image">
-                  <img src="${v.path_image}" alt="image" />
+                     <img src="${v.path_image}" alt="image" />
                </div>
                <div class="container-details">
                   <div class="text">
@@ -456,6 +469,18 @@ var Events = {
    searchByTitle : function() {
       this.inputSearch().addEventListener('keyup', ev => {
          this.loadEvents(this.inputSearch().value,true);
+      });
+   },
+   renderViews : {
+      events : () => Admin.loadEvents(),
+      images : () => Admin.loadImages()
+   },
+   changeViewPublication : function() {
+      this.buttonsChangeViewPublication().forEach( button => {
+         button.addEventListener('click',ev => (
+            this.renderViews[ev.target.getAttribute("data-name").toString()]()
+            )
+         );
       });
    },
    deleteEvent : function() {
@@ -496,11 +521,63 @@ var Events = {
          window.location = "index.php?url=login";
       })
    },
+   createEvent : function(){
+         let form = this.formPublication().querySelector("#form-insert-publication");
+         let picture = this.formPublication().querySelector("[name='image']");
+   
+         picture.addEventListener('change', ev => {
+            var preview  = document.querySelector('.preview-image');
+            var reader = new FileReader();
+            reader.onload = e => {
+               preview.innerHTML = `
+                 <img src="${e.target.result}"/>
+                 <p class="name-image">${ev.target.files[0].name}</p>
+                 `;
+            };
+            reader.readAsDataURL(ev.target.files[0]);
+         });
+   
+         form.addEventListener("submit", async ev => {
+            ev.preventDefault();
+   
+            const dataForm = new FormData(form);
+            const headers = {
+               method : "POST",
+               body : dataForm
+            };
+   
+            let inputs = form.querySelectorAll(".text-field");
+            let submit = form.querySelector("input[type='submit']");
+            submit.disabled = true;
+   
+            const requestData = await fetch("index.php?url=AdminCreateEvent",headers);
+            const response = await requestData.text();
+            
+            switch(response){
+               case "true":
+                  alert("Publicacion Subida");
+                  window.location = "index.php?url=admin";
+                  break;
+               case "false":
+               case "ErrorUpload":
+                  alert("Ocurrio un error al subir la imagen...");
+                  submit.disabled = false;
+                  break;
+               case "NoImage":
+                  alert("El archivo ingresado no es una Imagen");
+                  submit.disabled = false;
+                  break;   
+            }
+   
+         })
+   },
    init: function() {
       this.loadEvents();
       this.logout();
       this.toggleForm();
       this.searchByTitle();
+      this.createEvent();
+      this.changeViewPublication();
    }
 }
 
@@ -549,6 +626,6 @@ window.addEventListener("load", ev =>{
          Login.init();
          break;
       case "admin":
-         Events.init();
+         Admin.init();
    }
 })

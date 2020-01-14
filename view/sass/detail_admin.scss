@@ -214,6 +214,13 @@
         }
     }
     
+    .row-option-publication {
+        .btn-change-publication {
+            color: white ;
+            margin:1em 0 2em;
+            margin-right: 20px;
+        }
+    }
     .row-publications {
         margin: 3em 0;
         display: grid;
@@ -265,6 +272,12 @@
                     }
                 }
             }
+        .image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
         .not-found {
             position: relative;
             width: 500px;

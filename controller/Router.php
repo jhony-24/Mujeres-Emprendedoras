@@ -87,6 +87,16 @@
          echo $event;
       }
 
+      function RequestImages(){
+         require_once("model/Conection.php");
+         require_once("model/Photo.php");
+
+         $photo = new Photo();
+         $data = $photo->getPhotos();
+         echo $data;
+      }
+
+
       function SearchByTitle() {
          require_once("model/Conection.php");
          require_once("model/Events.php");
@@ -119,6 +129,7 @@
             if($response == "true"){
                session_start();
                $_SESSION["user"] = true;
+               session_write_close();
             }
 
             echo $response;
@@ -127,7 +138,7 @@
          }
       }
 
-      function AdminCreatePublication(){
+      function AdminCreateEvent(){
          if(isset($_FILES["image"])) {
             require_once("model/Conection.php");
             require_once("model/Events.php");

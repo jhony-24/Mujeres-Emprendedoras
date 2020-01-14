@@ -41,7 +41,7 @@
            
            $stm->execute();
 
-           return $stm->rowCount() > 0 ;
+           return $stm->rowCount() > 0 ? "true" : "false";
            
         }catch(PDOException $err){
            die($err->getMessage());
