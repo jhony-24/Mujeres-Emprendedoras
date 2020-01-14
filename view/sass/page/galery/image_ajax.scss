@@ -2,11 +2,10 @@
    width: 100%;
    height: 350px;
    text-align: center;
-   font-size: 1.5em;
    padding: 1em;
    @include centerContent(){ flex-direction: column; }
    .title{
-      font-size: 2.4em;
+      font-size: 3.5em;
       padding-bottom: .5em;
       background: $header-background;
       -webkit-background-clip: text;
@@ -17,19 +16,17 @@
       color: #999;
    }
    @include responsive(950px){
-      .title{ font-size: 1.8em; }
-      .description{ width: 40%; font-size: 0.8em; }
+      .title{ font-size: 3.1em; }
    }
    @include responsive(680px){
       height: 300px;
-      .title{ font-size: 1.5em; }
-      .description{ font-size: 0.7em; }
+      .title{ font-size: 2.5em; }
+      .description{ font-size: 0.9em; }
    }
    @include responsive(580px){
       height: 230px;
-      .description{
-         display: none;
-      }
+      .title{ font-size: 2em; }
+      .description{ display: none; }
    }
 }
 
@@ -41,31 +38,25 @@
 
       .content-galery{
          width: $galery-width;
-         margin: 0 auto;
+         margin: 0 auto 8em auto;
          display: grid;
          grid-gap: 10px;
-         grid-template-columns: repeat(3,1fr) ;
+         grid-template-columns: repeat(6,1fr) ;
 
          .image{
             width: 100%;
-            height: 250px;
             margin-bottom: 5px;
             position: relative;
             cursor: pointer;
-            //border-radius: .5em;
             overflow: hidden;
+            line-height: 0;
+
             .img-view{
                width: 100%;
-               min-height: 250px;
+               height: 150px;
+               object-fit: cover;
                opacity: 1;
                transition: .3s;
-               //animation: aparecer 1.5s;
-               animation-fill-mode: both;
-            }
-
-            @keyframes aparecer{
-               from{ opacity: 0; }
-               to{  opacity: 1; }
             }
 
             .icon{
@@ -84,29 +75,31 @@
                justify-content: center;
                opacity: 0;
             }
+
             &:hover{
                .icon{ opacity: 1; }
             }
 
          }
          @include responsive(1050px){
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: repeat(4,1fr);
          }
          @include responsive(850px){
             width: $galery-width + 5%;
          }
          @include responsive(700px){
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
          }
          @include responsive(600px){
-            grid-template-columns: 1fr;
-            .image{ height: 320px; }
+            grid-template-columns: 1fr 1fr;
+            .image .img-view{ height: 200px; }
          }
          @include responsive(450px){
-            .image{ height: 240px; }
+            grid-template-columns: 1fr;
+            .image .img-view{ height: 240px; }
          }
          @include responsive(350px){
-            .image{ height: 200px; }
+            .image .img-view{ height: 200px; }
          }
       }
    }

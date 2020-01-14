@@ -16,6 +16,10 @@
          $ruta = $this->routerBase."galery_image.html";
          require_once($ruta);
       }
+      function events(){
+         $ruta = $this->routerBase."galery_event.html";
+         require_once($ruta);         
+      }
       function contact(){
          $ruta = $this->routerBase."contact.html";
          require_once($ruta);
@@ -68,6 +72,13 @@
          echo $event;
       }
 
+      function getImages(){
+         require_once("model/Conection.php");
+         require_once("model/Photo.php");
+
+         $photos = new Photo();
+         echo $photos->getPhotos();
+      }
 
       function LoginRequest(){
          if(isset($_POST["user"])){
@@ -137,7 +148,7 @@
             $headers.="X-Priority: 3\r\n";
             $headers.="Content-type: text/html;charset=utf-8\r\n";
             $headers.="X-Mailer: smail-PHP ".phpversion();
-            $completeMessage = include("__template__.php");
+            $completeMessage = require_once("__template__.php");
             if(mail($to,$asunt,$completeMessage,$headers)){
                header("Location:contact");
             }

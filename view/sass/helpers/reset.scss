@@ -37,6 +37,10 @@ a{
    color: #fff;
 }
 
+@for $i from 1 through 6{
+  h#{$i}{ font-weight: normal; }
+}
+
 ::selection {
   background: #1d80e6;
   color: #fff;

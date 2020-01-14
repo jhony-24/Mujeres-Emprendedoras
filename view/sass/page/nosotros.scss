@@ -1,7 +1,7 @@
 $bg-image : "https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_960_720.jpg";
 .bg-image{
    width: 100%;
-   height: 560px;
+   height: 400px;
    background-image: url($bg_image);
    background-attachment: fixed;
    background-position: center;
@@ -11,7 +11,7 @@ $bg-image : "https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_960_7
    position: relative;
 
    .text-floating{
-      width: 35%;
+      width: 40%;
       height: max-content;
       margin: auto;
       position: absolute;
@@ -24,14 +24,8 @@ $bg-image : "https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_960_7
          width: 100%;
          margin: 0 auto;
          text-align: center;
-         font-size: 2.5em;
-         .n {
-           font-size: 1.8em;
-         }
-         .m {
-           font-size: 2em;
-           font-weight: bold;
-         }
+         font-size: 3em;
+         span{ font-size: 1.2em; font-weight: bold; }
       }
    }
 
@@ -45,11 +39,10 @@ $bg-image : "https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_960_7
    width: 70%;
    min-height: 700px;
    max-height: 800px;
-   margin: 0 auto;
+   margin: 3em auto;
    background: rgb(240,240,240);
    padding: 2em;
    text-align: center;
-   transform: translateY(-10%);
    .icons{
       @include centerContent();
       color: black;

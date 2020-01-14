@@ -7,27 +7,61 @@
     <meta name="theme-color" content="#e63c5a"/>
     <link rel="shortcut icon" href="view/assets/image/icon_page.png"/>
     <title>default_text - Mujeres Empoderadas</title>
-    <link rel="stylesheet" href="view/css/detail_login.css?v=undefined"/>
+    <link rel="stylesheet" href="view/css/detail_admin.css?v=2.1"/>
   </head>
   <body>
     <div class="fist-loading">
       <div class="loader"></div>
     </div>
     <main class="main-app">
-      <div class="container">
-        <p class="title">Admin Panel</p>
-        <form id="form-login">
-          <input class="input username" type="text" name="user" placeholder="Username" maxlength="50" required="required"/>
-          <input class="input password" type="password" name="pass" placeholder="Password" maxlength="50" required="required"/>
-          <input class="input submit" type="submit" name="submit" value="Entry"/>
-        </form>
-      </div><a class="floating-button" href="index.php?url=home"><i class="fa fa-door-open"></i></a>
+      <div class="header-options">
+        <button class="link" id="logout-button">Logout</button>
+      </div>
+      <div class="nav-options">
+        <div class="search"><i class="icon-search fa fa-search"></i>
+          <input class="input-search" placeholder="Search Publication"/>
+        </div>
+        <button class="add-publication" id="add-publication"><i class="fa fa-plus"></i></button>
+      </div>
+      <div class="body-publications">
+        <div class="publication toggle" id="publication">
+          <form class="add-publication toggle" id="form-insert-publication" enctype="multipart/form-data">
+            <div class="row-title">
+              <p class="title modal">Agregar publicación</p>
+            </div>
+            <div class="row-body-publication">
+              <div class="container-input">
+                <div class="fields"> 
+                  <input class="text-field" type="text" name="title" maxlength="300" placeholder="Titulo" rows="3" required="required"/>
+                  <textarea class="text-field" placeholder="Descripcion..." maxlength="2000" name="text" rows="6" required="required"></textarea>
+                  <div class="input-picture">
+                    <label class="text-upload-file"> <i class="icon-upload fa fa-image"></i>subir una foto
+                      <input type="file" name="image" required="required"/>
+                    </label>
+                  </div>
+                </div>
+                <div class="preview">
+                  <div class="preview-image"></div>
+                </div>
+              </div>
+              <div class="btn-options"> 
+                <input class="btn-cancel" type="reset" value="Cancelar" id="btn-cancel-publication"/>
+                <input class="btn-publication" type="submit" value="Publicar"/>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="row-title">
+          <p class="title">Eventos publicados</p>
+        </div>
+        <div class="row-publications" id="content-publications">
+          <!--Content js-->
+        </div>
+      </div>
     </main>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script async="async" src="view/assets/helpers/icons.js"></script>
-    <script src="view/js/functions/template_functions.js"></script>
-    <script src="view/js/pages/templates/header.js"></script>
-    <script src="view/js/pages/templates/aside.js"></script>
+    <script src="view/js/all.js"></script>
     <script>AOS.init({once:true});</script>
   </body>
 </html>

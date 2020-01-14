@@ -303,6 +303,24 @@ a {
   text-decoration: none;
   color: #fff; }
 
+h1 {
+  font-weight: normal; }
+
+h2 {
+  font-weight: normal; }
+
+h3 {
+  font-weight: normal; }
+
+h4 {
+  font-weight: normal; }
+
+h5 {
+  font-weight: normal; }
+
+h6 {
+  font-weight: normal; }
+
 ::-moz-selection {
   background: #1d80e6;
   color: #fff; }
@@ -344,6 +362,9 @@ body::-webkit-scrollbar-thumb {
 
 body::-webkit-scrollbar-thumb:vertical:hover {
   background: #e63c5a; }
+
+.main-app {
+  padding: 0; }
 
 .header-options {
   width: 80%;

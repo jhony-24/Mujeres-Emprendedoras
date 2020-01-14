@@ -1,4 +1,4 @@
-extends ../helpers/base_html
+extends ../templates/base_html
 
 append config
    - subtitle = "Nosotros"
@@ -7,5 +7,20 @@ append css3
    link(rel="stylesheet", href="view/css/detail_nosotros.css")
 
 append content
-   include nosotros/bg_image
-   include nosotros/card_information
+   .bg-image
+      .text-floating
+         p.text ¡<span>Nosotros</span> te brindamos el mejor servicio!
+   .card-nosotros
+      .icons
+         i.fab.fa-facebook
+         i.fab.fa-twitter
+         i.fab.fa-instagram
+      .text
+         h1.title(data-aos="fade-down") Nosotros
+         p.desc(data-aos="fade-up")
+            | Estamos a tu servicio para poder ayudarte a empoderar proyectos, empredimientos a liderar y sacar al mundo todo esa creatividad, fuerza y ganas que te definen.
+            br
+            | Si realmente quieres hacer algo, si crees en ello, simplemente sigue adelante y el éxito vendrá solo, nosotros estamos allí para orientarte y superar cualquier escenario.
+         a.btn-link(href="contact",data-aos="fade-up") Contactanos
+
+block detail-content

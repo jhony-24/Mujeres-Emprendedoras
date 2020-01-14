@@ -8,11 +8,16 @@
       }
  
       function SelectEvents() {
+         try{
             $query = "SELECT * FROM $this->table order by id_event desc";
             $stm = $this->con->prepare($query);
             $stm->execute();
             $data = $stm->fetchAll();
+            
             return json_encode($data);
+         }catch(PDOException $err){
+            die($err->getMessage());
+         }
       }
 
       function InsertEvent($keys) {

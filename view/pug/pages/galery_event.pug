@@ -1,4 +1,4 @@
-extends ../helpers/base_html.pug
+extends ../templates/base_html.pug
 include galery/mixins.pug
 
 append config
@@ -9,12 +9,19 @@ append css3
 
 append content
    section.main-content
-      .main-galery
-         .central-content
-            +image_event("Evento de la Semana","Evento de la semana")         
-         .content-galery
-            //Content ajax
-
+      .title-events
+         h1.title Nuestros Eventos
+         p.message Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, velit.
+      .container-events
+         -for(var i = 0; i < 10; i++)
+          .card
+            .header
+               img(src="https://cdn.pixabay.com/photo/2016/02/05/04/49/australia-1180394_960_720.jpg", alt="").img-head
+            .body
+               p.title
+                  | Lorem ipsum dolor sit amet.
+               p.message
+                  | Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur veritatis quibusdam distinctio velit, suscipit iste vitae, earum voluptates error tempora dolor atque deleniti blanditiis vero eligendi cumque. Quis totam illum eius facere numquam. Commodi aspernatur necessitatibus exercitationem aliquid sit fuga cupiditate eveniet saepe quibusdam, pariatur eius quidem suscipit ipsa ullam.
 block detail-content
 
 append floating-content

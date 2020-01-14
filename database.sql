@@ -10,6 +10,18 @@ create table `user`(
 
 insert `user`(`name`,`password`) values("brunella","brunella");
 
+create table photo(
+   id_photo int auto_increment primary key,
+   path_image varchar(500) not null
+) engine = InnoDB;
+
+insert photo(path_image) values("view/assets/image/b_a.jpg"),
+                           ("view/assets/image/b_b.jpg"),("view/assets/image/b_c.jpg"),
+                           ("view/assets/image/b_d.jpg"),("view/assets/image/b_e.jpg"),
+                           ("view/assets/image/b_f.jpg"),("view/assets/image/b_g.jpg"),
+                           ("view/assets/image/b_h.jpg"),("view/assets/image/b_i.jpg"),
+                           ("view/assets/image/b_n.jpg"),("view/assets/image/b_m.jpg"),
+                           ("view/assets/image/b_l.jpg");
 
 create table events(
    id_event int auto_increment primary key,
@@ -19,6 +31,7 @@ create table events(
    text_event varchar(2000) not null
 ) engine = InnoDB;
 
+select * from photo;
 
 delimiter //
 create procedure InsertEvent(pathImage varchar(500),title varchar(300), textE varchar(2000))
