@@ -335,6 +335,176 @@ var Aside = {
    }
 }
 
+var Events = {
+   events : () => document.querySelector(".container-events"),
+   loadEvents : async function() {
+      const request = await fetch(`index.php?url=RequestEvents`);
+      const response = await request.json();
+      const data = response;
+      
+      this.events().innerHTML = "";
+      data.forEach((event,index)=>{
+         this.events().innerHTML += `
+         <div class="card">
+            <div class="header">
+               <img class="img-head" src="${event.path_image}" alt="">
+            </div>
+            <div class="body">
+               <p class="title">${event.title_event}</p>
+               <p class="message">${event.text_event}</p>
+            </div>
+         </div>
+         `;
+      });
+
+   },
+   init : function() {
+      this.loadEvents();
+   }
+}
+
+var Login = {
+   form : () => document.querySelector("#form-login"),
+   actionLogin : function(){
+      const form = this.form();
+      form.addEventListener("submit",async ev => {
+         ev.preventDefault();
+
+         let submit = form.querySelector("input[type='submit']");
+         const data = new FormData(form);
+         submit.disabled = true;
+
+         const headers = {
+            method : "POST",
+            body : data
+         }
+
+         const request = await fetch("index.php?url=LoginRequest",headers);
+         const response = await request.text();
+
+         if(response == "true"){
+            window.location = "index.php?url=admin";
+         }else if(response == "false"){
+            submit.disabled = false;
+            alert("Usuario o Contraseña incorrecta");
+         }
+
+      });
+   },
+   init : function(){
+      this.actionLogin();
+   }
+}
+
+var Events = {
+   btnAddPublication : () => document.getElementById('add-publication'),
+   formButtonClose : () => document.getElementById("btn-cancel-publication"),
+   formPublication : () => document.getElementById('publication'),
+   publications : () => document.querySelector('#content-publications'),
+   inputSearch : () => document.querySelector('.input-search'),
+   toggleForm : function() {
+      var f = this.formPublication();
+      let add = f.querySelector("#form-insert-publication");
+      var style = "toggle";
+      var preview  = document.querySelector('.preview-image');
+
+      this.btnAddPublication().addEventListener('click', ev => {
+           f.classList.remove(style);
+           add.classList.remove(style);
+           document.body.style.overflow = "hidden";
+      });
+      this.formButtonClose().addEventListener("click", ev => {
+          f.classList.add(style);
+          add.classList.add(style);
+          preview.innerHTML = "";
+          document.body.style.overflow = "auto";
+      })
+  },
+   loadEvents : async function(title = null) {
+
+      var pathRequest;
+      if(title == null ) pathRequest = "index.php?url=RequestEvents";
+      else pathRequest = "index.php?url=SearchByTitle&title=" + title;
+
+      const request = await fetch(pathRequest);
+      const response = await request.json();
+      const divPublications = this.publications();
+
+      divPublications.innerHTML = "";
+      if(response.length > 0){
+
+         response.forEach(v => {
+            divPublications.innerHTML += `<div class="card-published">
+               <div class="container-image">
+                  <img src="${v.path_image}" alt="image" />
+               </div>
+               <div class="container-details">
+                  <div class="text">
+                     <p class="dark">${v.title_event}</p>
+                     <p class="text-publication">${v.text_event}</p>
+                  </div>
+               </div>
+               <div class="container-options">
+                  <p class="date">${v.date_create}</p>
+                  <button id="${v.id_event}" class="delete delete-event">Eliminar</button>
+               </div>
+            </div>`;
+         });
+         this.deleteEvent();
+      }
+   },
+   searchByTitle : function() {
+      this.inputSearch().addEventListener('keyup', ev => {
+         this.loadEvents(this.inputSearch().value,true);
+      });
+   },
+   deleteEvent : function() {
+      const deleteEvent = document.querySelectorAll(".delete-event");
+      deleteEvent.forEach(btn=> {
+         btn.addEventListener('click',async ev => {
+            let body = new FormData();
+            body.append("id_event", ev.target.id); 
+            let headers = {
+               method: 'POST',
+               body: body
+            }
+
+            const awaitRequest = confirm("Estas seguro de quere borrar este evento?");
+            if(awaitRequest){
+               const request = await fetch("index.php?url=AdminDeleteEvent",headers);
+               const response = await request.text();
+   
+               switch(response){
+                  case "deleteOk":
+                     alert("El evento se elimino con exito");
+                     window.location.href = "index.php?url=admin";
+                     break;
+                  case "deleteFail":
+                  default:
+                     alert("Ocurrio un error");
+                     break;
+               }
+            }
+         });
+      });
+   },
+   logout : () => {
+      const btn = document.querySelector("#logout-button");
+      btn.addEventListener("click",async ev => {
+         const request = await fetch("index.php?url=logout");
+         const response = await request.text();
+         window.location = "index.php?url=login";
+      })
+   },
+   init: function() {
+      this.loadEvents();
+      this.logout();
+      this.toggleForm();
+      this.searchByTitle();
+   }
+}
+
+
 window.addEventListener("load", ev =>{
    const url = window.location.href.split("/");
    const page = url[url.length-1];
@@ -372,5 +542,13 @@ window.addEventListener("load", ev =>{
          break;
       case "contact":
          break;
+      case "events":
+         Events.init();
+         break;
+      case "login":
+         Login.init();
+         break;
+      case "admin":
+         Events.init();
    }
 })

@@ -3,7 +3,7 @@
       private $host = "127.0.0.1";
       private $database = "brunellaEvents";
       private $user = "root";
-      private $password = "";
+      private $password = "1234";
       protected $con = null;
 
       function __construct(){

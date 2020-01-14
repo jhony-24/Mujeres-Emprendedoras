@@ -7,13 +7,23 @@
          $this->table = "events";
       }
  
-      function SelectEvents() {
+      function SelectEvents($filter = "all", $paramFilter = null) {
          try{
-            $query = "SELECT * FROM $this->table order by id_event desc";
-            $stm = $this->con->prepare($query);
-            $stm->execute();
-            $data = $stm->fetchAll();
-            
+            switch($filter){
+               case "all":
+                  $query = "select * from {$this->table} order by id_event desc";
+                  $stm = $this->con->prepare($query);
+                  $stm->execute();
+                  $data = $stm->fetchAll();
+                  break;
+               case "like" :
+                  $query = "select * from {$this->table} where title_event LIKE CONCAT('%',:title,'%') order by id_event desc";
+                  $stm = $this->con->prepare($query);
+                  $stm->bindValue(":title",$paramFilter);
+                  $stm->execute();
+                  $data = $stm->fetchAll();
+                  break;
+            }
             return json_encode($data);
          }catch(PDOException $err){
             die($err->getMessage());

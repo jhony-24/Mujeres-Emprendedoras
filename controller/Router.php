@@ -48,7 +48,7 @@
       //---------------------------------ALTERAR POR DISEÑO---------------------------------------
       function admin(){
          session_start();
-         if(!isset($_SESSION["user"])){
+         if(isset($_SESSION["user"])){
             $url = $this->routerBase . "admin.html";
             require_once($url);
          }else{
@@ -62,6 +62,21 @@
          echo "true";
       }
 
+      function AdminDeleteEvent(){
+         if(isset($_POST["id_publication"])){
+            require_once("model/Conection.php");
+            require_once("model/Events.php");
+
+            $id = intval($_POST["id_event"]);
+            $publications = new Events();
+            $response = $publications->deleteEvent($id);
+            echo ($response == "true" ? "deleteOk" : "deleteFail");
+         }else{
+            echo "deleteFail";
+         }
+      }
+
+
       //Ajax
       function RequestEvents(){
          require_once("model/Conection.php");
@@ -71,6 +86,19 @@
          $event = $publications->SelectEvents();
          echo $event;
       }
+
+      function SearchByTitle() {
+         require_once("model/Conection.php");
+         require_once("model/Events.php");
+         $publications = new Events();
+         if(isset($_GET["title"])) {
+            echo $publications->SelectEvents("like",$_GET["title"]);
+         }
+         else {
+            echo "error";
+         }
+      }
+
 
       function getImages(){
          require_once("model/Conection.php");

@@ -10,14 +10,14 @@ block content
     .nav-options
         .search
             i.icon-search.fa.fa-search
-            input.input-search(placeholder="Search Publication")
+            input.input-search(placeholder="Search Events")
         button.add-publication#add-publication
               i.fa.fa-plus
     .body-publications
         .publication#publication.toggle
             form#form-insert-publication.add-publication.toggle(enctype="multipart/form-data")
                 .row-title
-                    p.title.modal Agregar publicación
+                    p.title.modal Agregar evento
                 .row-body-publication
                     .container-input
                         .fields 
@@ -32,7 +32,7 @@ block content
                             .preview-image
                     .btn-options 
                         input.btn-cancel(type="reset",value="Cancelar")#btn-cancel-publication
-                        input.btn-publication(type="submit",value="Publicar")
+                        input.btn-publication(type="submit",value="Añadir evento")
         .row-title
             p.title Eventos publicados
         .row-publications#content-publications
