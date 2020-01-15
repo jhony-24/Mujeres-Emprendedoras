@@ -16,4 +16,13 @@
             die($err->getMessage());
          }
       }
+
+      function deletePhoto($id) {
+         $query = "DELETE FROM {$this->table} WHERE id_photo = :id";
+         $stm = $this->con->prepare($query);
+         $stm->bindParam(":id",$id);
+         $stm->execute();
+
+         return $stm->rowCount() > 0 ? "true" : "false";
+      }
    }

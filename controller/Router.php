@@ -96,6 +96,17 @@
          echo $data;
       }
 
+      function DeleteImage(){         
+         require_once("model/Conection.php");
+         require_once("model/Photo.php");
+
+         $id = intval($_POST["id_photo"]);
+         $photo = new Photo();
+         $data = $photo->deletePhoto($id);
+         echo $data;
+
+      }
+
 
       function SearchByTitle() {
          require_once("model/Conection.php");

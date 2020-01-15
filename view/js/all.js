@@ -423,9 +423,24 @@ var Admin = {
   },
   deleteImage : function() {
    const btn = document.querySelectorAll('.btn-delete-image');
-   btn.forEach(button=> {
+   const self = this;
+   btn.forEach(button => {
       button.addEventListener('click',function() {
-         
+         var body = new FormData();
+         body.append("id_photo",this.id);
+         var headers = {
+            method : "POST",
+            body : body
+         }
+         fetch("index.php?url=DeleteImage",headers).then(r=>r.text()).then(request=>{
+            if(request == "true") {
+               self.loadImages();
+               console.clear();
+            }
+            else {
+               alert("no se puede eliminar esta imagen");
+            }
+         });
       });
    });
   },
@@ -447,6 +462,7 @@ var Admin = {
          </div>
       `;
    });
+   this.deleteImage();
 
   },
    loadEvents : async function(title = null) {
@@ -614,7 +630,6 @@ window.addEventListener("load", ev =>{
       Aside.action_play();
       Aside.action_change_video();
    }
-
    switch(page){
       case "home":
          Slider.init();
@@ -643,5 +658,6 @@ window.addEventListener("load", ev =>{
          break;
       case "admin":
          Admin.init();
+         break;
    }
 })
