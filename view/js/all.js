@@ -526,20 +526,24 @@ var Admin = {
 
    divPublications.classList.add("grid-images");
    divPublications.innerHTML = "";
-   response.forEach(image=>{
-      divPublications.innerHTML += `
-         <div class="image-published">
-            <img class="image" src="${image.path_image}" alt=""/>
-            <button class="btn-delete-image" id="${image.id_photo}">
-               <i class="fa fa-trash-alt"></i>
-               <span role="tooltip" class="delete-tooltip">eliminar</span>
-            </button>
-         </div>
-      `;
-   });
    this.title().innerHTML = "Imagenes subidas";
-   this.btnUploadImage().classList.remove('hidden');
-   this.deleteImage();
+   if(response.length > 0){
+      response.forEach(image=>{
+         divPublications.innerHTML += `
+            <div class="image-published">
+               <img class="image" src="${image.path_image}" alt=""/>
+               <button class="btn-delete-image" id="${image.id_photo}">
+                  <i class="fa fa-trash-alt"></i>
+                  <span role="tooltip" class="delete-tooltip">eliminar</span>
+               </button>
+            </div>
+         `;
+      });
+      this.btnUploadImage().classList.remove('hidden');
+      this.deleteImage();
+   } else {
+      divPublications.innerHTML = this.templateMessage("Aún no subes ningúna imagen");
+   }
 
   },
    loadEvents : async function(title = null) {
@@ -553,6 +557,7 @@ var Admin = {
 
       divPublications.classList.remove('grid-images');
       divPublications.innerHTML = "";
+      this.title().innerHTML = "Eventos publicados";
       if(response.length > 0){
 
          response.forEach(v => {
@@ -572,10 +577,17 @@ var Admin = {
                </div>
             </div>`;
          });
-         this.title().innerHTML = "Eventos publicados";
          this.btnUploadImage().classList.add('hidden');
          this.deleteEvent();
+      } else {
+         divPublications.innerHTML = this.templateMessage("No hay eventos publicados");
       }
+   },
+   templateMessage : function(message){
+      return `<div class="has-empty">
+         <p class="dark"><i class="fa fa-frown fa-2x"></i></p>
+         <p>${message}</p>
+      </div>`;
    },
    searchByTitle : function() {
       this.inputSearch().addEventListener('keyup', ev => {

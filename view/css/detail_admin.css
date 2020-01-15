@@ -706,6 +706,15 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1em; }
+    .body-publications .row-publications .has-empty {
+      -ms-grid-column-span: 3;
+      grid-column: span 3;
+      padding: 2em;
+      text-align: center;
+      color: gray; }
+      .body-publications .row-publications .has-empty .dark {
+        color: #e63c5a;
+        padding: 1em 0; }
     .body-publications .row-publications .card-published {
       width: 100%;
       border: 1px solid rgba(100, 100, 100, 0.1); }

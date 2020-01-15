@@ -261,6 +261,17 @@
         grid-template-columns: repeat(3,1fr);
         grid-gap: 1em;
 
+        .has-empty {
+            grid-column: span 3;
+            padding: 2em;
+            text-align: center;
+            color: gray;
+            .dark {
+                color: rgb(230,60,90);
+                padding:1em 0;
+            }
+        }
+
         .card-published {
             width: 100%;
             border:1px solid rgba(100,100,100,.1); 
