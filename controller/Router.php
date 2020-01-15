@@ -63,7 +63,7 @@
       }
 
       function AdminDeleteEvent(){
-         if(isset($_POST["id_publication"])){
+         if(isset($_POST["id_event"])){
             require_once("model/Conection.php");
             require_once("model/Events.php");
 

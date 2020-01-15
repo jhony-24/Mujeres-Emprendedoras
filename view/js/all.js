@@ -425,9 +425,9 @@ var Admin = {
    const btn = document.querySelectorAll('.btn-delete-image');
    const self = this;
    btn.forEach(button => {
-      button.addEventListener('click',function() {
+      button.addEventListener('click',ev => {
          var body = new FormData();
-         body.append("id_photo",this.id);
+         body.append("id_photo",ev.currentTarget.id);
          var headers = {
             method : "POST",
             body : body
@@ -530,11 +530,12 @@ var Admin = {
             if(awaitRequest){
                const request = await fetch("index.php?url=AdminDeleteEvent",headers);
                const response = await request.text();
-   
+               
                switch(response){
                   case "deleteOk":
                      alert("El evento se elimino con exito");
-                     window.location.href = "index.php?url=admin";
+                     this.loadEvents();
+                     console.clear();
                      break;
                   case "deleteFail":
                   default:
@@ -588,7 +589,7 @@ var Admin = {
             switch(response){
                case "true":
                   alert("Publicacion Subida");
-                  window.location = "index.php?url=admin";
+                  this.loadEvents();
                   break;
                case "false":
                case "ErrorUpload":

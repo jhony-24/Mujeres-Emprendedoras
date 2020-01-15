@@ -52,10 +52,10 @@
         try{
            $query = "DELETE FROM $this->table WHERE id_event = :id";
            $stm = $this->con->prepare($query);
-           $stm->bindValue(":id",$id,PDO::PARAM_INT);
+           $stm->bindParam(":id",$id,PDO::PARAM_INT);
            $stm->execute();
 
-           return $stm->rowCount() > 0 ;
+           return $stm->rowCount() > 0 ? "true" : "false";
         }catch(PDOException $err){
            die($err->getMessage());
         }
