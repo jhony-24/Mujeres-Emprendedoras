@@ -429,7 +429,12 @@ var Admin = {
 
    divPublications.innerHTML = "";
    response.forEach(image=>{
-      divPublications.innerHTML += `<img class="image" src="${image.path_image}" alt=""/>`;
+      divPublications.innerHTML += `
+         <div class="image-published">
+            <img class="image" src="${image.path_image}" alt=""/>
+            <button class="btn-delete-image"><i class="fa fa-trash"></i></button>
+         </div>
+      `;
    });
 
   },

@@ -694,12 +694,39 @@ body::-webkit-scrollbar-thumb:vertical:hover {
           background: -o-linear-gradient(330deg, #e63c5a, #831cf6);
           background: linear-gradient(120deg, #e63c5a, #831cf6);
           color: white; }
-    .body-publications .row-publications .image {
-      width: 300px;
-      height: 300px;
-      -o-object-fit: cover;
-      object-fit: cover;
-      display: block; }
+    .body-publications .row-publications .image-published {
+      position: relative; }
+      .body-publications .row-publications .image-published .image {
+        width: 300px;
+        height: 300px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        display: block; }
+      .body-publications .row-publications .image-published .btn-delete-image {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: absolute;
+        background: white;
+        color: #e63c5a;
+        width: 35px;
+        height: 35px;
+        top: 0;
+        right: 0;
+        margin: 10px;
+        border-radius: 100%;
+        -webkit-box-shadow: 0 3px 5px rgba(100, 100, 100, 0.1);
+        box-shadow: 0 3px 5px rgba(100, 100, 100, 0.1); }
     .body-publications .row-publications .not-found {
       position: relative;
       width: 500px; }

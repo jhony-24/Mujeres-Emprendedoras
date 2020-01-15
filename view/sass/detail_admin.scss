@@ -272,11 +272,28 @@
                     }
                 }
             }
-        .image {
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            display: block;
+        .image-published {
+            position: relative;
+            .image {
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                display: block;
+            }
+            .btn-delete-image {
+                $size : 35px;
+                @include flex(row,center,center);
+                position: absolute;
+                background: white;
+                color: rgb(230,60,90);
+                width: $size;
+                height: $size;
+                top: 0;
+                right:0;
+                margin:10px;
+                border-radius: 100%;
+                box-shadow: 0 3px 5px rgba(100,100,100,.1);
+            }
         }
         .not-found {
             position: relative;
