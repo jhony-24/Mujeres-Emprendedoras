@@ -373,7 +373,6 @@ var Login = {
          let submit = form.querySelector("input[type='submit']");
          const data = new FormData(form);
          submit.disabled = true;
-         //header
          const headers = {
             method : "POST",
             body : data
