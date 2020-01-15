@@ -293,6 +293,22 @@
                 margin:10px;
                 border-radius: 100%;
                 box-shadow: 0 3px 5px rgba(100,100,100,.1);
+
+                .delete-tooltip {
+                    background: black;
+                    border-radius: 5px;
+                    display: inline-block;
+                    position: absolute;
+                    color: white;
+                    padding: 5px 10px;
+                    bottom: -100%;
+                    opacity: 0;
+                    transition: .3s;
+                }
+
+                &:hover .delete-tooltip {
+                    opacity: 1;
+                }
             }
         }
         .not-found {

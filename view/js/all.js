@@ -421,6 +421,14 @@ var Admin = {
           document.body.style.overflow = "auto";
       })
   },
+  deleteImage : function() {
+   const btn = document.querySelectorAll('.btn-delete-image');
+   btn.forEach(button=> {
+      button.addEventListener('click',function() {
+         
+      });
+   });
+  },
   loadImages : async function() {
 
    const request = await fetch("index.php?url=RequestImages");
@@ -432,7 +440,10 @@ var Admin = {
       divPublications.innerHTML += `
          <div class="image-published">
             <img class="image" src="${image.path_image}" alt=""/>
-            <button class="btn-delete-image"><i class="fa fa-trash"></i></button>
+            <button class="btn-delete-image" id="${image.id_photo}">
+               <i class="fa fa-trash"></i>
+               <span role="tooltip" class="delete-tooltip">eliminar</span>
+            </button>
          </div>
       `;
    });

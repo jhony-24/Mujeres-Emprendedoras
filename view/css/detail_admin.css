@@ -727,6 +727,20 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         border-radius: 100%;
         -webkit-box-shadow: 0 3px 5px rgba(100, 100, 100, 0.1);
         box-shadow: 0 3px 5px rgba(100, 100, 100, 0.1); }
+        .body-publications .row-publications .image-published .btn-delete-image .delete-tooltip {
+          background: black;
+          border-radius: 5px;
+          display: inline-block;
+          position: absolute;
+          color: white;
+          padding: 5px 10px;
+          bottom: -100%;
+          opacity: 0;
+          -webkit-transition: .3s;
+          -o-transition: .3s;
+          transition: .3s; }
+        .body-publications .row-publications .image-published .btn-delete-image:hover .delete-tooltip {
+          opacity: 1; }
     .body-publications .row-publications .not-found {
       position: relative;
       width: 500px; }
