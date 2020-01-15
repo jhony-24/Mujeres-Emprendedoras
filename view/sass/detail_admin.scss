@@ -215,6 +215,12 @@
     }
     
     .row-option-publication {
+        @include responsive(500px) {
+            @include flex(row,none,center);
+            .btn-link {
+                font-size: .9em;
+            }
+        }
         .btn-link {
             color: white ;
         }
@@ -267,7 +273,7 @@
                     height: 100%;
                     object-fit: cover;
                     transition: .3s;
-                    filter: brightness(85%);
+                    filter: brightness(80%);
                 }
             }
             &:hover .container-image img{
@@ -305,57 +311,65 @@
                     }
                 }
             }
-        .image-published {
-            position: relative;
-
-
-            .image {
-                width: 300px;
-                height: 300px;
-                object-fit: cover;
-                display: block;
-                transition: .3s;
-                filter: brightness(85%);
-            }
-            &:hover .image {
-                filter: brightness(100%);
-            }
-            &:hover .btn-delete-image {
-                @include flex(row,center,center);
-            }
-            .btn-delete-image {
-                $size : 35px;
-                position: absolute;
-                background: white;
-                color: rgb(230,60,90);
-                width: $size;
-                height: $size;
-                left:0;
-                right: 0;
-                top: 0;
-                bottom: 0;
-                margin:auto;
-                border-radius: 100%;
-                box-shadow: 0 3px 5px rgba(100,100,100,.1);
-                display: none;
-
-                .delete-tooltip {
-                    background: black;
-                    border-radius: 5px;
-                    display: inline-block;
-                    position: absolute;
-                    color: white;
-                    padding: 5px 10px;
-                    bottom: -100%;
-                    opacity: 0;
+        &.grid-images {
+            grid-template-columns: repeat(5,1fr);
+            @include responsive(1200px){grid-template-columns: repeat(3,1fr);}
+            @include responsive(800px){grid-template-columns: repeat(2,1fr);}
+            @include responsive(600px){grid-template-columns: 1fr;}
+            .image-published {
+                position: relative;
+                .image {
+                    width: 100%;
+                    height: 150px;
+                    object-fit: cover;
+                    display: block;
                     transition: .3s;
+                    @include responsive(600px){
+                        height: 250px;
+                    }
                 }
+                &:hover .image {
+                    filter: brightness(50%);
+                }
+                &:hover .btn-delete-image {
+                    @include flex(row,center,center);
+                }
+                .btn-delete-image {
+                    $size : 35px;
+                    position: absolute;
+                    background: white;
+                    color: rgb(230,60,90);
+                    width: $size;
+                    height: $size;
+                    left:0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin:auto;
+                    border-radius: 100%;
+                    box-shadow: 0 3px 5px rgba(100,100,100,.1);
+                    display: none;
 
-                &:hover .delete-tooltip {
-                    opacity: 1;
+                    .delete-tooltip {
+                        background: black;
+                        border-radius: 5px;
+                        display: inline-block;
+                        position: absolute;
+                        color: white;
+                        padding: 5px 10px;
+                        bottom: -100%;
+                        opacity: 0;
+                        transition: .3s;
+                    }
+
+                    &:hover .delete-tooltip {
+                        opacity: 1;
+                    }
                 }
+    
             }
         }
+
         .not-found {
             position: relative;
             width: 500px;

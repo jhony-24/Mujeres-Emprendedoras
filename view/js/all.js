@@ -383,7 +383,7 @@ var Login = {
          const response = await request.text();
 
          if(response == "true"){
-            window.location = "index.php?url=admin";
+            window.location = "admin";
          }else if(response == "false"){
             submit.disabled = false;
             alert("Usuario o Contraseña incorrecta");
@@ -475,14 +475,48 @@ var Admin = {
       picture.addEventListener('change', ev => {
          var preview  = this.formImage().querySelector('.preview-image');
          var reader = new FileReader();
-            reader.onload = e => {
-               preview.innerHTML = `
+         reader.onload = e => {
+            preview.innerHTML = `
                  <img src="${e.target.result}"/>
                  <p class="name-image">${ev.target.files[0].name}</p>
                  `;
-            };
-            reader.readAsDataURL(ev.target.files[0]);
+         };
+         reader.readAsDataURL(ev.target.files[0]);
       });
+
+      form.addEventListener("submit", async ev => {
+         ev.preventDefault();
+
+         const dataForm = new FormData(form);
+         const headers = {
+            method : "POST",
+            body : dataForm
+         };
+
+         let inputs = form.querySelectorAll(".text-field");
+         let submit = form.querySelector("input[type='submit']");
+         submit.disabled = true;
+
+         const requestData = await fetch("index.php?url=AdminCreateImage",headers);
+         const response = await requestData.text();
+         
+         switch(response){
+            case "true":
+               alert("Imagen Subida");
+               window.location.reload();
+               break;
+            case "false":
+            case "ErrorUpload":
+               alert("Ocurrio un error al subir la imagen...");
+               submit.disabled = false;
+               break;
+            case "NoImage":
+               alert("El archivo ingresado no es una Imagen");
+               submit.disabled = false;
+               break;   
+         }
+
+      })
 
   },
   loadImages : async function() {
@@ -491,6 +525,7 @@ var Admin = {
    const response = await request.json();
    const divPublications =  this.publications();
 
+   divPublications.classList.add("grid-images");
    divPublications.innerHTML = "";
    response.forEach(image=>{
       divPublications.innerHTML += `
@@ -517,7 +552,7 @@ var Admin = {
       const response = await request.json();
       const divPublications = this.publications();
 
-
+      divPublications.classList.remove('grid-images');
       divPublications.innerHTML = "";
       if(response.length > 0){
 
@@ -634,7 +669,7 @@ var Admin = {
             switch(response){
                case "true":
                   alert("Publicacion Subida");
-                  this.loadEvents();
+                  window.location.reload();
                   break;
                case "false":
                case "ErrorUpload":

@@ -187,7 +187,7 @@
             require_once("model/Conection.php");
             require_once("model/Photo.php");
             
-            $path = "views/assets/image" . $_FILES["image"]["name"];
+            $path = "view/assets/image/" . $_FILES["image"]["name"];
             $type = explode("/",$_FILES["image"]["type"]);
    
             if ($type[1] == "png" || $type[1] == "jpeg" || $type[1] == "jpg") {
