@@ -634,10 +634,54 @@ body::-webkit-scrollbar-thumb:vertical:hover {
     .body-publications .row-title .title.modal {
       border-bottom: none;
       padding-bottom: 0; }
+  .body-publications .row-option-publication .btn-link {
+    color: white; }
   .body-publications .row-option-publication .btn-change-publication {
-    color: white;
     margin: 1em 0 2em;
     margin-right: 20px; }
+  .body-publications .row-option-publication .btn-upload-new-image {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    border-radius: 100%;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-animation: showing .3s 1;
+    animation: showing .3s 1; }
+
+@-webkit-keyframes showing {
+  from {
+    -webkit-transform: scale(0) translateY(-100px);
+    transform: scale(0) translateY(-100px); }
+  50% {
+    opacity: .4; } }
+
+@keyframes showing {
+  from {
+    -webkit-transform: scale(0) translateY(-100px);
+    transform: scale(0) translateY(-100px); }
+  50% {
+    opacity: .4; } }
+    .body-publications .row-option-publication .btn-upload-new-image.hidden {
+      display: none;
+      -webkit-animation: none;
+      animation: none; }
   .body-publications .row-publications {
     margin: 3em 0;
     display: -ms-grid;
@@ -718,7 +762,7 @@ body::-webkit-scrollbar-thumb:vertical:hover {
       .body-publications .row-publications .image-published:hover .image {
         -webkit-filter: brightness(100%);
         filter: brightness(100%); }
-      .body-publications .row-publications .image-published .btn-delete-image {
+      .body-publications .row-publications .image-published:hover .btn-delete-image {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -731,18 +775,22 @@ body::-webkit-scrollbar-thumb:vertical:hover {
         justify-content: center;
         -webkit-box-align: center;
         -ms-flex-align: center;
-        align-items: center;
+        align-items: center; }
+      .body-publications .row-publications .image-published .btn-delete-image {
         position: absolute;
         background: white;
         color: #e63c5a;
         width: 35px;
         height: 35px;
-        top: 0;
+        left: 0;
         right: 0;
-        margin: 10px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
         border-radius: 100%;
         -webkit-box-shadow: 0 3px 5px rgba(100, 100, 100, 0.1);
-        box-shadow: 0 3px 5px rgba(100, 100, 100, 0.1); }
+        box-shadow: 0 3px 5px rgba(100, 100, 100, 0.1);
+        display: none; }
         .body-publications .row-publications .image-published .btn-delete-image .delete-tooltip {
           background: black;
           border-radius: 5px;

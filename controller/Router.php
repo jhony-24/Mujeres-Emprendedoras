@@ -182,6 +182,33 @@
          }
       }
 
+      function AdminCreateImage() {
+         if(isset($_FILES["image"])) {
+            require_once("model/Conection.php");
+            require_once("model/Photo.php");
+            
+            $path = "views/assets/image" . $_FILES["image"]["name"];
+            $type = explode("/",$_FILES["image"]["type"]);
+   
+            if ($type[1] == "png" || $type[1] == "jpeg" || $type[1] == "jpg") {
+               $photo = new Photo();
+               $response = $photo->InsertPhoto($path);
+               if ($response == "true") {
+                  if (move_uploaded_file($_FILES["image"]["tmp_name"],$path)) {
+                     echo $response;
+                  }
+               }else if ($response == "false") {
+                  echo "ErrorUpdload";
+               }
+            } else{
+               echo "NoImage";
+            }
+         }
+         else {
+            echo "false";
+         }
+      }
+
       function sendEmail() {
          if(isset($_POST["submit"])){
             $to = "brunella.benavente@emcforwoman.com";

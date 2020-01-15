@@ -21,9 +21,14 @@
         <div class="search"><i class="icon-search fa fa-search"></i>
           <input class="input-search" placeholder="Search Events"/>
         </div>
-        <button class="add-publication" id="add-publication"><i class="fa fa-plus"></i></button>
+        <button class="add-publication" id="add-publication" title="agregar un nuevo evento"></button>
       </div>
       <div class="body-publications">
+        <div class="row-option-publication">
+          <button class="btn-link btn-change-publication" data-name="events">eventos</button>
+          <button class="btn-link btn-change-publication" data-name="images">mis imagenes</button>
+          <button class="btn-link btn-upload-new-image">subir </button>
+        </div>
         <div class="publication toggle" id="publication">
           <form class="add-publication toggle" id="form-insert-publication" enctype="multipart/form-data">
             <div class="row-title">

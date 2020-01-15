@@ -397,29 +397,51 @@ var Login = {
 }
 
 var Admin = {
+   title : () => document.querySelector('.title-dynamic'),
    btnAddPublication : () => document.getElementById('add-publication'),
    formButtonClose : () => document.getElementById("btn-cancel-publication"),
-   formPublication : () => document.getElementById('publication'),
+   formButtonImageClose : () => document.getElementById('btn-cancel-publication-image'),
+   formPublication : () => document.getElementById('publication-upload'),
+   formImage : () => document.getElementById('image-upload'),
    publications : () => document.querySelector('#content-publications'),
    inputSearch : () => document.querySelector('.input-search'),
+   btnUploadImage : () => document.querySelector('.btn-upload-new-image'),
    buttonsChangeViewPublication : () => document.querySelectorAll(".btn-change-publication"),
    toggleForm : function() {
-      var f = this.formPublication();
-      let add = f.querySelector("#form-insert-publication");
+      
       var style = "toggle";
-      var preview  = document.querySelector('.preview-image');
 
-      this.btnAddPublication().addEventListener('click', ev => {
-           f.classList.remove(style);
-           add.classList.remove(style);
-           document.body.style.overflow = "hidden";
+      function toggleFormInteractive({ form , childFormId , buttonOpen , buttonClose  }) {
+         var f = form;
+         let add = f.querySelector(childFormId);
+         let preview = f.querySelector(".preview-image");
+         buttonOpen.addEventListener('click', ev => {
+              f.classList.remove(style);
+              add.classList.remove(style);
+              document.body.style.overflow = "hidden";
+         });
+         buttonClose.addEventListener("click", ev => {
+             f.classList.add(style);
+             add.classList.add(style);
+             preview.innerHTML = "";
+             document.body.style.overflow = "auto";
+         });
+      }
+      
+      toggleFormInteractive({
+         form:this.formPublication(),
+         childFormId: "#form-insert-publication",
+         buttonOpen: this.btnAddPublication(),
+         buttonClose: this.formButtonClose()
       });
-      this.formButtonClose().addEventListener("click", ev => {
-          f.classList.add(style);
-          add.classList.add(style);
-          preview.innerHTML = "";
-          document.body.style.overflow = "auto";
+
+      toggleFormInteractive({
+         form:this.formImage(),
+         childFormId: "#form-insert-image",
+         buttonOpen: this.btnUploadImage(),
+         buttonClose: this.formButtonImageClose()
       })
+
   },
   deleteImage : function() {
    const btn = document.querySelectorAll('.btn-delete-image');
@@ -432,17 +454,36 @@ var Admin = {
             method : "POST",
             body : body
          }
-         fetch("index.php?url=DeleteImage",headers).then(r=>r.text()).then(request=>{
-            if(request == "true") {
-               self.loadImages();
-               console.clear();
-            }
-            else {
-               alert("no se puede eliminar esta imagen");
-            }
-         });
+         if(confirm("Deseas eliminar la imagen?")){
+            fetch("index.php?url=DeleteImage",headers).then(r=>r.text()).then(request=>{
+               if(request == "true") {
+                  self.loadImages();
+                  console.clear();
+               }
+               else {
+                  alert("no se puede eliminar esta imagen");
+               }
+            });
+         }
       });
    });
+  },
+  addImage : function() {
+      let form = this.formImage().querySelector("#form-insert-image");
+      let picture = this.formImage().querySelector("[name='image']");
+   
+      picture.addEventListener('change', ev => {
+         var preview  = this.formImage().querySelector('.preview-image');
+         var reader = new FileReader();
+            reader.onload = e => {
+               preview.innerHTML = `
+                 <img src="${e.target.result}"/>
+                 <p class="name-image">${ev.target.files[0].name}</p>
+                 `;
+            };
+            reader.readAsDataURL(ev.target.files[0]);
+      });
+
   },
   loadImages : async function() {
 
@@ -456,12 +497,14 @@ var Admin = {
          <div class="image-published">
             <img class="image" src="${image.path_image}" alt=""/>
             <button class="btn-delete-image" id="${image.id_photo}">
-               <i class="fa fa-trash"></i>
+               <i class="fa fa-trash-alt"></i>
                <span role="tooltip" class="delete-tooltip">eliminar</span>
             </button>
          </div>
       `;
    });
+   this.title().innerHTML = "Imagenes subidas";
+   this.btnUploadImage().classList.remove('hidden');
    this.deleteImage();
 
   },
@@ -495,6 +538,8 @@ var Admin = {
                </div>
             </div>`;
          });
+         this.title().innerHTML = "Eventos publicados";
+         this.btnUploadImage().classList.add('hidden');
          this.deleteEvent();
       }
    },
@@ -610,6 +655,7 @@ var Admin = {
       this.toggleForm();
       this.searchByTitle();
       this.createEvent();
+      this.addImage();
       this.changeViewPublication();
    }
 }

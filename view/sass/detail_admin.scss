@@ -215,10 +215,38 @@
     }
     
     .row-option-publication {
-        .btn-change-publication {
+        .btn-link {
             color: white ;
+        }
+        .btn-change-publication {
             margin:1em 0 2em;
             margin-right: 20px;
+        }
+        .btn-upload-new-image {
+            position: fixed;
+            bottom:0;
+            right: 0;
+            margin:20px;
+            border-radius: 100%;
+            padding: 0;
+            $size:60px;
+            width: $size;
+            height: $size;
+            z-index: 10;
+            @include flex(row,center,center);
+            animation: showing .3s 1;
+            @keyframes showing {
+                from {
+                    transform: scale(0)translateY(-100px);
+                }
+                50%{
+                    opacity: .4;
+                }
+            }
+            &.hidden {
+                display: none;
+                animation: none;
+            }
         }
     }
     .row-publications {
@@ -292,19 +320,24 @@
             &:hover .image {
                 filter: brightness(100%);
             }
+            &:hover .btn-delete-image {
+                @include flex(row,center,center);
+            }
             .btn-delete-image {
                 $size : 35px;
-                @include flex(row,center,center);
                 position: absolute;
                 background: white;
                 color: rgb(230,60,90);
                 width: $size;
                 height: $size;
+                left:0;
+                right: 0;
                 top: 0;
-                right:0;
-                margin:10px;
+                bottom: 0;
+                margin:auto;
                 border-radius: 100%;
                 box-shadow: 0 3px 5px rgba(100,100,100,.1);
+                display: none;
 
                 .delete-tooltip {
                     background: black;

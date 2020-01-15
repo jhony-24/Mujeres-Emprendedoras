@@ -25,4 +25,19 @@
 
          return $stm->rowCount() > 0 ? "true" : "false";
       }
+
+      function InsertPhoto($path_image) {
+         try{
+         $query = "INSERT {$this->table}(path_image) VALUES(:path_image)";
+            $stm = $this->con->prepare($query);
+            $stm->bindParam(":path_image",$path_image);
+            $stm->execute();
+   
+            return $stm->rowCount() > 0 ? "true" : "false";
+         }
+         catch(PDOException $err){
+            die($err->getMessage());
+         }
+      }
+
    }

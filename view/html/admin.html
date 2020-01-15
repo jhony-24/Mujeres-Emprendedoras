@@ -21,14 +21,15 @@
         <div class="search"><i class="icon-search fa fa-search"></i>
           <input class="input-search" placeholder="Search Events"/>
         </div>
-        <button class="add-publication" id="add-publication"><i class="fa fa-plus"></i></button>
+        <button class="add-publication" id="add-publication" title="agregar un nuevo evento"><i class="fa fa-plus"></i></button>
       </div>
       <div class="body-publications">
         <div class="row-option-publication">
           <button class="btn-link btn-change-publication" data-name="events">eventos</button>
           <button class="btn-link btn-change-publication" data-name="images">mis imagenes</button>
+          <button class="btn-link btn-upload-new-image hidden" title="subir nueva imagen"><i class="fa fa-upload"></i></button>
         </div>
-        <div class="publication toggle" id="publication">
+        <div class="publication toggle" id="publication-upload">
           <form class="add-publication toggle" id="form-insert-publication" enctype="multipart/form-data">
             <div class="row-title">
               <p class="title modal">Agregar evento</p>
@@ -55,8 +56,33 @@
             </div>
           </form>
         </div>
+        <div class="publication toggle" id="image-upload">
+          <form class="add-publication toggle" id="form-insert-image" enctype="multipart/form-data">
+            <div class="row-title">
+              <p class="title modal">Subir una foto                    </p>
+            </div>
+            <div class="row-body-publication">
+              <div class="container-input">
+                <div class="fields">
+                  <div class="input-picture">
+                    <label class="text-upload-file"> <i class="icon-upload fa fa-image"></i>subir una foto
+                      <input type="file" name="image" required="required"/>
+                    </label>
+                  </div>
+                </div>
+                <div class="preview">
+                  <div class="preview-image"> </div>
+                </div>
+              </div>
+              <div class="btn-options">
+                <input class="btn-cancel" type="reset" value="Cancelar" id="btn-cancel-publication-image"/>
+                <input class="btn-publication" type="submit" value="Añadir foto"/>
+              </div>
+            </div>
+          </form>
+        </div>
         <div class="row-title">
-          <p class="title">Eventos publicados</p>
+          <p class="title title-dynamic">Eventos publicados</p>
         </div>
         <div class="row-publications" id="content-publications">
           <!--Content js-->

@@ -11,13 +11,15 @@ block content
         .search
             i.icon-search.fa.fa-search
             input.input-search(placeholder="Search Events")
-        button.add-publication#add-publication
-              i.fa.fa-plus
+        button.add-publication#add-publication(title="agregar un nuevo evento")
+            i.fa.fa-plus
     .body-publications
         .row-option-publication
             button.btn-link.btn-change-publication(data-name="events") eventos
             button.btn-link.btn-change-publication(data-name="images") mis imagenes
-        .publication#publication.toggle
+            button.btn-link.btn-upload-new-image.hidden(title="subir nueva imagen")
+                i.fa.fa-upload
+        .publication.toggle#publication-upload
             form#form-insert-publication.add-publication.toggle(enctype="multipart/form-data")
                 .row-title
                     p.title.modal Agregar evento
@@ -36,8 +38,25 @@ block content
                     .btn-options 
                         input.btn-cancel(type="reset",value="Cancelar")#btn-cancel-publication
                         input.btn-publication(type="submit",value="Añadir evento")
+        .publication.toggle#image-upload
+            form#form-insert-image.add-publication.toggle(enctype="multipart/form-data")
+                .row-title
+                    p.title.modal Subir una foto                    
+                .row-body-publication
+                    .container-input
+                        .fields
+                            .input-picture
+                                label.text-upload-file 
+                                    i.icon-upload.fa.fa-image
+                                    | subir una foto
+                                    input(type="file" name="image" required)
+                        .preview
+                            .preview-image 
+                    .btn-options
+                        input.btn-cancel(type="reset",value="Cancelar")#btn-cancel-publication-image
+                        input.btn-publication(type="submit",value="Añadir foto")
         .row-title
-            p.title Eventos publicados
+            p.title.title-dynamic Eventos publicados
         .row-publications#content-publications
             //Content js
 
