@@ -11,6 +11,9 @@
     padding: 2em 0;
     .link{
         color: $header-background;
+        .icon {
+            margin-right: 5px;
+        }
         &:hover{ text-decoration: underline; }
     }
 }

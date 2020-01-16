@@ -372,6 +372,8 @@ body::-webkit-scrollbar-thumb:vertical:hover {
   padding: 2em 0; }
   .header-options .link {
     color: linear-gradient(120deg, #e63c5a, #831cf6); }
+    .header-options .link .icon {
+      margin-right: 5px; }
     .header-options .link:hover {
       text-decoration: underline; }
 
