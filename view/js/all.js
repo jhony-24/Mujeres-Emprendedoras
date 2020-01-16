@@ -91,8 +91,6 @@ var Servicios = {
 var Images = {
    element : () => document.querySelector(".main-content .content-galery"),
    modalPhotos : () => document.querySelector(".photo-screen"),
-   icons : () => document.querySelectorAll(".main-content .content-galery .image .icon"),
-   images : () => document.querySelectorAll(".main-content .content-galery .image"),
    CreateIcon : function(i){
       let icon = document.createElement("div");
       icon.classList.add("icon");
@@ -103,7 +101,9 @@ var Images = {
       var img = new Image();
       img.src = src;
       img.classList.add("img-view");
-      return img;
+      return new Promise((resolve,reject) => {
+         img.addEventListener("load", ev => resolve(img))
+      });
    },
    AddImage : async function(){
       const request = await fetch("getImages");
@@ -111,28 +111,25 @@ var Images = {
 
       for(let e of data){
          let div_image = document.createElement("div");
-         let img = this.CreateImage(e.path_image);
+         let img = await this.CreateImage(e.path_image);
+         let icon = this.CreateIcon("fa fa-camera");
 
-         img.onload = (ev)=>{
-            let icon = this.CreateIcon("fa fa-camera");
+         div_image.classList.add("image");
+         div_image.appendChild(img);
+         div_image.appendChild(icon);
 
-            div_image.classList.add("image");
-
-            div_image.appendChild(img);
-            div_image.appendChild(icon);
-
-            this.element().appendChild(div_image);
-         }
+         this.element().appendChild(div_image);
       }
+
+      this.ViewImage();
    },
    ViewImage : function(){
-      let images = this.images();
-      let icons = this.icons();
+      let images = document.querySelectorAll(".main-content .content-galery .image");
+      let icons = document.querySelectorAll(".main-content .content-galery .image .icon");
       let photo = this.modalPhotos();
 
       [...icons].forEach( (v,i) => {
          v.addEventListener("click", ev => {
-            console.log("hola");
             document.body.style.overflow = "hidden";
             photo.style.visibility = "visible";
             photo.style.opacity = "1";
@@ -160,7 +157,6 @@ var Images = {
    },
    init : function(){
       this.AddImage();
-      this.ViewImage();
       this.CloseImage();
    }
 }
@@ -341,22 +337,30 @@ var Events = {
       const request = await fetch(`index.php?url=RequestEvents`);
       const response = await request.json();
       const data = response;
+      let events = this.events();
       
-      this.events().innerHTML = "";
-      data.forEach((event,index)=>{
-         this.events().innerHTML += `
-         <div class="card">
-            <div class="header">
-               <img class="img-head" src="${event.path_image}" alt="">
-            </div>
-            <div class="body">
-               <p class="title">${event.title_event}</p>
-               <p class="message">${event.text_event}</p>
-            </div>
-         </div>
-         `;
-      });
-
+      events.innerHTML = "";
+      if(data.length > 0){
+         data.forEach((event,index)=>{
+            events.innerHTML += `<div class="card">
+               <div class="header">
+                  <img class="img-head" src="${event.path_image}" alt="">
+               </div>
+               <div class="body">
+                  <p class="title">${event.title_event}</p>
+                  <p class="message">${event.text_event}</p>
+               </div>
+            </div>`;
+         });
+      }else{
+         let father = events.parentNode;
+         father.firstChild.style.display = "none";
+         events.innerHTML = `<div class="not-events">
+            <i class="fa fa-sad-tear"></i> 
+            <p class="title">Eventos No Programados</p>
+            <p class="message">Aun no tenemos ningun evento programado...</p>
+         </div>`;
+      }
    },
    init : function() {
       this.loadEvents();
@@ -380,6 +384,8 @@ var Login = {
 
          const request = await fetch("index.php?url=LoginRequest",headers);
          const response = await request.text();
+
+         console.log(response);
 
          if(response == "true"){
             window.location = "admin";
@@ -441,111 +447,111 @@ var Admin = {
          buttonClose: this.formButtonImageClose()
       })
 
-  },
-  deleteImage : function() {
-   const btn = document.querySelectorAll('.btn-delete-image');
-   const self = this;
-   btn.forEach(button => {
-      button.addEventListener('click',ev => {
-         var body = new FormData();
-         body.append("id_photo",ev.currentTarget.id);
-         var headers = {
-            method : "POST",
-            body : body
-         }
-         if(confirm("Deseas eliminar la imagen?")){
-            fetch("index.php?url=DeleteImage",headers).then(r=>r.text()).then(request=>{
-               if(request == "true") {
-                  self.loadImages();
-                  console.clear();
-               }
-               else {
-                  alert("no se puede eliminar esta imagen");
-               }
-            });
-         }
+   },
+   deleteImage : function() {
+      const btn = document.querySelectorAll('.btn-delete-image');
+      const self = this;
+      btn.forEach(button => {
+         button.addEventListener('click',ev => {
+            var body = new FormData();
+            body.append("id_photo",ev.currentTarget.id);
+            var headers = {
+               method : "POST",
+               body : body
+            }
+            if(confirm("Deseas eliminar la imagen?")){
+               fetch("index.php?url=DeleteImage",headers).then(r=>r.text()).then(request=>{
+                  if(request == "true") {
+                     self.loadImages();
+                     console.clear();
+                  }
+                  else {
+                     alert("no se puede eliminar esta imagen");
+                  }
+               });
+            }
+         });
       });
-   });
-  },
-  addImage : function() {
-      let form = this.formImage().querySelector("#form-insert-image");
-      let picture = this.formImage().querySelector("[name='image']");
-   
-      picture.addEventListener('change', ev => {
-         var preview  = this.formImage().querySelector('.preview-image');
-         var reader = new FileReader();
-         reader.onload = e => {
-            preview.innerHTML = `
-                 <img src="${e.target.result}"/>
-                 <p class="name-image">${ev.target.files[0].name}</p>
-                 `;
-         };
-         reader.readAsDataURL(ev.target.files[0]);
-      });
+   },
+   addImage : function() {
+         let form = this.formImage().querySelector("#form-insert-image");
+         let picture = this.formImage().querySelector("[name='image']");
+      
+         picture.addEventListener('change', ev => {
+            var preview  = this.formImage().querySelector('.preview-image');
+            var reader = new FileReader();
+            reader.onload = e => {
+               preview.innerHTML = `
+                  <img src="${e.target.result}"/>
+                  <p class="name-image">${ev.target.files[0].name}</p>
+                  `;
+            };
+            reader.readAsDataURL(ev.target.files[0]);
+         });
 
-      form.addEventListener("submit", async ev => {
-         ev.preventDefault();
+         form.addEventListener("submit", async ev => {
+            ev.preventDefault();
 
-         const dataForm = new FormData(form);
-         const headers = {
-            method : "POST",
-            body : dataForm
-         };
+            const dataForm = new FormData(form);
+            const headers = {
+               method : "POST",
+               body : dataForm
+            };
 
-         let inputs = form.querySelectorAll(".text-field");
-         let submit = form.querySelector("input[type='submit']");
-         submit.disabled = true;
+            let inputs = form.querySelectorAll(".text-field");
+            let submit = form.querySelector("input[type='submit']");
+            submit.disabled = true;
 
-         const requestData = await fetch("index.php?url=AdminCreateImage",headers);
-         const response = await requestData.text();
-         
-         switch(response){
-            case "true":
-               alert("Imagen Subida");
-               window.location.reload();
-               break;
-            case "false":
-            case "ErrorUpload":
-               alert("Ocurrio un error al subir la imagen...");
-               submit.disabled = false;
-               break;
-            case "NoImage":
-               alert("El archivo ingresado no es una Imagen");
-               submit.disabled = false;
-               break;   
-         }
+            const requestData = await fetch("index.php?url=AdminCreateImage",headers);
+            const response = await requestData.text();
+            
+            switch(response){
+               case "true":
+                  alert("Imagen Subida");
+                  window.location.reload();
+                  break;
+               case "false":
+               case "ErrorUpdload":
+                  alert("Ocurrio un error al subir la imagen...");
+                  submit.disabled = false;
+                  break;
+               case "NoImage":
+                  alert("El archivo ingresado no es una Imagen");
+                  submit.disabled = false;
+                  break;   
+            }
 
-      })
+         })
 
-  },
-  loadImages : async function() {
+   },
+   loadImages : async function() {
 
-   const request = await fetch("index.php?url=RequestImages");
-   const response = await request.json();
-   const divPublications =  this.publications();
+      const request = await fetch("index.php?url=RequestImages");
+      const response = await request.json();
+      const divPublications =  this.publications();
 
-   divPublications.classList.add("grid-images");
-   divPublications.innerHTML = "";
-   this.title().innerHTML = "Imagenes subidas";
-   if(response.length > 0){
-      response.forEach(image=>{
-         divPublications.innerHTML += `
-            <div class="image-published">
-               <img class="image" src="${image.path_image}" alt=""/>
-               <button class="btn-delete-image" id="${image.id_photo}">
-                  <i class="fa fa-trash-alt"></i>
-                  <span role="tooltip" class="delete-tooltip">eliminar</span>
-               </button>
-            </div>
-         `;
-      });
-      this.btnUploadImage().classList.remove('hidden');
-      this.deleteImage();
-   } else {
-      divPublications.innerHTML = this.templateMessage("Aún no subes ningúna imagen");
-   }
+      divPublications.classList.add("grid-images");
+      divPublications.innerHTML = "";
+      this.title().innerHTML = "Imagenes subidas";
+      if(response.length > 0){
+         response.forEach(image=>{
+            divPublications.innerHTML += `
+               <div class="image-published">
+                  <img class="image" src="${image.path_image}" alt=""/>
+                  <button class="btn-delete-image" id="${image.id_photo}">
+                     <i class="fa fa-trash-alt"></i>
+                     <span role="tooltip" class="delete-tooltip">eliminar</span>
+                  </button>
+               </div>
+            `;
+         });
+         this.btnUploadImage().classList.remove('hidden');
+         this.deleteImage();
+      } else {
+         divPublications.innerHTML = this.templateMessage("Aún no subes ningúna imagen");
+      }
 
-  },
+   },
    loadEvents : async function(title = null) {
       var pathRequest;
       if(title == null ) pathRequest = "index.php?url=RequestEvents";
@@ -642,7 +648,7 @@ var Admin = {
       btn.addEventListener("click",async ev => {
          const request = await fetch("index.php?url=logout");
          const response = await request.text();
-         window.location = "index.php?url=login";
+         window.location.href = "login";
       })
    },
    createEvent : function(){
@@ -683,7 +689,7 @@ var Admin = {
                   window.location.reload();
                   break;
                case "false":
-               case "ErrorUpload":
+               case "ErrorUpdload":
                   alert("Ocurrio un error al subir la imagen...");
                   submit.disabled = false;
                   break;
@@ -705,7 +711,6 @@ var Admin = {
       this.changeViewPublication();
    }
 }
-
 
 window.addEventListener("load", ev =>{
    const url = window.location.href.split("/");

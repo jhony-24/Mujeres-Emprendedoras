@@ -41,11 +41,16 @@
          require_once($ruta);
        }
       function login() {
-         $rute = $this->routerBase."login.html";
-         require_once($rute);
+         session_start();
+         if(!isset($_SESSION["user"])){
+            $rute = $this->routerBase."login.html";
+            require_once($rute);            
+         }else{
+            header("location: admin");
+         }
+
       }
 
-      //---------------------------------ALTERAR POR DISEÑO---------------------------------------
       function admin(){
          session_start();
          if(isset($_SESSION["user"])){

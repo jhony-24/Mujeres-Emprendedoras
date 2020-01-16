@@ -5,7 +5,7 @@
    @content;
 }
 
-@mixin  flex($dir : row , $j : center , $a : center) {
+@mixin flex($dir : row , $j : center , $a : center) {
     display: flex;
     flex-direction: $dir;
     justify-content: $j;

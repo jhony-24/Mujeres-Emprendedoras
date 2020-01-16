@@ -1,9 +1,9 @@
 .main-content{
-   width: 80%;
+   width: 70%;
    margin: 3em auto 6em auto;
    .title-events{
       width: 100%;
-      padding: 0 0 3em 0;
+      padding: 2em 0 4em 0;
       .title{ 
          font-size: 2.8em; 
          padding-bottom: .3em;
@@ -11,7 +11,6 @@
          -webkit-background-clip: text;
          -webkit-text-fill-color: transparent;
       }
-
       .message{
          color: lighten(#000, 45);
       }
@@ -22,17 +21,27 @@
       grid-gap: 1.5em;
       .card{
          display: grid;
-         grid-template-columns: 1fr 2fr;
+         grid-template-columns: 1fr 1fr;
          grid-gap: 1em;
-         $h : 230px;
-         box-shadow: 0 5px 15px rgb(230,230,230);
+         $h : 260px;
+         box-shadow: 0 5px 15px rgb(230,230,230), 0 -5px 15px rgb(230,230,230);
          .header{
             width: 100%;
             height: $h;
+            position: relative;
             .img-head{
                width: 100%;
                height: 100%;
                object-fit: cover;
+            }
+            &:after{ 
+               content:""; 
+               width: 100%; 
+               height: 100%; 
+               position: absolute; 
+               top: 0; 
+               left: 0; 
+               background: rgba(#000,.3); 
             }
          }
          .body{
@@ -41,15 +50,80 @@
             overflow: auto;
             padding: 0 .5em;
             .title{
-               font-size: 1.5em;
-               padding: 1em 0 .5em 0;
-               color: $header-color-a;
+               font-size: 1.7em;
+               padding: .8em 0 .5em 0;
+               @include gradient-text($header-background);
             }
             .message{
                line-height: 1.5em;
-               color: #444;
+               color: lighten(#000,45);
             }
          }
       }
+      .not-events{
+         @include flex(column);
+         height: 60vh;
+         text-align: center;
+         svg{ color: $header-color-a; font-size: 3em; }
+         .title{ 
+            font-size: 2.8em;
+            padding: .5em 0;  
+
+            @include gradient-text($header-background); 
+         }
+         .message{ 
+            color: lighten(#000,45); 
+            padding-bottom: 2em; 
+         }
+         .content{
+            width: 50%;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 1em;
+         }
+      }
+   }
+
+   @include responsive(900px){
+      width: 80%;
+   }
+   @include responsive(700px){
+      width: 90%;
+      .title-events{
+         .title{ font-size: 2.2em; }
+         .message{ font-size: .9em; }
+      }
+      .container-events{
+         .card{
+            .header,.body{ height: 200px; }
+         }
+         .not-events{
+            height: 50vh;
+            font-size: .9em;
+         }
+      }
+   }
+   @include responsive(630px){
+      width: 75%;
+      .title-events{
+         text-align: center;
+      }
+      .container-events{
+         .card{ 
+            grid-template-columns: 1fr; 
+            grid-gap: 0em; 
+            .header{ height: 190px; }
+            .body{ 
+               height: auto; 
+               padding: 1em; 
+               font-size: .9em;
+               .title{ padding-top: 0; font-size: 1.4em;}
+            }
+         }
+      }
+   }
+
+   @include responsive(450px){
+      width: 85%;
    }
 }
