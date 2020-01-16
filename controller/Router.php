@@ -52,7 +52,7 @@
             $url = $this->routerBase . "admin.html";
             require_once($url);
          }else{
-            header("location: index.php?url=login");
+            header("location: login");
          }
       }
 
